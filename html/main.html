@@ -19,6 +19,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
     
+    <link rel="stylesheet" href="./slick-1.8.1/slick-1.8.1/slick/slick.css">
+    <link rel="stylesheet" href="./slick-1.8.1/slick-1.8.1/slick/slick-theme.css">
     <style>
         .img-wrap{
             width: 200px; 
@@ -44,25 +46,27 @@
             margin-bottom: 10px;
         }
         
-        .card{
-            box-sizing: border-box;
-            /* padding: 0 5px; */
-            /* margin-right:1px; */
-            width: 25%;
-            display: inline-block;
-            /* margin-right: 1px; */
-            
-            border-radius: 40px;
+        .banner{
+            margin:76px;
+        }
+        
+        .container{
+            width: 150vh;
+            height: 200px;
         }
 
-        .img-wrap1 img{
+        .slick-prev:before, .slick-next:before{
+            color: black;
+            /* 左右button顏色 */
+        }
+
+        .slick-slide img{
             width: 100%;
             height: 200px;
             object-fit: cover;
-            border-radius: 40px;
-            
+            border-radius: 20px;
         }
-
+        
      </style>
 
 
@@ -229,6 +233,9 @@
                     <a href="#">連接錢包</a>
                 </button>
             </div>
+            <div class="banner">
+                <img src="" dlt="">
+            </div>
             <div class="nav justify-content-start ">
                 <h5>加入時間:2022/11/10</h5>
             </div>       
@@ -259,95 +266,130 @@
                 <button>
                     <a href="#"><i class="fas fa-ellipsis-h"></i></a>
                 </button>
-
             </div>
 
             <!-- 第二部份：標籤分頁的內容 -->
             <div class="tab-content">
                 <!-- 第1個內容 -->
                 <div class="tab-pane fade show active" id="menu1">
-                    <div class="nav justify-content-start">
+                    <div class="container">
                         <div class="card">
-                            <div class="img-wrap1">
+                            <div>
                                 <img src="./imgs/1111.JPG" alt="">
                             </div>
-                        </div>
-                        <div class="card">
-                            <div class="img-wrap1">
+                            <div>
                                 <img src="./imgs/1112.JPG" alt="">
                             </div>
-                        </div>
-                        <div class="card">
-                            <div class="img-wrap1">
+                            <div>
                                 <img src="./imgs/1113.JPG" alt="">
                             </div>
-                        </div>
+                            <div>
+                                <img src="./imgs/1111.JPG" alt="">
+                            </div>
+                            <div>
+                                <img src="./imgs/1112.JPG" alt="">
+                            </div>
+                            <div>
+                                <img src="./imgs/1113.JPG" alt="">
+                            </div>
+                        </div>    
                     </div>
                 </div>
                 <!-- 第2個內容 -->
                 <div class="tab-pane fade" id="menu2">
-                    <div class="nav justify-content-start">
+                    <div class="container">
                         <div class="card">
-                            <div class="img-wrap1">
-                                <img src="./imgs/2221.JPG" alt="">
+                            <div>
+                                <img src="./imgs/3331.JPG" alt="">
                             </div>
-                        </div>
-                        <div class="card">
-                            <div class="img-wrap1">
-                                <img src="./imgs/2222.JPG" alt="">
+                            <div>
+                                <img src="./imgs/3332.JPG" alt="">
                             </div>
-                        </div>
-                        <div class="card">
-                            <div class="img-wrap1">
-                                <img src="./imgs/2223.JPG" alt="">
+                            <div>
+                                <img src="./imgs/3333.JPG" alt="">
                             </div>
-                        </div>
+                            <div>
+                                <img src="./imgs/1111.JPG" alt="">
+                            </div>
+                            <div>
+                                <img src="./imgs/1111.JPG" alt="">
+                            </div>
+                            <div>
+                                <img src="./imgs/1111.JPG" alt="">
+                            </div>
+                        </div>    
                     </div>
                 </div>
                 <!-- 第3個內容 -->
                 <div class="tab-pane fade" id="menu3">
-                    <div class="nav justify-content-start">
+                    <div class="container">
                         <div class="card">
-                            <div class="img-wrap1">
-                                <img src="./imgs/3331.JPG" alt="">
+                            <div>
+                                <img src="./imgs/1111.JPG" alt="">
                             </div>
-                        </div>
-                        <div class="card">
-                            <div class="img-wrap1">
-                                <img src="./imgs/3332.JPG" alt="">
+                            <div>
+                                <img src="./imgs/1111.JPG" alt="">
                             </div>
-                        </div>
-                        <div class="card">
-                            <div class="img-wrap1">
-                                <img src="./imgs/3333.JPG" alt="">
+                            <div>
+                                <img src="./imgs/1111.JPG" alt="">
                             </div>
-                        </div>
+                            <div>
+                                <img src="./imgs/1111.JPG" alt="">
+                            </div>
+                            <div>
+                                <img src="./imgs/1111.JPG" alt="">
+                            </div>
+                            <div>
+                                <img src="./imgs/1111.JPG" alt="">
+                            </div>
+                        </div>    
                     </div>
                 </div>
                 <!-- 第4個內容 -->
                 <div class="tab-pane fade" id="menu4">
-                    <div class="nav justify-content-start">
+                    <div class="container">
                         <div class="card">
-                            <div class="img-wrap1">
-                                <img src="./imgs/441.JPG" alt="">
+                            <div>
+                                <img src="./imgs/1111.JPG" alt="">
                             </div>
-                        </div>
-                        <div class="card">
-                            <div class="img-wrap1">
-                                <img src="./imgs/442.JPG" alt="">
+                            <div>
+                                <img src="./imgs/1111.JPG" alt="">
                             </div>
-                        </div>
-                        <div class="card">
-                            <div class="img-wrap1">
-                                <img src="./imgs/43.JPG" alt="">
+                            <div>
+                                <img src="./imgs/1111.JPG" alt="">
                             </div>
-                        </div>
+                            <div>
+                                <img src="./imgs/1111.JPG" alt="">
+                            </div>
+                            <div>
+                                <img src="./imgs/1111.JPG" alt="">
+                            </div>
+                            <div>
+                                <img src="./imgs/1111.JPG" alt="">
+                            </div>
+                        </div>    
                     </div>
-                </div>               
-            </div>    
-        </div>       
+                </div>
+            </div>                                   
     </div>
 </div>
 
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script> -->
+    <script src="./slick-1.8.1/slick-1.8.1/slick/slick.min.js">
+
+    </script>
+    
+    <script>
+        $('.card').slick({
+            infinite: true,
+            slidesToShow: 4,
+            slidesToScroll: 3,
+            adaptiveHeight: true
+        });
+    </script>
+
+   
 </body>
 </html>
