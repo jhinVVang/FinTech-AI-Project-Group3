@@ -1,64 +1,62 @@
+/* 總畫面 */
 .container-all {
     display: flex;
     align-items: stretch;
 }
 
+/* logo 大頭像 帳戶名 */
 .post{
     background-color: rgb(188, 133, 240);
     width: 250px;
-    padding-bottom: 10px;
+    padding-bottom: 2px;
 }
+
+.header{
+    width: 200px;
+    height: 70px;
+    padding-top: 20px; 
+    margin-left: 23px;
+}
+
+.header img{
+    border-radius: 3px;
+}
+
+.img-wrap{
+    width: 200px; 
+    height:200px; 
+    background-color:#ccc;
+    margin-top: 20px; 
+    margin-left: 23px;
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 100px;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 1px 50%;
+}
+
+.right{
+    margin-top: 10px; 
+    margin-left: 65px;
+    margin-bottom: 10px;
+}
+
+/* 左邊導覽列 */
 #sidebar {
     width: 250px;
     height: 640px;
-    /* height: 100vh; */
     background-color: rgb(243, 243, 202);
     /* sidebar的背景色 */
-    color: black;
-    /* bar上的cwc頻道字顏色 */
     transition: 1s;
 }
 
 #sidebar.active {
     margin-left: -200px;
-}
-
-.container-fluid{
-    background-color:rgb(188, 133, 240);
-    width: 140vh;
-    height: 350px;
-   
-}
-.container-right {
-    background-color: green;
-    /* background-color: brown;   */
-    width: 100%;
-    height: 137vh;
-    text-align: center;
-    /* padding: 1px; */
-}
-
-.collapse-btn {
-    position: relative;
-    top: 1%;
-    left: 200px;
-    background-color:indigo;
-    color:white;
-    border: none;
-    font-size: 30px;
-    padding: 5px;
-}
-
-.collapse-btn:hover {
-    background-color: rgb(120, 5, 205);
-    transition: 0.4s;
-}
-
-#sidebar p {
-    text-align: center;
-    font-size: 30px;
-    font-style: italic;
-    padding: 10px;
 }
 
 #sidebar ul li a {
@@ -72,46 +70,61 @@
 
 #sidebar ul li a:hover {
     color: indigo;
-    background: red;
+    background: pink;
     /* sidebar選項框的顏色 */
 }
 
-.fas,
-.far,
-.fab {
-    float: right;
-}
-
 ul ul li a {
-    /* background-color: rgb(203, 142, 247); */
+    background-color: rgb(203, 142, 247); 
     background-color: white;
     font-size: 20px;
     font-style: italic;
+} 
+
+/* 右邊畫面 */
+.container-right {
+    background-color: white;
+    width: 83.5%;
+    height: 136vh;
+    text-align: center;
 }
 
+/* 連接錢包 banner 加入時間 */
+.container-fluid{
+    background-color: rgb(188, 133, 240);
+    width: 83.5%;
+    height: 342px;
+}
 
-/* @media (max-width:600px) {
-    #sidebar {
-        /* margin-left: 50px; */
-        /* width: 70px;
-        font-size: 20px;
-    } */
-    /* .collapse-btn {
-        position: relative;
-        top: 1%;
-        left: 110px;
-    }
-    #sidebar.active {
-        margin-left: 0px;
-    }
-    #sidebar ul p {
-        font-size: 18px;
-        text-align: left;
-    }
-    
-    .post{
-        width: 150px;
-        padding-bottom: 10px;
-    } */
+.container-fluid button{
+    background-color: orange;
+    border-radius: 5px;
+    margin-top: 15px;
+    margin-right: 10px;
+    margin-bottom: 3px;
+}
 
-/* } */
+.banner img{
+    width: 90%;
+    height: 260px;
+    margin-bottom: 2px;
+    /* padding: 30px; */
+}
+
+.container{
+    width: 140vh;
+    height: 200px;
+}
+
+/* 分頁內輪播 */
+.slick-prev:before, .slick-next:before{
+    color: red;
+    /* 左右button顏色 */
+}
+
+.slick-slide img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 20px;
+}
