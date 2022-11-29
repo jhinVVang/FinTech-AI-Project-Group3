@@ -103,19 +103,11 @@ ul ul li a {
     height: 342px;
 }
 
-.container-fluid button{
-    background-color: orange;
-    border-radius: 5px;
-    margin-top: 15px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-}
-
 .banner img{
     width: 90%;
-    height: 260px;
-    margin-top: 12px;
-    margin-bottom: 10px;
+    height: 250px;
+    margin-top: 5px;
+    margin-bottom: 2px;
     /* padding: 30px; */
 }
 
@@ -124,3 +116,9 @@ ul ul li a {
     height: 200px;
 }
 
+.forecast {
+    margin-top: 10px; 
+    margin-left: 46px;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
