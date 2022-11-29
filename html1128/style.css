@@ -108,13 +108,14 @@ ul ul li a {
     border-radius: 5px;
     margin-top: 15px;
     margin-right: 10px;
-    margin-bottom: 3px;
+    margin-bottom: 10px;
 }
 
 .banner img{
     width: 90%;
     height: 260px;
-    margin-bottom: 2px;
+    margin-top: 12px;
+    margin-bottom: 10px;
     /* padding: 30px; */
 }
 
@@ -123,15 +124,3 @@ ul ul li a {
     height: 200px;
 }
 
-/* 分頁內輪播 */
-.slick-prev:before, .slick-next:before{
-    color: red;
-    /* 左右button顏色 */
-}
-
-.slick-slide img{
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 20px;
-}
