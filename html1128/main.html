@@ -214,7 +214,48 @@
     <div class="container-right">
         <div class="container-fluid" >
             <div class="nav justify-content-end ">
-                <a href="#">登入</a>
+                <!-- 按鈕 -->
+                <a href="#" type="button" data-bs-toggle="modal" data-bs-target="#loginModal">會員登入</a>
+                <!-- 跳出視窗內容 -->
+                <div class="modal fade" id="loginModal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <!-- Header -->
+                            <div class="modal-header">
+                                <h3>會員登入</h3>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+                            <!-- Body -->
+                            <div class="modal-body">
+                            <!-- 登入表單 -->
+                                <form>
+                                    <!-- email -->
+                                    <div class="form-group">
+                                        <input type="email" class="account form-control" placeholder="Email">
+                                    </div>
+                                    <!-- password -->
+                                    <div class="form-group">
+                                        <input type="password" class="password form-control" placeholder="Password">
+                                    </div>
+                                    <!-- checkbox -->
+                                    <div class="form-group">
+                                        <input type="checkbox" class="remember">記住我的密碼
+                                    </div>
+                                    <!-- 送出按鈕 -->
+                                    <button type="button" class="btn btn-info"> 登入 </button>
+                                </form>
+                            </div>
+            
+                            <!-- Footer -->
+                            <div class="modal-footer">
+                                <div class="signup">
+                                    <span>尚未成為會員</span>
+                                    <a href="#" type="button" class="member"> 立即加入 </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <span>/</span>
                  <a href="#">註冊</a>  
             </div>
