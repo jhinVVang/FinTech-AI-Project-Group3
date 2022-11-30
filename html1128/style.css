@@ -98,18 +98,26 @@ ul ul li a {
 
 /* 連接錢包 banner 加入時間 */
 .container-fluid{
-    background-color: rgb(188, 133, 240);
+    /* background-color: rgb(188, 133, 240); */
+    background-image: url('./imgs/diamondbanner.JPG');
     width: 83.5%;
     height: 342px;
+    
 }
 
-.banner img{
-    width: 90%;
-    height: 250px;
-    margin-top: 5px;
-    margin-bottom: 2px;
-    /* padding: 30px; */
+.container-fluid h6 {
+    margin-top: 260px;
+    
 }
+
+/* .banner img{
+    width: 174vh;
+    height: 342px;
+    margin-right: -10px; */
+    /* margin-top: 5px;
+    margin-bottom: 2px; */
+    /* padding: 30px; */
+/* } */
 
 .container{
     width: 140vh;
