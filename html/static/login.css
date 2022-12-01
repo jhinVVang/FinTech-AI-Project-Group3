@@ -1,0 +1,167 @@
+/* 總畫面 */
+.container-all {
+    display: flex;
+    align-items: stretch;
+    padding-bottom: 7%;
+    /* width: 100%;
+    height: 100%; */
+    /* background-color: bisque; */
+    background-image: url('./imgs/star.jpg');
+}
+
+.container-left{
+    /* margin-top: 12%; */
+    margin-top: 14%;
+    margin-left: 35%;
+}
+
+.header img{
+    border-radius: 100px;
+}
+/* logo 大頭像 帳戶名 */
+/* .post{
+    background-color: rgb(188, 133, 240);
+    width: 250px;
+    padding-bottom: 2px;
+}
+
+
+
+
+/* .img-wrap{
+    width: 200px; 
+    height:200px; 
+    background-color:#ccc;
+    margin-top: 20px; 
+    margin-left: 23px;
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 100px;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 1px 50%;
+}
+
+.right{
+    margin-top: 10px; 
+    margin-left: 65px;
+    margin-bottom: 10px;
+} */ 
+
+/* 左邊導覽列 */
+/* #sidebar {
+    width: 250px;
+    height: 100%;
+    margin-left: 100px;
+    background-color: rgb(243, 243, 202);
+    /* sidebar的背景色 */
+    /* transition: 1s; */
+/* } */ 
+
+/* .header{ */
+    /* width: 100px;
+    height: 70px; */
+    /* padding-top: 200px;  */
+    /* padding-top: 135%; 
+    padding-left: 390%; */
+    /* margin-left: 50%; */
+    
+/* } */
+
+/* .head img{
+    width: 100px;
+} */
+
+/* #sidebar.active {
+    margin-left: -200px;
+}
+
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 20px;
+    display: block;
+    text-decoration: none;
+    background-color: rgb(244, 244, 176);
+    /* 字的顏色 */
+/* } */ */
+
+/* #sidebar ul li a:hover {
+    margin-left: 20px;
+    color: indigo;
+    background: pink;
+    /* sidebar選項框的顏色 */
+/* } */ 
+
+/* ul ul li a {
+    background-color: rgb(203, 142, 247); 
+    margin-left: 20px;
+    /* 小選項 */
+    /* font-size: 20px;
+    font-style: italic; */
+/* }  */
+
+.nav-item button{
+    margin-left: 20px;
+    font-size: 22px;
+    color: crimson;
+}
+/* 右邊畫面 */
+.container-right {
+    /* width: 600px; */
+    background-color: white;
+    width: 35%;
+    /* height: 136vh; */
+    height: 50%;
+    margin-top: 8%;
+    /* margin-left: 40%; */
+    padding: 100px;
+    text-align: center;
+}
+
+/* 連接錢包 banner 加入時間 */
+/* .container-fluid{
+    /* background-color: rgb(188, 133, 240); */
+    /* background-image: url('./imgs/diamondbanner.JPG');
+    width: 83.5%;
+    height: 342px;
+    
+} */ 
+
+/* .container-fluid h6 {
+    margin-top: 302px;
+    
+} */
+
+/* .banner img{
+    width: 174vh;
+    height: 342px;
+    margin-right: -10px; */
+    /* margin-top: 5px;
+    margin-bottom: 2px; */
+    /* padding: 30px; */
+/* } */
+
+/* .container{
+    width: 140vh;
+    height: 200px;
+} */
+
+.forecast {
+    margin-top: 15%; 
+    margin-left: 20%;
+   
+    font-size: 20px;
+}
+
+.modal-header h3{
+    padding-left: 33%;
+    color: yellow;
+}
+
+.signup{
+    padding-right: 20%;
+}
