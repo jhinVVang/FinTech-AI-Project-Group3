@@ -49,7 +49,7 @@ img{
 /* 左邊導覽列 */
 #sidebar {
     width: 250px;
-    height: 100%;
+    height: 640px;
     background-color: rgb(243, 243, 202);
     /* sidebar的背景色 */
     transition: 1s;
@@ -64,12 +64,11 @@ img{
     font-size: 20px;
     display: block;
     text-decoration: none;
-    background-color: rgb(244, 244, 176);
+    color: black; 
     /* 字的顏色 */
 }
 
 #sidebar ul li a:hover {
-    margin-left: 20px;
     color: indigo;
     background: pink;
     /* sidebar選項框的顏色 */
@@ -77,17 +76,11 @@ img{
 
 ul ul li a {
     background-color: rgb(203, 142, 247); 
-    margin-left: 20px;
-    /* 小選項 */
+    background-color: white;
     font-size: 20px;
     font-style: italic;
 } 
 
-.nav-item button{
-    margin-left: 20px;
-    font-size: 22px;
-    color: crimson;
-}
 /* 右邊畫面 */
 .container-right {
     background-color: white;
@@ -98,35 +91,40 @@ ul ul li a {
 
 /* 連接錢包 banner 加入時間 */
 .container-fluid{
-    /* background-color: rgb(188, 133, 240); */
-    background-image: url('./imgs/diamondbanner.JPG');
+    background-color: rgb(188, 133, 240);
     width: 83.5%;
     height: 342px;
-    
 }
 
-.container-fluid h6 {
-    margin-top: 260px;
-    
+.container-fluid button{
+    background-color: orange;
+    border-radius: 5px;
+    margin-top: 15px;
+    margin-right: 10px;
+    margin-bottom: 3px;
 }
 
-/* .banner img{
-    width: 174vh;
-    height: 342px;
-    margin-right: -10px; */
-    /* margin-top: 5px;
-    margin-bottom: 2px; */
+.banner img{
+    width: 90%;
+    height: 260px;
+    margin-bottom: 2px;
     /* padding: 30px; */
-/* } */
+}
 
 .container{
     width: 140vh;
     height: 200px;
 }
 
-.forecast {
-    margin-top: 10px; 
-    margin-left: 46px;
-    margin-bottom: 10px;
-    font-size: 20px;
+/* 分頁內輪播 */
+.slick-prev:before, .slick-next:before{
+    color: red;
+    /* 左右button顏色 */
+}
+
+.slick-slide img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 20px;
 }

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+            
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIA_BLOCKCHAIN</title>
+
+    <!-- JQuery連結 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- css連結 -->
+    <link rel="stylesheet" href="style.css">
+    <!-- JS連結 -->
+    <script src="script.js"></script>
+    <!-- FontAwesome 連結 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <!-- Bootstrap 連結 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="./slick-1.8.1/slick-1.8.1/slick/slick.css">
+    <link rel="stylesheet" href="./slick-1.8.1/slick-1.8.1/slick/slick-theme.css">  
+</head>
+                
+            
+<body>
+<div class="container-all ">
+    <!-- 左邊 -->
+    <div class="container-left ">
+        <div class="post">
+            <div class="header">
+                <a href="#"><img src="./imgs/logo.JPG" alt=""></a>
+            </div>
+            <div class="img-wrap">
+                <a href="#"><img src="./imgs/dog.JPG" alt=""></a>    
+            </div>
+            <div class="right">
+                <a href="#">0Xfintech1110</a>
+            </div>
+        </div>
+        <!-- 導覽列 -->
+        <nav id="sidebar">
+            <!-- List 列表 -->
+            <button>
+                <a href="#sublist" data-bs-toggle="collapse" id="dropdown"><i class="fas fa-align-left"></i></a>
+            </button>
+            
+            <ul id="sublist" class="list-unstyled collapse">
+                <li class="nav-item">
+                    <button class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#shape-collapse" aria-expanded="false">
+                        形狀
+                    </button>     
+                    <div class="collapse" id="shape-collapse">
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">圓形</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">花式</a>
+                            </li>
+                            <li>
+                               <a href="#" class="d-inline-flex align-items-center rounded">彩鑽</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                
+                <li class="nav-item">
+                    <button class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#carat-collapse" aria-expanded="false">
+                        克拉
+                    </button>     
+                    <div class="collapse" id="carat-collapse">
+                        <ul class="list-unstyled ">
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">30分</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">40分</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">50分</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">60分</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">70分</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">80分</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">90分</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">1克拉</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">2克拉~</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <button class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#color-collapse" aria-expanded="false">
+                        顏色
+                    </button>     
+                    <div class="collapse" id="color-collapse">
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">D</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">E</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">F</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">G</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">H</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">I</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">J</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">K</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">L</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <button class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#clarity-collapse" aria-expanded="false">
+                        淨度
+                    </button>     
+                    <div class="collapse" id="clarity-collapse">
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">30分</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">40分</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">50分</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">60分</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">70分</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">80分</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">90分</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">1克拉</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">2克拉~</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>        
+        </nav>
+    </div>
+
+    <!-- 右邊 -->
+    <div class="container-right">
+        <div class="container-fluid" >
+            <div class="nav justify-content-end ">
+                <button>
+                    <a href="#">連接錢包</a>
+                </button>
+            </div>
+            <div class="banner">
+                <a href="#"><img src="./imgs/diamondbanner.JPG" alt=""></a>
+            </div>
+            <div class="nav justify-content-start ">
+                <h6>加入時間:2022/11/10</h6>
+            </div>       
+        </div>    
+            <!-- 第一部份：標籤分頁的導覽列 -->
+            <div class="nav nav-tabs nav-justified">
+                <!-- 按鈕1 -->
+                <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#menu1" aria-selected="true">
+                    已收藏
+                </button>
+                <!-- 按鈕2 -->
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#menu2" aria-selected="false">
+                    喜愛
+                </button>
+                <!-- 按鈕3 -->
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#menu3" aria-selected="false">
+                    已上架
+                </button>
+                <!-- 按鈕4 -->
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#menu4" aria-selected="false">
+                    最近成交
+                </button>
+                <!-- 最右邊的分享跟收縮圖案按鈕 -->
+                <button>
+                    <a href="#"><i class="fas fa-code-merge"></i></a>
+                </button>
+                <button>
+                    <a href="#"><i class="fas fa-ellipsis-h"></i></a>
+                </button>
+            </div>
+
+            <!-- 第二部份：標籤分頁的內容 -->
+            <div class="tab-content">
+                <!-- 第1個內容 -->
+                <div class="tab-pane fade show active" id="menu1">
+                    <div class="container">
+                        <div class="card">
+                            <div>
+                                <a href="#"><img src="./imgs/diamond1.JPG" alt=""></a>
+                            </div>
+                            <div>
+                                <a href="#"><img src="./imgs/diamond2.JPG" alt=""></a>
+                            </div>
+                            <div>
+                                <a href="#"><img src="./imgs/diamond3.JPG" alt=""></a>
+                            </div>
+                            <div>
+                                <a href="#"><img src="./imgs/diamond3.JPG" alt=""></a>
+                            </div>
+                            <div>
+                                <a href="#"><img src="./imgs/diamond2.JPG" alt=""></a>
+                            </div>
+                            <div>
+                                <a href="#"><img src="./imgs/diamond1.JPG" alt=""></a>
+                            </div>
+                        </div>    
+                    </div>
+                </div>
+                <!-- 第2個內容 -->
+                <div class="tab-pane fade" id="menu2">
+                    <div class="container">
+                        <div class="card">
+                            <div>
+                                <a href="#"><img src="./imgs/diamond4.JPG" alt=""></a>
+                            </div>
+                            <div>
+                                <a href="#"><img src="./imgs/diamond5.JPG" alt=""></a>
+                            </div>
+                            <div>
+                                <a href="#"><img src="./imgs/diamond6.JPG" alt=""></a>
+                            </div>
+                            <div>
+                                <a href="#"><img src="./imgs/diamond6.JPG" alt=""></a>
+                            </div>
+                            <div>
+                                <a href="#"><img src="./imgs/diamond5.JPG" alt=""></a>
+                            </div>
+                            <div>
+                                <a href="#"><img src="./imgs/diamond4.JPG" alt=""></a>
+                            </div>
+                        </div>    
+                    </div>
+                </div>
+                <!-- 第3個內容 -->
+                <div class="tab-pane fade" id="menu3">
+                    <div class="container">
+                        <div class="card">
+                            <div>
+                                <a href="#"><img src="./imgs/diamond7.JPG" alt=""></a>
+                            </div>
+                            <div>
+                                <a href="#"><img src="./imgs/diamond8.JPG" alt=""></a>
+                            </div>
+                            <div>
+                                <a href="#"><img src="./imgs/diamond9.JPG" alt=""></a>
+                            </div>
+                            <div>
+                                <a href="#"><img src="./imgs/diamond9.JPG" alt=""></a>
+                            </div>
+                            <div>
+                                <a href="#"><img src="./imgs/diamond8.JPG" alt=""></a>
+                            </div>
+                            <div>
+                                <a href="#"><img src="./imgs/diamond7.JPG" alt=""></a>
+                            </div>
+                        </div>    
+                    </div>
+                </div>
+                <!-- 第4個內容 -->
+                <div class="tab-pane fade" id="menu4">
+                    <div class="container">
+                        <div class="card">
+                            <div>
+                                <a href="#"><img src="./imgs/diamond10.JPG" alt=""></a>
+                            </div>
+                            <div>
+                                <a href="#"><img src="./imgs/diamond11.JPG" alt=""></a>
+                            </div>
+                            <div>
+                                <a href="#"><img src="./imgs/diamond12.JPG" alt=""></a>
+                            </div>
+                            <div>
+                                <a href="#"><img src="./imgs/diamond12.JPG" alt=""></a>
+                            </div>
+                            <div>
+                                <a href="#"><img src="./imgs/diamond11.JPG" alt=""></a>
+                            </div>
+                            <div>
+                                <a href="#"><img src="./imgs/diamond10.JPG" alt=""></a>
+                            </div>
+                        </div>    
+                    </div>
+                </div>
+            </div>                                   
+    </div>
+</div>
+
+
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script> -->
+<script src="./slick-1.8.1/slick-1.8.1/slick/slick.min.js"></script>
+    
+<script>
+    $('.card').slick({
+        infinite: false,
+        slidesToShow: 4,
+        slidesToScroll: 4,
+        adaptiveHeight: true,   
+    });   
+</script>
+
+</body>
+</html>
