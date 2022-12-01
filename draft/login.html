@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+            
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIAMOND CLOUD</title>
+
+    <!-- JQuery連結 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- css連結 -->
+    <link rel="stylesheet" href="./style.css">
+    <!-- JS連結 -->
+    <script src="./script.js"></script>
+    <!-- FontAwesome 連結 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <!-- Bootstrap 連結 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+
+    <!-- Demo styles -->
+    <style>
+        .swiper {
+          width: 100%;
+          height: 100%;
+        }
+  
+        .swiper-slide {
+          text-align: center;
+          font-size: 18px;
+          background: #fff;
+  
+          /* Center slide text vertically */
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: -webkit-flex;
+          display: flex;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+          -webkit-justify-content: center;
+          justify-content: center;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          -webkit-align-items: center;
+          align-items: center;
+        }
+  
+        .swiper-slide img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+    </style>
+</head>
+                
+            
+<body>
+
+
+<div class="container-all ">
+    <!-- 左邊 -->
+    <div class="container-left ">
+        <div class="post">
+            <div class="header">
+                <a href="#"><img src="./imgs/logo123.JPG" alt=""></a>
+            </div>
+            <div class="img-wrap">
+                <a href="#"><img src="./imgs/dog.JPG" alt=""></a>    
+            </div>
+            <div class="right">
+                <a href="#">0Xfintech1110</a>
+            </div>
+        </div>
+        <!-- 導覽列 -->
+        <nav id="sidebar">
+            <ul class="bar">              
+                <div class="forecast">
+                    <a href="#">價格預測</a>
+                </div>
+            </ul>        
+        </nav>
+    </div>
+
+    <!-- 右邊 -->
+    <div class="container-right">
+        <div class="container-fluid" >
+            <div class="nav justify-content-end">
+                <!-- <img src="./imgs/diamondbanner.jpg"></a> -->
+            </div>  
+        </div>
+
+        <!-- Header -->
+        <div class="modal-header">
+            <h3 >會員登入</h3>
+        </div>
+        <!-- Body -->
+        <div class="modal-body">
+        <!-- 登入表單 -->
+            <form action = "main" method = post>
+                <!-- email -->
+                <div class="form-group">
+                    <input type="email" class="account form-control" placeholder="Email" name = username value = "{{request.form.username }}">
+                </div>
+                <!-- password -->
+                <div class="form-group">
+                    <input type="password" class="password form-control" placeholder="Password" name = password>
+                </div>
+                <!-- checkbox -->
+                <div class="form-group">
+                    <input type="checkbox" class="remember">記住我的密碼
+                </div>
+                <!-- 送出按鈕 -->
+                <input type="submit"  value="登入" />
+            </form>
+        </div>    
+        <!-- Footer -->
+        <div class="modal-footer">
+            <div class="signup">
+                <span>尚未成為會員</span>
+                <a href="#" type="button" class="member"> 立即加入 </a>
+            </div>            
+        </div>       
+        {% if error %}
+        <p><strong>Error:</strong> {{ error }}
+        {% endif %}
+
+                
+                
+            
+                   
+                    
+    </div>
+ 
+
+
+
+</body>
+</html>
