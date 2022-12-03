@@ -11,95 +11,35 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- css連結 -->
     <link rel="stylesheet" href="../static/login.css">
-    <!-- JS連結
-    <script src="./static/script.js"></script>
-    FontAwesome 連結
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"> -->
+   
     <!-- Bootstrap 連結 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
 
-    <!-- Link Swiper's CSS -->
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"> -->
-
-    <!-- Demo styles -->
-    <!-- <style>
-        .swiper {
-          width: 100%;
-          height: 100%;
-        }
-  
-        .swiper-slide {
-          text-align: center;
-          font-size: 18px;
-          background: #fff; -->
-  
-          <!-- /* Center slide text vertically */
-          display: -webkit-box;
-          display: -ms-flexbox;
-          display: -webkit-flex;
-          display: flex;
-          -webkit-box-pack: center;
-          -ms-flex-pack: center;
-          -webkit-justify-content: center;
-          justify-content: center;
-          -webkit-box-align: center;
-          -ms-flex-align: center;
-          -webkit-align-items: center;
-          align-items: center;
-        } -->
-  
-        <!-- .swiper-slide img {
-          display: block;
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-        }
-    </style> -->
 </head>
                 
             
 <body>
 
-
 <div class="container-all ">
     <!-- 左邊 -->
     <div class="container-left ">
-        <!-- <div class="post"> -->
-            <!-- <div class="header">
-                <a href="#"><img src="./static/imgs/logo123.JPG" alt=""></a>
-            </div> -->
-            <!-- <div class="img-wrap">
-                <a href="#"><img src="./static/imgs/dog.JPG" alt=""></a>    
-            </div>
-            <div class="right">
-                <a href="#">0Xfintech1110</a>
-            </div> -->
-        <!-- </div> -->
-        <!-- 導覽列 -->
-        <!-- <nav id="sidebar">
-            <ul class="bar"> -->
-                <div class="header">
-                    <a href="#"><img src="../static/imgs/loginlogo.jpg" alt=""></a>
-                </div>              
-                <div class="forecast">
-                    <a href="#">價格預測</a>
-                </div>
-            <!-- </ul>        
-        </nav> -->
+        <div class="header">
+            <a href="#"><img src="../static/imgs/logo_diamond.png" alt=""></a>
+        </div>              
     </div>
 
+    <div class="title">
+        <a href="#"><img src="../static/imgs/title.png"></a>
+    </div>
+
+    <a class="line" href="#"><img src="../static/imgs/line.JPG"></a>
+    
     <!-- 右邊 -->
     <div class="container-right">
-        <!-- <div class="container-fluid" >
-            <div class="nav justify-content-end"> -->
-                <!-- <img src="./static/imgs/diamondbanner.jpg"></a> -->
-            <!-- </div>  
-        </div> -->
-
         <!-- Header -->
         <div class="modal-header">
-            <h3 >會員登入</h3>
+            <h4 >會員登入</h4>
         </div>
         <!-- Body -->
         <div class="modal-body">
@@ -130,17 +70,9 @@
         </div>       
         {% if error %}
         <p><strong>Error:</strong> {{ error }}
-        {% endif %}
-
-                
-                
-            
-                   
-                    
+        {% endif %}                
     </div>
- 
-
-
 </div>
+
 </body>
 </html>
