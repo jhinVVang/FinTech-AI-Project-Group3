@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+            
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIAMOND CLOUD</title>
+
+    <!-- JQuery連結 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- css連結 -->
+    <link rel="stylesheet" href="../static/home.css">
+    <!-- JS連結 -->
+    <!-- <script src="../static/script.js"></script> -->
+    <!-- FontAwesome 連結 -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"> -->
+    <!-- Bootstrap 連結 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+   
+    <link rel="stylesheet" href="./slick-1.8.1/slick/slick.css">
+    <link rel="stylesheet" href="./slick-1.8.1/slick/slick-theme.css">
+
+    <style>
+        .wrap{
+            font-size: 0px;
+        }
+        .card{
+            box-sizing: border-box;
+            display: inline-block;
+            width: 25%;
+            margin-top: 5px;
+            margin-left: 3px;
+        }
+        .img-wrap img{
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        h3{
+            font-size: 20px;
+        }
+
+        p{
+            font-size: 16px;
+        }
+        span{
+            color: pink;
+        }
+
+        .footer{
+            margin-top: 60vh;
+        }
+    </style>
+</head>
+                
+            
+<body>
+<nav class="sticky-top">
+    <a href="#"><img src="../static/imgs/logo123.JPG" alt=""></a>
+    <a class="b1" href="#">會員登入</a>
+    <a class="b2" href="#">購物車</a>
+    <a class="b3" href="#">我的最愛</a> 
+</nav>
+
+<div class="container">
+    <div class="your-class">
+        <div>
+            <img src="../static/imgs/backgroud_purple.jpg" alt="">
+        </div>
+        <div>
+            <img src="../static/imgs/backgroud_purple.jpg" alt="">
+        </div>
+        <div>
+            <img src="../static/imgs/backgroud_purple.jpg" alt="">
+        </div>
+        <div>
+            <img src="../static/imgs/backgroud_purple.jpg" alt="">
+        </div>
+        <div>
+            <img src="../static/imgs/backgroud_purple.jpg" alt="">
+        </div>
+        <div>
+            <img src="../static/imgs/backgroud_purple.jpg" alt="">
+        </div>
+    </div>
+</div>   
+
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script> -->
+<script src="./slick-1.8.1/slick/slick.min.js"></script>
+
+<script>
+    $('.your-class').slick({
+dots: true,
+infinite: true,
+speed: 300,
+slidesToShow: 1,
+adaptiveHeight: false
+
+});
+</script>
+
+<div class="container-all ">
+    <div class="container-left ">
+        <div id="sidebar">
+            <ul class="bar">
+                <ol class="nav-item">
+                    <button class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#shape-collapse" aria-expanded="false">
+                        形狀
+                    </button>     
+                    <div class="collapse" id="shape-collapse">
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">圓形</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">花式</a>
+                            </li>
+                            <li>
+                               <a href="#" class="d-inline-flex align-items-center rounded">彩鑽</a>
+                            </li>
+                        </ul>
+                    </div>
+                </ol>
+
+                <ol class="nav-item">
+                    <button class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#carat-collapse" aria-expanded="false">
+                        克拉
+                    </button>     
+                    <div class="collapse" id="carat-collapse">
+                        <ul class="list-unstyled ">
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">30分</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">40分</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">50分</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">60分</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">70分</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">80分</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">90分</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">1克拉</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">2克拉~</a>
+                            </li>
+                        </ul>
+                    </div>
+                </ol>
+
+                <ol class="nav-item">
+                    <button class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#color-collapse" aria-expanded="false">
+                        顏色
+                    </button>     
+                    <div class="collapse" id="color-collapse">
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">D</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">E</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">F</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">G</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">H</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">I</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">J</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">K</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">L</a>
+                            </li>
+                        </ul>
+                    </div>
+                </ol>
+
+                <ol class="nav-item dropown">
+                    <button class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#clarity-collapse" aria-expanded="false">
+                        淨度
+                    </button>     
+                    <div class="collapse" id="clarity-collapse">
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">30分</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">40分</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">50分</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">60分</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">70分</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">80分</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">90分</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">1克拉</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">2克拉~</a>
+                            </li>
+                        </ul>
+                    </div>
+                </ol>
+            </ul>        
+        </div>
+    </div>
+
+    <div class="container-right">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="ring-tab" data-bs-toggle="tab" data-bs-target="#ring" type="button" role="tab" aria-controls="ring" aria-selected="true">戒指</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="wristband-tab" data-bs-toggle="tab" data-bs-target="#wristband" type="button" role="tab" aria-controls="wristband" aria-selected="false">手環</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="necklace-tab" data-bs-toggle="tab" data-bs-target="#necklace" type="button" role="tab" aria-controls="necklace" aria-selected="false">項鍊</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="earrings-tab" data-bs-toggle="tab" data-bs-target="#earrings" type="button" role="tab" aria-controls="earrings" aria-selected="false">耳環</button>
+            </li>
+        </ul>
+
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="ring" role="tabpanel" aria-labelledby="ring-tab">
+                <div class="wrap">
+                    <div class="card">
+                        <div class="img-wrap">
+                            <img src="../static/imgs/1.jpeg" alt="">
+                        </div>
+                        <h3>莓果鬆餅</h3>
+                        <p>戶外<span>下午茶最值得推薦的點心</span> ，充滿奶香的鬆餅加上酸甜莓果，大人小孩看了都心動，若再配上咖啡跟美景就更完美。</p>
+                    </div>
+                
+                    <div class="card">
+                        <div class="img-wrap">
+                            <img src="../static/imgs/1.jpeg" alt="">
+                        </div>
+                        <h3>莓果鬆餅</h3>
+                        <p>戶外<span>下午茶最值得推薦的點心</span> ，充滿奶香的鬆餅加上酸甜莓果，大人小孩看了都心動，若再配上咖啡跟美景就更完美。</p>
+                    </div>
+                
+                    <div class="card">
+                        <div class="img-wrap">
+                            <img src="../static/imgs/1.jpeg" alt="">
+                        </div>
+                        <h3>莓果鬆餅</h3>
+                        <p>戶外<span>下午茶最值得推薦的點心</span> ，充滿奶香的鬆餅加上酸甜莓果，大人小孩看了都心動，若再配上咖啡跟美景就更完美。</p>
+                    </div>
+                
+                    <div class="card">
+                        <div class="img-wrap">
+                            <img src="../static/imgs/1.jpeg" alt="">
+                        </div>
+                        <h3>莓果鬆餅</h3>
+                        <p>戶外<span>下午茶最值得推薦的點心</span> ，充滿奶香的鬆餅加上酸甜莓果，大人小孩看了都心動，若再配上咖啡跟美景就更完美。</p>
+                    </div>
+                
+                    <div class="card">
+                        <div class="img-wrap">
+                           <img src="../static/imgs/1.jpeg" alt="">
+                        </div>
+                        <h3>莓果鬆餅</h3>
+                        <p>戶外<span>下午茶最值得推薦的點心</span> ，充滿奶香的鬆餅加上酸甜莓果，大人小孩看了都心動，若再配上咖啡跟美景就更完美。</p>
+                    </div>
+
+                    <div class="card">
+                        <div class="img-wrap">
+                            <img src="../static/imgs/1.jpeg" alt="">
+                        </div>
+                        <h3>莓果鬆餅</h3>
+                        <p>戶外<span>下午茶最值得推薦的點心</span> ，充滿奶香的鬆餅加上酸甜莓果，大人小孩看了都心動，若再配上咖啡跟美景就更完美。</p>
+                    </div>
+            </div>
+                
+            </div>    
+
+            <div class="tab-pane fade" id="wristband" role="tabpanel" aria-labelledby="wristband-tab">
+                <div class="wrap">
+                    <div class="card">
+                        <div class="img-wrap">
+                            <img src="../static/imgs/1.jpeg" alt="">
+                        </div>
+                        <h3>莓果鬆餅</h3>
+                        <p>戶外<span>下午茶最值得推薦的點心</span> ，充滿奶香的鬆餅加上酸甜莓果，大人小孩看了都心動，若再配上咖啡跟美景就更完美。</p>
+                    </div>
+                
+                    <div class="card">
+                        <div class="img-wrap">
+                            <img src="../static/imgs/1.jpeg" alt="">
+                        </div>
+                        <h3>莓果鬆餅</h3>
+                        <p>戶外<span>下午茶最值得推薦的點心</span> ，充滿奶香的鬆餅加上酸甜莓果，大人小孩看了都心動，若再配上咖啡跟美景就更完美。</p>
+                    </div>
+                
+                    <div class="card">
+                        <div class="img-wrap">
+                            <img src="../static/imgs/1.jpeg" alt="">
+                        </div>
+                        <h3>莓果鬆餅</h3>
+                        <p>戶外<span>下午茶最值得推薦的點心</span> ，充滿奶香的鬆餅加上酸甜莓果，大人小孩看了都心動，若再配上咖啡跟美景就更完美。</p>
+                    </div>
+                
+                    <div class="card">
+                        <div class="img-wrap">
+                            <img src="../static/imgs/1.jpeg" alt="">
+                        </div>
+                        <h3>莓果鬆餅</h3>
+                        <p>戶外<span>下午茶最值得推薦的點心</span> ，充滿奶香的鬆餅加上酸甜莓果，大人小孩看了都心動，若再配上咖啡跟美景就更完美。</p>
+                    </div>
+                
+                    <div class="card">
+                        <div class="img-wrap">
+                           <img src="../static/imgs/1.jpeg" alt="">
+                        </div>
+                        <h3>莓果鬆餅</h3>
+                        <p>戶外<span>下午茶最值得推薦的點心</span> ，充滿奶香的鬆餅加上酸甜莓果，大人小孩看了都心動，若再配上咖啡跟美景就更完美。</p>
+                    </div>
+
+                    <div class="card">
+                        <div class="img-wrap">
+                            <img src="../static/imgs/1.jpeg" alt="">
+                        </div>
+                        <h3>莓果鬆餅</h3>
+                        <p>戶外<span>下午茶最值得推薦的點心</span> ，充滿奶香的鬆餅加上酸甜莓果，大人小孩看了都心動，若再配上咖啡跟美景就更完美。</p>
+                    </div>
+                
+            </div>
+
+            <div class="tab-pane fade" id="necklace" role="tabpanel" aria-labelledby="necklace-tab">
+                <div class="wrap">
+                    <div class="card">
+                        <div class="img-wrap">
+                            <img src="../static/imgs/1.jpeg" alt="">
+                        </div>
+                        <h3>莓果鬆餅</h3>
+                        <p>戶外<span>下午茶最值得推薦的點心</span> ，充滿奶香的鬆餅加上酸甜莓果，大人小孩看了都心動，若再配上咖啡跟美景就更完美。</p>
+                    </div>
+                
+                    <div class="card">
+                        <div class="img-wrap">
+                            <img src="../static/imgs/1.jpeg" alt="">
+                        </div>
+                        <h3>莓果鬆餅</h3>
+                        <p>戶外<span>下午茶最值得推薦的點心</span> ，充滿奶香的鬆餅加上酸甜莓果，大人小孩看了都心動，若再配上咖啡跟美景就更完美。</p>
+                    </div>
+                
+                    <div class="card">
+                        <div class="img-wrap">
+                            <img src="../static/imgs/1.jpeg" alt="">
+                        </div>
+                        <h3>莓果鬆餅</h3>
+                        <p>戶外<span>下午茶最值得推薦的點心</span> ，充滿奶香的鬆餅加上酸甜莓果，大人小孩看了都心動，若再配上咖啡跟美景就更完美。</p>
+                    </div>
+                
+                    <div class="card">
+                        <div class="img-wrap">
+                            <img src="../static/imgs/1.jpeg" alt="">
+                        </div>
+                        <h3>莓果鬆餅</h3>
+                        <p>戶外<span>下午茶最值得推薦的點心</span> ，充滿奶香的鬆餅加上酸甜莓果，大人小孩看了都心動，若再配上咖啡跟美景就更完美。</p>
+                    </div>
+                
+                    <div class="card">
+                        <div class="img-wrap">
+                           <img src="../static/imgs/1.jpeg" alt="">
+                        </div>
+                        <h3>莓果鬆餅</h3>
+                        <p>戶外<span>下午茶最值得推薦的點心</span> ，充滿奶香的鬆餅加上酸甜莓果，大人小孩看了都心動，若再配上咖啡跟美景就更完美。</p>
+                    </div>
+
+                    <div class="card">
+                        <div class="img-wrap">
+                            <img src="../static/imgs/1.jpeg" alt="">
+                        </div>
+                        <h3>莓果鬆餅</h3>
+                        <p>戶外<span>下午茶最值得推薦的點心</span> ，充滿奶香的鬆餅加上酸甜莓果，大人小孩看了都心動，若再配上咖啡跟美景就更完美。</p>
+                    </div>
+                
+            </div>
+
+            <div class="tab-pane fade" id="earrings" role="tabpanel" aria-labelledby="earrings-tab">
+                <div class="wrap">
+                    <div class="card">
+                        <div class="img-wrap">
+                            <img src="../static/imgs/1.jpeg" alt="">
+                        </div>
+                        <h3>莓果鬆餅</h3>
+                        <p>戶外<span>下午茶最值得推薦的點心</span> ，充滿奶香的鬆餅加上酸甜莓果，大人小孩看了都心動，若再配上咖啡跟美景就更完美。</p>
+                    </div>
+                
+                    <div class="card">
+                        <div class="img-wrap">
+                            <img src="../static/imgs/1.jpeg" alt="">
+                        </div>
+                        <h3>莓果鬆餅</h3>
+                        <p>戶外<span>下午茶最值得推薦的點心</span> ，充滿奶香的鬆餅加上酸甜莓果，大人小孩看了都心動，若再配上咖啡跟美景就更完美。</p>
+                    </div>
+                
+                    <div class="card">
+                        <div class="img-wrap">
+                            <img src="../static/imgs/1.jpeg" alt="">
+                        </div>
+                        <h3>莓果鬆餅</h3>
+                        <p>戶外<span>下午茶最值得推薦的點心</span> ，充滿奶香的鬆餅加上酸甜莓果，大人小孩看了都心動，若再配上咖啡跟美景就更完美。</p>
+                    </div>
+                
+                    <div class="card">
+                        <div class="img-wrap">
+                            <img src="../static/imgs/1.jpeg" alt="">
+                        </div>
+                        <h3>莓果鬆餅</h3>
+                        <p>戶外<span>下午茶最值得推薦的點心</span> ，充滿奶香的鬆餅加上酸甜莓果，大人小孩看了都心動，若再配上咖啡跟美景就更完美。</p>
+                    </div>
+                
+                    <div class="card">
+                        <div class="img-wrap">
+                           <img src="../static/imgs/1.jpeg" alt="">
+                        </div>
+                        <h3>莓果鬆餅</h3>
+                        <p>戶外<span>下午茶最值得推薦的點心</span> ，充滿奶香的鬆餅加上酸甜莓果，大人小孩看了都心動，若再配上咖啡跟美景就更完美。</p>
+                    </div>
+
+                    <div class="card">
+                        <div class="img-wrap">
+                            <img src="../static/imgs/1.jpeg" alt="">
+                        </div>
+                        <h3>莓果鬆餅</h3>
+                        <p>戶外<span>下午茶最值得推薦的點心</span> ，充滿奶香的鬆餅加上酸甜莓果，大人小孩看了都心動，若再配上咖啡跟美景就更完美。</p>
+                    </div>
+                
+            </div>
+  
+    
+        </div>
+    </div>
+</div>  
+<div class="footer">COPYRIGHT©FinTech-AI-Project-Group3 ALL RIGHTS RESERVED</div>
+</body>
+</html>
