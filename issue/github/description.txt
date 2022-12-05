@@ -1,0 +1,21 @@
+0.png
+cd 進入自己電腦github資料夾(FinTech-AI-Project-Group3)
+
+1.png
+先輸入指令 git pull 更新自己電腦的檔案內容
+
+2.png
+輸入 git status 觀察檔案狀態 紅色表示未提交更新
+
+3.png
+輸入 git add . 將自己電腦檔案提交更新
+
+4.png
+輸入 git status 觀察檔案狀態 綠色表示已經提交更新
+
+5.png
+輸入 git commit -m "xxxxx" 
+xxxxx是你要給大家看的註解
+
+6.png
+輸入 git push 將自己電腦的檔案推送到github
