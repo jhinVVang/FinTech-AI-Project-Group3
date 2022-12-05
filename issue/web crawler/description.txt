@@ -1,0 +1,14 @@
+re.png
+網路爬蟲抓的資料不是很乾淨，紅色的內容才是我們真正需要的
+
+0.png
+用for迴圈抓全部頁，再用beautifulsoup把爬蟲資料放入鑽石特徵的list裡面
+
+1.png
+使用字串replace過濾爬蟲資料
+
+2.png
+使用pandas將資料寫入csv檔
+
+3.png
+乾淨的爬蟲資料
