@@ -97,9 +97,9 @@
 <nav class="sticky-top">
     <!-- <a class="logo" href="#"><img src="../static/imgs/logo/logo_title_white.png" alt=""></a> -->
     <div class="link">
-        <a class="b1" href="./home.html"><img src="../static/imgs/button/main.png" title="首頁"></a>
-        <a class="b2" href="./knowledge.html"><img src="../static/imgs/button/knowledge.png" title="知識中心"></a>    
-        <a class="b3" href="#"><img src="../static/imgs/button/user.png" title="會員中心"></a>
+        <a class="b1" href="{{ url_for('home') }}"><img src="../static/imgs/button/main.png" title="首頁"></a>
+        <a class="b2" href="{{ url_for('knowledge') }}"><img src="../static/imgs/button/knowledge.png" title="知識中心"></a>    
+        <a class="b3" href="{{ url_for('login') }}"><img src="../static/imgs/button/user.png" title="會員中心"></a>
         <a class="b4" href="#"><img src="../static/imgs/button/shopping_cart.png" title="購物車"></a>
         <a class="b5" href="#"><img src="../static/imgs/button/favorite.png" title="我的最愛"></a> 
         </div>
