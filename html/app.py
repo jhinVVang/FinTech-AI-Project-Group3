@@ -9,7 +9,7 @@ def home():
 def knowledge():
     return render_template('knowledge.html')
 
-@app.route('/main')
+@app.route('/main', methods=['GET', 'POST'])
 def main():
     return render_template('main.html')
 

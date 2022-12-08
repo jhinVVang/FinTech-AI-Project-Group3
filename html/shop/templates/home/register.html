@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html >
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>註冊-51商城</title>
+<link rel="stylesheet" href="{{url_for('static',filename='home/css/mr-01.css')}}" type="text/css">
+</head>
+<body>
+	<!-- 主體內容 -->
+	<div id="mr-mainbody" class="container mr-mainbody">
+		<div class="row">
+			<div id="mr-content" class="mr-content col-xs-12">
+				<div class="login-wrap"
+					style="margin-bottom: 60px; margin-top: 50px">
+					<div style="max-width: 540px; margin: 0 auto;">
+						<a href="index.html" title="點擊返回首頁">
+							<img src="{{url_for('static',filename='home/images/51logo.png')}}"></a>
+					</div>
+					<div class="login">
+						<div class="page-header" style="pause: 0px;">
+							<h1 class="login_h1">會員註冊</h1>
+						</div>
+						<!-- 會員註冊表單 -->
+						<form  action="" method="post" class="form-horizontal">
+							<fieldset>
+								<div class="form-group">
+									<div class="col-sm-4 control-label">
+										{{form.username.label}}
+									</div>
+									<div class="col-sm-8">
+										<!-- 帳戶文本框 -->
+										{{form.username}}
+										{% for err in form.username.errors %}
+										<span class="error">{{ err }}</span>
+										{% endfor %}
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="col-sm-4 control-label">
+										{{form.password.label}}
+									</div>
+									<div class="col-sm-8">
+										<!-- 密碼文本框 -->
+										{{form.password}}
+										{% for err in form.password.errors %}
+										<span class="error">{{ err }}</span>
+										{% endfor %}
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="col-sm-4 control-label">
+										{{form.repassword.label}}
+									</div>
+									<div class="col-sm-8">
+										<!-- 確認密碼文本框 -->
+										{{form.repassword}}
+										{% for err in form.repassword.errors %}
+										<span class="error">{{ err }}</span>
+										{% endfor %}
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="col-sm-4 control-label">
+										{{form.phone.label}}
+									</div>
+									<div class="col-sm-8" style="clear: none;">
+										<!-- 輸入聯系電話的文本框 -->
+										{{form.phone}}
+										{% for err in form.phone.errors %}
+										<span class="error">{{ err }}</span>
+										{% endfor %}
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="col-sm-4 control-label">
+										{{form.email.label}}
+									</div>
+									<div class="col-sm-8" style="clear: none;">
+										<!-- 輸入郵箱的文本框 -->
+										{{form.email}}
+										{% for err in form.email.errors %}
+										<span class="error">{{ err }}</span>
+										{% endfor %}
+									</div>
+								</div>
+								<div class="form-group">
+									<div style="float: right; padding-right: 216px;">
+										51商城<a href="#" style="color: #0885B1;">《使用條款》</a>
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="col-sm-offset-4 col-sm-8">
+										{{ form.csrf_token }}
+										{{ form.submit }}
+									</div>
+								</div>
+								<div class="form-group" style="margin: 20px;">
+									<label
+										style="float: right; color: #858585; margin-right: 80px; margin-top: 10px; font-size: 14px;">已有賬號！<a
+										href="{{url_for('login')}}">去登錄</a></label>
+								</div>
+							</fieldset>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //主體內容 -->
+</body>
+</html>
