@@ -68,6 +68,8 @@ def index():
                                 "text": getTodayCovid19Message()
                             }
                         ]
+                elif text == "送禮推薦":
+                    payload["messages"] = [getproductMessage()]
                 elif text == "製作者名單":
                     payload["messages"] = [getproducerCarouselMessage()]
                 elif text == "主選單":
@@ -187,6 +189,187 @@ def getNameEmojiMessage():
     print(message)
     return message
 
+def getproductMessage():
+    message = {
+        "type": "template",
+        "altText": "this is a carousel template",
+        "template": {
+            "type": "carousel",
+            "columns": [
+            {
+                "thumbnailImageUrl": F"{end_point}/static/jewelry/1.jpeg",
+                "imageBackgroundColor": "#FFFFFF",
+                "title": "this is menu",
+                "text": "description",
+                "defaultAction": {
+                "type": "uri",
+                "label": "查看更多",
+                "uri": "http://example.com/page/123"
+                },
+                "actions": [
+                {
+                    "type": "postback",
+                    "label": "立即購買",
+                    "data": "action=buy&itemid=111"
+                },
+                {
+                    "type": "postback",
+                    "label": "加入購物車",
+                    "data": "action=add&itemid=111"
+                },
+                {
+                    "type": "uri",
+                    "label": "查看更多",
+                    "uri": "http://example.com/page/111"
+                }
+                ]
+            },
+            {
+                "thumbnailImageUrl": F"{end_point}/static/jewelry/2.jpg",
+                "imageBackgroundColor": "#000000",
+                "title": "this is menu",
+                "text": "description",
+                "defaultAction": {
+                "type": "uri",
+                "label": "查看更多",
+                "uri": "http://example.com/page/222"
+                },
+                "actions": [
+                {
+                    "type": "postback",
+                    "label": "立即購買",
+                    "data": "action=buy&itemid=222"
+                },
+                {
+                    "type": "postback",
+                    "label": "加入購物車",
+                    "data": "action=add&itemid=222"
+                },
+                {
+                    "type": "uri",
+                    "label": "查看更多",
+                    "uri": "http://example.com/page/222"
+                }
+                ]
+            },
+            {
+                "thumbnailImageUrl": F"{end_point}/static/jewelry/3.jpeg",
+                "imageBackgroundColor": "#000000",
+                "title": "this is menu",
+                "text": "description",
+                "defaultAction": {
+                "type": "uri",
+                "label": "查看更多",
+                "uri": "http://example.com/page/222"
+                },
+                "actions": [
+                {
+                    "type": "postback",
+                    "label": "立即購買",
+                    "data": "action=buy&itemid=222"
+                },
+                {
+                    "type": "postback",
+                    "label": "加入購物車",
+                    "data": "action=add&itemid=222"
+                },
+                {
+                    "type": "uri",
+                    "label": "查看更多",
+                    "uri": "http://example.com/page/222"
+                }
+                ]
+            },
+            {
+                "thumbnailImageUrl": F"{end_point}/static/jewelry/4.jpg",
+                "imageBackgroundColor": "#000000",
+                "title": "this is menu",
+                "text": "description",
+                "defaultAction": {
+                "type": "uri",
+                "label": "查看更多",
+                "uri": "http://example.com/page/222"
+                },
+                "actions": [
+                {
+                    "type": "postback",
+                    "label": "立即購買",
+                    "data": "action=buy&itemid=222"
+                },
+                {
+                    "type": "postback",
+                    "label": "加入購物車",
+                    "data": "action=add&itemid=222"
+                },
+                {
+                    "type": "uri",
+                    "label": "查看更多",
+                    "uri": "http://example.com/page/222"
+                }
+                ]
+            },
+            {
+                "thumbnailImageUrl": F"{end_point}/static/jewelry/5.jpeg",
+                "imageBackgroundColor": "#000000",
+                "title": "this is menu",
+                "text": "description",
+                "defaultAction": {
+                "type": "uri",
+                "label": "查看更多",
+                "uri": "http://example.com/page/222"
+                },
+                "actions": [
+                {
+                    "type": "postback",
+                    "label": "立即購買",
+                    "data": "action=buy&itemid=222"
+                },
+                {
+                    "type": "postback",
+                    "label": "加入購物車",
+                    "data": "action=add&itemid=222"
+                },
+                {
+                    "type": "uri",
+                    "label": "查看更多",
+                    "uri": "http://example.com/page/222"
+                }
+                ]
+            },
+            {
+                "thumbnailImageUrl": F"{end_point}/static/jewelry/6.jpeg",
+                "imageBackgroundColor": "#000000",
+                "title": "this is menu",
+                "text": "description",
+                "defaultAction": {
+                "type": "uri",
+                "label": "查看更多",
+                "uri": "http://example.com/page/222"
+                },
+                "actions": [
+                {
+                    "type": "postback",
+                    "label": "立即購買",
+                    "data": "action=buy&itemid=222"
+                },
+                {
+                    "type": "postback",
+                    "label": "加入購物車",
+                    "data": "action=add&itemid=222"
+                },
+                {
+                    "type": "uri",
+                    "label": "查看更多",
+                    "uri": "http://example.com/page/222"
+                }
+                ]
+            }
+            ],
+            "imageAspectRatio": "rectangle",
+            "imageSize": "cover"
+        }
+    }
+    return message
 
 def getproducerCarouselMessage():
     message = {
@@ -199,7 +382,7 @@ def getproducerCarouselMessage():
         "imageUrl": F"{end_point}/static/1.jpg",
         "action": {
           "type": "message",    
-          "label": "王浩晉",
+          "label": "組長:王浩晉",
           "text": "王浩晉"
         }
       },
