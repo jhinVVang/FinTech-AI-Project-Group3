@@ -1,19 +1,23 @@
-from flask import Flask, flash, redirect, render_template, request, url_for
+from flask import Flask, flash, redirect, render_template, request, url_for, session
 app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return render_template('home.html')
+    return render_template('login.html')
 
 @app.route('/knowledge')
 def knowledge():
     return render_template('knowledge.html')
 
-@app.route('/main')
+@app.route('/home')
 def main():
     return render_template('main.html')
 
-@app.route('/login', methods=['GET', 'POST'])
+@app.route('/hom')
+def hom():
+    return render_template('home.html')
+
+@app.route('/main', methods=['GET', 'POST'])
 def login():
     error = None
 
@@ -24,9 +28,6 @@ def login():
         else:
             return render_template('home.html')
     return render_template('login.html', error=error)
-
-    
-
 
 
 if __name__ == "__main__":

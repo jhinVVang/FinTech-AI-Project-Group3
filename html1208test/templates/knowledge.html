@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+            
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIAMOND CLOUD</title>
+
+    <!-- JQuery連結 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- css連結 -->
+    <link rel="stylesheet" href="../static/knowledge.css">
+    <!-- JS連結 -->
+    <!-- <script src="../static/script.js"></script> -->
+    <!-- FontAwesome 連結 -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"> -->
+    <!-- Bootstrap 連結 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+   
+    <link rel="stylesheet" href="./slick-1.8.1/slick/slick.css">
+    <link rel="stylesheet" href="./slick-1.8.1/slick/slick-theme.css">
+
+</head>
+                
+            
+<body>
+<nav class="sticky-top">
+    <div class="link">
+        <a class="b1" href="{{ url_for('hom') }}"><img src="../static/imgs/button/main.png" title="首頁"></a>
+        <a class="b2" href="{{ url_for('knowledge') }}"><img src="../static/imgs/button/knowledge.png" title="知識中心"></a>    
+        <a class="b3" href="{{ url_for('main') }}"><img src="../static/imgs/button/user.png" title="會員中心"></a>
+        <a class="b4" href="#"><img src="../static/imgs/button/shopping_cart.png" title="購物車"></a>
+        <a class="b5" href="#"><img src="../static/imgs/button/favorite.png" title="我的最愛"></a> 
+    </div>
+</nav>
+    
+<div class="line"><a href="#"><img src="../static/imgs/button/line.png"></a></div>
+
+<div class="container-all ">
+    <div class="container-right">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="gia-tab" data-bs-toggle="tab" data-bs-target="#gia" type="button" role="tab" aria-controls="gia" aria-selected="true">GIA 國際認證鑽石</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="carat-tab" data-bs-toggle="tab" data-bs-target="#carat" type="button" role="tab" aria-controls="carat" aria-selected="false">鑽石克拉Carat</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="cut-tab" data-bs-toggle="tab" data-bs-target="#cut" type="button" role="tab" aria-controls="cut" aria-selected="false">鑽石車工Cut</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="color-tab" data-bs-toggle="tab" data-bs-target="#color" type="button" role="tab" aria-controls="color" aria-selected="false">鑽石成色Color</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="clarity-tab" data-bs-toggle="tab" data-bs-target="#clarity" type="button" role="tab" aria-controls="clarity" aria-selected="false">鑽石淨度Clarity</button>
+            </li>
+        </ul>
+
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="gia" role="tabpanel" aria-labelledby="gia-tab">
+                <h2 style="color:#b89965;">GIA鑽石證書是什麼？如何辨識GIA真偽？</h2>
+                <div>
+                    <span style="color:brown;font-size:20px;">GIA鑽石</span>
+                    <p>所謂GIA鑽石，就是經過GIA國際認證的鑽石。GIA，全名Gemological Institute of American於1953年創立<br>國際鑽石分級系統後，讓鑽石4C等級成為評鑑鑽石的指標！此後，GIA更成為全球最備受敬重的鑽石分級與鑑定權威！</p>
+                </div>
+               
+                <div>
+                    <span style="color:brown;font-size:20px;">鑽石4C是什麼？</span>
+                    <p>鑽石4C的四個要素：顏色 Color、淨度 Clarity、重量 Carat 和車工 Cut，這可是直接影響鑽石價格高低的四個要素呢！<br>可別以為只要是「鑽石」就都能賣到好價錢，顏色不夠透明，不夠純淨，克拉數太少或者車工不夠精細，<br>這些都會讓鑽石的身價失之毫釐，差之千里喔！</p>
+                </div>
+                <hr>
+                <div>
+                    <span style="color:brown;font-size:20px;">GIA鑽石鑑定證書是什麼？</span>
+                    <div><img  src="../static/imgs/knowledge/Certificate of authenticity.jpg">
+                        <p>GIA鑽石鑑定證書，一般簡稱為GIA證書。即便知道鑽石會依照鑽石4C的準則而有所分級，但一般人還是沒有能力鑑定鑽石，<br>尤其現在科技進步，真假鑽石越來越難以辨識。還好，身為全球敬重的鑽石鑑定權威，GIA鑑定所除了提供鑑定服務之外，<br>還會提供GIA證書，相當具有公信力！</p>
+                        <p>(圖片來源 /<a href="https://4cs.gia.edu/en-us/">GIA官方網站)</a></p>
+                    </div>
+                </div>
+                <hr>
+                <div>
+                    <span style="color:brown;font-size:20px;">GIA鑽石鑑定報告證書大致上會包含以下內容：</span>
+                </div>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td><p style="font-size:15px;">形狀與車工 (Shape and Cutting Style) </p></td>
+                            <td><p style="font-size:15px;">鑽石的線條、形狀與車工刻面排列的方式與風格，例如：圓形明亮式車工(Round Brilliant) 、梨形明亮式車工 (Pear Brilliant)或是公主方(Princess Cut)。</p></td>
+                        </tr>
+                        <tr>
+                            <td><p style="font-size:15px;">尺寸 (Measurements)</p></td>
+                            <td><p style="font-size:15px;">圓形的尺寸最小直徑-最大直徑x高度(公厘)。</p></td>
+                        </tr>
+                        <tr>
+                            <td><p style="font-size:15px;">重量 (Carat Weight)</p></td>
+                            <td><p style="font-size:15px;">鑽石的重量，單位是克拉數，重量越重，價格越高。</p></td>
+                        </tr>
+                        <tr>
+                            <td><p style="font-size:15px;">顏色等級 (Color Grade) </p></td>
+                            <td><p style="font-size:15px;">GIA以英文字母D~Z來區別，成色最好的是D，越後面的越差。</p></td>
+                        </tr>
+                        <tr>
+                            <td><p style="font-size:15px;">淨度 (Clarity Grade) </p></td>
+                            <td><p style="font-size:15px;">鑽石在10倍放大底下的表面特徵和內部特徵，GIA將它分成11個等級。</p></td>
+                        </tr>
+                        <tr>
+                            <td><p style="font-size:15px;">車工 (Cut Grade) </p></td>
+                            <td><p style="font-size:15px;">由最好到不佳，依序分為EX、VG、G、F、P。</p></td>
+                        </tr>
+                        <tr>
+                            <td><p style="font-size:15px;">拋光 (Polish) </p></td>
+                            <td><p style="font-size:15px;">指的是鑽石表面的拋光處理，由極好至不佳，同樣分為EX、VG、G、F和P五種等級。</p></td>
+                        </tr>
+                        <tr>
+                            <td><p style="font-size:15px;">對稱 (Symmetry) </p></td>
+                            <td><p style="font-size:15px;">最好的八心八箭鑽石一定是對稱性相當良好的！由最好到不佳，同樣依序可分為EX、VG、G、F和P五種等級。</p></td>
+                        </tr>
+                        <tr>
+                            <td><p style="font-size:15px;">螢光 (Fluorescence) </p></td>
+                            <td><p style="font-size:15px;">鑽石暴露在紫外線的光線下時所射出的螢光強度，可分為無螢光None、微弱Faint、中等Medium、強烈Strong、極強Very Strong等五個等級。</p></td>
+                        </tr>
+                        <tr>
+                            <td><p style="font-size:15px;">淨度特徵 (Clarity Characteristics) </p></td>
+                            <td><p style="font-size:15px;">在顯微鏡下鑽石的表面特徵和內部特徵的標示形狀。</p></td>
+                        </tr>
+                        <tr>
+                            <td><p style="font-size:15px;">雷射刻碼 (Inscriptions) </p></td>
+                            <td><p style="font-size:15px;">刻在鑽石腰圍上的雷射刻碼，也就是GIA Report Number。</p></td>
+                        </tr>
+                        <tr>
+                            <td><p style="font-size:15px;">深度 (Depth) </p></td>
+                            <td><p style="font-size:15px;">寶石的高度，(深度高/平均直徑)X100%，也就是桌面至鑽石尖底的距離。</p></td>
+                        </tr>
+                        <tr>
+                            <td><p style="font-size:15px;">桌面 (Table) </p></td>
+                            <td><p style="font-size:15px;">鑽石平均桌面刻面大小佔外型正面的百分比，也就是鑽石的最大刻面。</p></td>
+                        </tr>
+                        <tr>
+                            <td><p style="font-size:15px;">腰圍 (Girdle) </p></td>
+                            <td><p style="font-size:15px;">鑽石腰圍的薄厚程度和狀況。</p></td>
+                        </tr>
+                        <tr>
+                            <td><p style="font-size:15px;">尖底 (Culet) </p></td>
+                            <td><p style="font-size:15px;">尖底刻面的大小程度，GIA分為極大EXTREMELY LARGE、非常大VERY LARGE、稍大SLIGHTLY LARGE、小SMALL、非常小VERY SMALL、尖POINTED和沒有NONE，六種狀態。</p></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="text-align: justify;" class="bigsmall"><span style="font-size:15px;" >其中，GIA鑽石鑑定報告證書又分為大證書和小證書，基本上內容大同小異，唯一的差別就是大證書有淨度圖(Plot)，小證書則沒有。</span></p>
+               
+            </div>
+
+            <div class="tab-pane fade" id="carat" role="tabpanel" aria-labelledby="carat-tab">
+                <h2 style="color:#b89965;">鑽石蘊含的4大元素『克拉Carat』</h2>
+                <div>
+                    <span style="color:brown;font-size:20px;">卡，Carat，為鑽石的重量單位。越重的鑽石體積越大，也更加稀有。</span>
+                    <p>卡，或譯克拉、卡拉（Carat），是鑽石的質量單位。一卡相等於200毫克，相傳早期<br>鑽石商人稱量鑽石所用的砝碼為稻子豆樹（carob）果實，一粒這樣的果實大約就重<br>200毫克。因為鑽石的密度基本上相同，因此越重的鑽石體積越大。<br>越大的鑽石越稀有，每卡的價值亦越高。</p>
+                </div>
+                <hr>
+                <div>
+                    <span style="color:brown;font-size:20px;">克拉是4C中最容易被決定的，但即使重量相同的兩個鑽石，價格依舊會因為車工、成色、淨度而不同。</span>
+                    <p>在GIA的証書上，鑽石的重量記錄為一克拉以下小數點的第二位，小數點第三位以下不計，除非第三位小數為0.009，才可進位成為0.01。<br>鑽石的重量以克拉為單位。每克拉分為100分，所以一顆0.75克拉的鑽石相當於75分。克拉是4C中最容易被決定的，但就算是兩顆重量<br>相同的鑽石，卻會因為車工、色澤和淨度的不同，在價值上差距甚大。通常鑽石愈大，就愈稀有。值得注意的是，一克拉跟兩克拉<br>鑽石的價格，不僅是簡單的乘以兩倍。</p>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="cut" role="tabpanel" aria-labelledby="cut-tab">
+                <h2 style="color:#b89965;">鑽石蘊含的4大元素『車工Cut』</h2>
+                <p>鑽石車工愈精細，鑽石愈耀眼：許多人常將鑽石的車工和形狀混淆。其實，鑽石的車工就是鑽石面的切割。<br>無論那一種形狀 的鑽石，只要是一顆切割精美的鑽石，都是鑽石切割師巧奪天工的傑作。因為一顆切工完美的鑽石，<br>可以凝聚更多的光線，反射更多的光線，也賦予鑽石更高的價值。不必擔心自己是不是能夠判斷鑽石的車工好壞，<br>選購鑽石時，可以比較看看光線折射的情況。</p>
+                <hr>
+                <div>
+                    <span style="color:brown;font-size:20px;">車工等級</span>
+                    <li>極優(EXCELLENT)</li>
+                    <li>優良(VERY GOOD)</li>
+                    <li>良好(GOOD)</li>
+                    <li>尚可(FAIR)</li>
+                    <li>不良(POOR)</li>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="color" role="tabpanel" aria-labelledby="color-tab">
+                <h2 style="color:#b89965;">鑽石蘊含的4大元素『成色 Color』</h2>
+                <div>
+                    <span style="color:brown;font-size:20px;">白色鑽石的成色分級制度由GIA訂定，範圍由D(無色)開始至Z(黃)。</span>
+                    <p>鑽石有許多不同的顏色，對白色的鑽石來說，無色的鑽石是最好的。白鑽顏色的分級制度是由美國 (GIA) <br>Gemological Institute of America所建立而成，範圍由D(無色)至Z(黃)等級。無色的鑽石，將分級為D，<br>因他的稀有珍貴，在鑽石品質金字塔上屬於最高。不過等級E或者F顏色也是相當稀有，這兩級的顏色在沒有比色石<br>的比較之下，鑑定師也很難區分出來。</p>
+                </div>
+                <hr>
+                <div>
+                    <img class="crlevel" src="../static/imgs/knowledge/crlevel.jpg">
+                </div>
+                <hr>
+                <div>
+                    <span style="color:brown;font-size:20px;">螢光反應 - 影響鑽石火光要素</span>
+                    <p>當鑽石暴露於紫外線時，很多鑽石會發出些許的可見光。大約有35%左右珠寶等級的鑽石會顯示螢光反應，藍色反應是最普通的顏色，<br>另外還有黃、橙及白色。具有強烈(Strong)或非常強烈(Very Strong)螢光反應的鑽石有時會看起來油油的或略帶乳白，減損鑽石的火光，<br>因此定價得比其他的鑽石稍微低一些。螢光反應的等級是，無(NONE)，微弱(FAINT)，中等(MEDIUM)，強烈(STRONG)，非常強烈<br>(VERY STRONG)。</p>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="clarity" role="tabpanel" aria-labelledby="clarity-tab">
+                <h2 style="color:#b89965;">鑽石淨度4C－蘊含的4大元素『淨度Clarity』</h2>
+                <div>
+                    <p>GIA以嚴謹的標準與規範將鑽石中天然內含物依照種類、數量、位置等特徵的不同，分為不同淨度等級。每一顆鑽石都是獨一無二的。<br>大自然使每顆鑽石都像戴著它的人 一樣特別。鑽石內天然的淨度等級，亦稱為內含物，提供鑽石特別的指紋。內含物也是鑑定鑽石的<br>重要特徵，包括像是礦物或是裂縫，常見內含物種類包含雲狀物(Cloud)、羽裂紋(Feather) 、內含晶體(Included Crystal) 、針狀物(Needle) 。 <br>GIA實驗室用一套嚴謹的標準和規範來描述鑽石內含物的種類、數量、位置 、大小及明顯度。所有鑽石淨度都是在10倍放大的標準下做分級，<br>所以很多內含物是無法用肉眼看見的。</p>
+                </div>
+                <hr>
+                <div>
+                    <img class="cylevel" src="../static/imgs/knowledge/claritylevel.jpg">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>  
+<div class="footer">COPYRIGHT©FinTech-AI-Project-Group3 ALL RIGHTS RESERVED</div>
+</body>
+</html>
