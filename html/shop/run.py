@@ -114,12 +114,12 @@ def login():
 @app.route("/register/", methods=["GET", "POST"])
 def register():
     """
-    注冊功能
+    註冊功能
     """
     if "user_id" in session:
         return redirect(url_for("index"))
-    form = RegisterForm()  # 導入注冊表單
-    if form.validate_on_submit():  # 提交注冊表單
+    form = RegisterForm()  # 導入註冊表單
+    if form.validate_on_submit():  # 提交註冊表單
         data = form.data  # 接收表單數據
         # 為User類屬性賦值
         user = User(

@@ -9,10 +9,10 @@ from model import *
 
 class RegisterForm(FlaskForm):
     """
-    用戶注冊表單
+    用戶註冊表單
     """
     username = StringField(
-        label="賬戶 ：",
+        label="帳戶 ：",
         validators=[
             DataRequired("用戶名不能為空！"),
             Length(min=3, max=50, message="用戶名長度必須在3到10位之間")
@@ -75,7 +75,7 @@ class RegisterForm(FlaskForm):
         }
     )
     submit = SubmitField(
-        '同意協議並注冊',
+        '同意協議並註冊',
         render_kw={
             "class": "btn btn-primary login",
         }
@@ -83,7 +83,7 @@ class RegisterForm(FlaskForm):
 
     def validate_email(self, field):
         """
-        檢測注冊郵箱是否已經存在
+        檢測註冊郵箱是否已經存在
         :param field: 字段名
         """
         email = field.data
@@ -286,12 +286,12 @@ class MLoginForm(FlaskForm):
         }
     )
 
-    # 驗證賬號，命名規則：validate_ + 字段名。如果要驗證密碼，則可以創建函數validate_pwd
+    # 驗證帳號，命名規則：validate_ + 字段名。如果要驗證密碼，則可以創建函數validate_pwd
     def validate_manager(self, field):
         account = field.data
         admin = Admin.query.filter_by(manager=account).count()
         if admin == 0:
-            raise ValidationError("賬號不存在! ")
+            raise ValidationError("帳號不存在! ")
 
 
 class GoodsForm(FlaskForm):

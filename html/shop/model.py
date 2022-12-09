@@ -27,7 +27,7 @@ class User(db.Model):
     email = db.Column(db.String(100), unique=True)  # 郵箱
     phone = db.Column(db.String(11), unique=True)  # 手機號
     consumption = db.Column(db.DECIMAL(10, 2), default=0)  # 消費額
-    addtime = db.Column(db.DateTime, index=True, default=datetime.now)  # 注冊時間
+    addtime = db.Column(db.DateTime, index=True, default=datetime.now)  # 註冊時間
     orders = db.relationship('Orders', backref='user')  # 訂單外鍵關系關聯
 
     def __repr__(self):
@@ -47,7 +47,7 @@ class User(db.Model):
 class Admin(db.Model):
     __tablename__ = "admin"
     id = db.Column(db.Integer, primary_key=True)  # 編號
-    manager = db.Column(db.String(100), unique=True)  # 管理員賬號
+    manager = db.Column(db.String(100), unique=True)  # 管理員帳號
     password = db.Column(db.String(100))  # 管理員密碼
 
     def __repr__(self):

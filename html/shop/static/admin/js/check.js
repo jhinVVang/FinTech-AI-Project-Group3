@@ -1,87 +1,87 @@
-//判断用户的输入是否合法
+//判斷用戶的輸入是否合法
 function check(){
 	if (myform.username.value==""){
-		alert("请输入用户名！");myform.username.focus();return;
+		alert("請輸入用戶名！");myform.username.focus();return;
 	}
 	if (myform.truename.value==""){
-		alert("请输入真实姓名！");myform.truename.focus();return;
+		alert("請輸入真實姓名！");myform.truename.focus();return;
 	}
 	if (myform.pwd.value==""){
-		alert("请输入密码！");myform.pwd.focus();return;
+		alert("請輸入密碼！");myform.pwd.focus();return;
 	}
 	if (myform.pwd.value.length<1){
-		alert("密码至少为6位，请重新输入！");myform.pwd.focus();return;
+		alert("密碼至少為6位，請重新輸入！");myform.pwd.focus();return;
 	}		
 	if (myform.pwd1.value==""){
-		alert("请确认密码！");myform.pwd1.focus();return;
+		alert("請確認密碼！");myform.pwd1.focus();return;
 	}
 	if (myform.pwd.value!=myform.pwd1.value){
-		alert("您两次输入的密码不一致，请重新输入！");myform.pwd.focus();return;
+		alert("您兩次輸入的密碼不一致，請重新輸入！");myform.pwd.focus();return;
 	}
 	if(myform.cardno.value==""){
-		alert("请证件号码！");myform.cardno.focus();return;
+		alert("請證件號碼！");myform.cardno.focus();return;
 	}		
 	if (myform.email.value==""){
-		alert("请输入Email地址！");myform.email.focus();return;
+		alert("請輸入Email地址！");myform.email.focus();return;
 	}
 	var i=myform.email.value.indexOf("@");
 	var j=myform.email.value.indexOf(".");
 	if((i<0)||(i-j>0)||(j<0)){
-		alert("您输入的Email地址不正确，请重新输入！");myform.email.value="";myform.email.focus();return;
+		alert("您輸入的Email地址不正確，請重新輸入！");myform.email.value="";myform.email.focus();return;
 	}
 	myform.submit();		
 }
 function check_modi(){
 	if (myform.truename.value==""){
-		alert("请输入真实姓名！");myform.truename.focus();return;
+		alert("請輸入真實姓名！");myform.truename.focus();return;
 	}
 	if (myform.oldpwd.value==""){
-		alert("请输入原密码！");myform.oldpwd.focus();return;
+		alert("請輸入原密碼！");myform.oldpwd.focus();return;
 	}
 	if(myform.holdpwd.value!=myform.oldpwd.value){
-		alert("您输入的原密码不正确，请重新输入！");myform.oldpwd.value="";myform.oldpwd.focus();return;
+		alert("您輸入的原密碼不正確，請重新輸入！");myform.oldpwd.value="";myform.oldpwd.focus();return;
 	}
 	if (myform.pwd.value==""){
-		alert("请输入新密码！");myform.pwd.focus();return;
+		alert("請輸入新密碼！");myform.pwd.focus();return;
 	}
 	if (myform.pwd.value.length<1){
-		alert("新密码至少为6位，请重新输入！");myform.pwd.focus();return;
+		alert("新密碼至少為6位，請重新輸入！");myform.pwd.focus();return;
 	}		
 	if (myform.pwd1.value==""){
-		alert("请确认新密码！");myform.pwd1.focus();return;
+		alert("請確認新密碼！");myform.pwd1.focus();return;
 	}
 	if (myform.pwd.value!=myform.pwd1.value){
-		alert("您两次输入的密码不一致，请重新输入！");myform.pwd.focus();return;
+		alert("您兩次輸入的密碼不一致，請重新輸入！");myform.pwd.focus();return;
 	}
 	if(myform.cardno.value==""){
-		alert("请证件号码！");myform.cardno.focus();return;
+		alert("請證件號碼！");myform.cardno.focus();return;
 	}		
 	if (myform.email.value==""){
-		alert("请输入Email地址！");myform.email.focus();return;
+		alert("請輸入Email地址！");myform.email.focus();return;
 	}
 	var i=myform.email.value.indexOf("@");
 	var j=myform.email.value.indexOf(".");
 	if((i<0)||(i-j>0)||(j<0)){
-		alert("您输入的Email地址不正确，请重新输入！");myform.email.value="";myform.email.focus();return;
+		alert("您輸入的Email地址不正確，請重新輸入！");myform.email.value="";myform.email.focus();return;
 	}
 	myform.submit();		
 }
 function checkU(myform){
 	if(myform.username.value==""){
-		alert("请输入用户名!");myform.username.focus();return;
+		alert("請輸入用戶名!");myform.username.focus();return;
 	}
 	if(myform.PWD.value==""){
-		alert("请输入密码!");myform.PWD.focus();return;
+		alert("請輸入密碼!");myform.PWD.focus();return;
 	}
 	myform.submit();
 }
 
 function checkM(myform){
 	if(myform.manager.value==""){
-		alert("请输入管理员名!");myform.manager.focus();return;
+		alert("請輸入管理員名!");myform.manager.focus();return;
 	}
 	if(myform.PWD.value==""){
-		alert("请输入密码!");myform.PWD.focus();return;
+		alert("請輸入密碼!");myform.PWD.focus();return;
 	}
 	myform.submit();
 }
@@ -95,7 +95,7 @@ function CheckAll(elementsA,elementsB){
 		}
 	}
 }
-//判断用户是否选择了要删除的记录，如果是，则提示“是否删除”；否则提示“请选择要删除的记录”
+//判斷用戶是否選擇了要刪除的記錄，如果是，則提示“是否刪除”；否則提示“請選擇要刪除的記錄”
 function checkdel(delid,formname){
 	var flag = false;
 	for(i=0;i<delid.length;i++){
@@ -105,10 +105,10 @@ function checkdel(delid,formname){
 		}
 	}
 	if(!flag){
-		alert("请选择要删除的记录！");
+		alert("請選擇要刪除的記錄！");
 		return false;
 	}else{
-			if(confirm("确定要删除吗？")){
+			if(confirm("確定要刪除嗎？")){
 				formname.submit();
 		}
 	}
