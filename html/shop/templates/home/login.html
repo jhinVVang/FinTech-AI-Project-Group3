@@ -13,12 +13,12 @@
 			<div id="mr-content" class="mr-content col-xs-12">
 				<div class="login-wrap" style="margin-bottom: 60px; margin-top: 50px">
 					<div style="max-width: 540px; margin: 0 auto;">
-						<a href="index.html" title="點擊返回首頁"><img src="{{url_for('static',filename='home/images/logo.png')}}"></a>
+						<a href="../index" title="點擊返回首頁"><img src="{{url_for('static',filename='home/images/logo_title.png')}}"></a>
 					</div>
 					<div class="login">
 						<div class="page-header" style="pause: 0px;"> <h1 class="login_h1">會員登錄</h1> </div>
 						    {% for msg in get_flashed_messages(category_filter=["err"]) %}
-								<div style="color:red;text-align:center;font-size:16px">
+								<div style="color:;text-align:center;font-size:16px">
 								  	{{ msg }}
 								</div>
 							{% endfor %}

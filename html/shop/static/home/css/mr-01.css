@@ -559,8 +559,8 @@ input[type="search"] {
 }
 .btn-primary {
     color: #ffffff;
-    background-color: #E33737;
-    border-color: #a30a11
+    background-color: #0c1733;
+    border-color: #bcc6e4
 }
 .page-header {
 padding-bottom: 9px;
@@ -1293,7 +1293,7 @@ dl dd img{
 /*****************��ҳ�����ϼܼ�������Ʒ��ʽ ����**********************/
 /**************************��Ȩ����ʽ ��ʼ************************/
 .mr-footer {
-    background: #4D4D4D;
+    background: #c5a99e;
     color: #eeeeee;
     margin-top: 10px;
 }
@@ -1789,7 +1789,7 @@ img {
 .mr-header {
     padding-top: 20px;
     padding-bottom: 20px;
-    background: #E33737;
+    background: #0c1636;
     position: relative
 }
 
