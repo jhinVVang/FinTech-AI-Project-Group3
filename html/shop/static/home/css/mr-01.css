@@ -570,6 +570,10 @@ border-bottom: 0px solid #0885B1;
 text-align: center;
 }
 /*****��¼ҳ��ĵ�¼��ť��ʽ*******/
+.login-wrap img{
+    margin-left: 44%;
+    margin-bottom: 3%;
+}
 .login{
 	max-width: 540px; margin: 0 auto;padding:0px; border: 1px solid #eeeeee;
 }
@@ -1848,6 +1852,17 @@ img {
     position: relative;
     z-index: 1
 }
+
+#footer{
+    margin-left: 48%;
+}
+.foot dt{
+    margin-left: 10%;
+}
+
+.foot span{
+    margin-left: 5%;
+}
 .mr-footer:before, .mr-footer:after {
     content: " ";
     display: table
@@ -2188,7 +2203,7 @@ input.required{
 }
 /******************�������õ���ʽ************************/
 .search_box{width:438px;height:48px;line-height:48px;border:1px solid #F19F9F; float:right;margin-top:22px; margin-right:80px;position:relative;}
-.search_box_img{width:auto; position:absolute; right:0px; top:0px; background-color:#fff;  border-left:1px solid #F19F9F;height:47px}
+.search_box_img{width:auto; position:absolute; right:0px; top:0px; background-color:#fff;  border:1px solid #F19F9F;height:47px} 
 .search_box_img:hover{ background-color:#f2f2f2;}
 .search_box_img a:active{background:#f2f2f2;}
 .top-nav-search-input{line-height:18px; margin-left:10px; float:left;  border:0px; overflow:hidden; outline:none; font-family:"����"; margin-top:1px;width:235px; height:43px;  
@@ -2210,6 +2225,7 @@ padding:0px; }
 	border-right: 1px solid #B3B3B3; 
 	border-bottom: 1px solid #B3B3B3; 
 	float: left;
+    margin-top: -11.5%;
 }
 
 .validate-code{
