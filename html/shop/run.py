@@ -162,7 +162,6 @@ def modify_password():
         return "<script>alert('密碼修改成功');location.href='/';</script>"
     return render_template("home/modify_password.html", form=form)
 
-
 @app.route("/")
 @app.route("/index/")
 def index():
@@ -181,6 +180,9 @@ def index():
     ).limit(12).all()
     return render_template('home/index.html', new_goods=new_goods, sale_goods=sale_goods, hot_goods=hot_goods)  # 渲染模板
 
+@app.route('/user/')
+def user():
+    return render_template('home/user.html')
 
 @app.route("/goods_list/<int:supercat_id>/")
 def goods_list(supercat_id=None):  # supercat_id 為商品大分類ID
@@ -640,9 +642,7 @@ def a_subcat_del():
         db.session.commit()
         return redirect(url_for("a_subcat_list"))
 
-@app.route('/user')
-def user():
-    return render_template('user.html')
+
 
 @app.route("/orders/list/", methods=["GET"])
 @admin_login
