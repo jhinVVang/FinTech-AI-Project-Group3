@@ -1,0 +1,65 @@
+{% extends "home/common.html" %}
+{% block content %}
+	<!-- //網站頭部 -->
+
+    <div id="mr-mainbody" class="container mr-mainbody">
+        <div class="row">
+            <!-- 顯示訂單列表 -->
+            <div id="mr-content" class="mr-content col-xs-12">
+                <div id="mrshop" class="mrshop common-home">
+                    <div class="container_oc">
+                        <div class="row">
+                            <div id="content_oc" class="col-sm-12">
+                                <h1>我的訂單</h1>
+                                    <div class="table-responsive cart-info">
+                                        <table class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <td class="text-center image">訂單編號</td>
+                                                    <td class="text-center name">商品名稱</td>
+                                                    <td class="text-center name">購買數量</td>
+                                                    <td class="text-center name">單價</td>
+                                                    <td class="text-center name">消費金額</td>
+                                                    <td class="text-center quantity">收件者姓名</td>
+                                                    <td class="text-center price">收件者手機</td>
+                                                    <td class="text-center total">下單日期</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {% for item in orders%}
+                                                 <tr>
+                                                    <td class="text-center image" width="10%">{{item.orders.id}}</td>
+                                                    <td class="text-center name">{{item.goods.name}}</td>
+                                                    <td class="text-center quantity">{{item.number}}件</td>
+                                                    <td class="text-center quantity">{{item.goods.current_price}}元</td>
+                                                    <td class="text-center quantity">{{item.number*item.goods.current_price}}元</td>
+                                                    <td class="text-center quantity">{{item.orders.recevie_name}}</td>
+                                                    <td class="text-center quantity">{{item.orders.recevie_tel}}</td>
+                                                    <td class="text-center quantity">{{item.orders.addtime}}</td>
+                                                </tr>
+                                                {% endfor %}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                            </div>
+                        </div>
+                        <br /><br />
+                        <div class="row">
+                            <div  class="col-sm-12">
+                                <br />
+                                <br />
+                                <div class="buttons">
+                                    <div class="pull-right">
+                                        <a href="{{url_for('index')}}" class="tigger btn btn-primary btn-primary">繼續購物</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!-- //顯示訂單列表 -->
+        </div>
+    </div>
+
+{% endblock %}

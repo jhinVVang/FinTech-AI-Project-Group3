@@ -1,0 +1,442 @@
+{% extends "home/common.html" %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+            
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIAMOND CLOUD</title>
+
+    <!-- JQuery連結 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- css連結 -->
+    <link rel="stylesheet" href="../static/style.css">
+    <!-- JS連結 -->
+    <script src="../static/script.js"></script>
+    <!-- FontAwesome 連結 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <!-- Bootstrap 連結 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+
+    <!-- Demo styles -->
+    <style>
+        .swiper {
+          width: 100%;
+          height: 100%;
+        }
+  
+        .swiper-slide {
+          text-align: center;
+          font-size: 18px;
+          background: #fff;
+  
+          /* Center slide text vertically */
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: -webkit-flex;
+          display: flex;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+          -webkit-justify-content: center;
+          justify-content: center;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          -webkit-align-items: center;
+          align-items: center;
+        }
+  
+        .swiper-slide img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+    </style>
+</head>
+                
+            
+<body>
+<div class="container-all ">
+    <!-- 左邊 -->
+    <div class="container-left ">
+        <!-- 導覽列 -->
+        <nav id="sidebar">
+            <div class="header">
+                <a href="./home.html"><img src="../static/imgs/logo/title.png" alt=""></a>
+            </div>
+            <div class="img-wrap">
+                <a href="#"><img src="../static/imgs/dog.JPG" alt=""></a>    
+            </div>
+            <div class="right">
+                <a href="#">0Xfintech1110</a>
+            </div>
+            <ul class="bar">
+                <ol class="nav-item">
+                    <button class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#sex-collapse" aria-expanded="false">
+                        款式分類
+                    </button>     
+                    <div class="collapse" id="sex-collapse">
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">男用</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">女用</a>
+                            </li>
+                        </ul>
+                    </div>
+                </ol>
+                <ol class="nav-item">
+                    <button class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#jewel_type-collapse" aria-expanded="false">
+                        飾品類別
+                    </button>     
+                    <div class="collapse" id="jewel_type-collapse">
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">戒指</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">耳環</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">項鍊</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">手環</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">胸針</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">袖扣</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">吊墜</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">鑰匙圈</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">十字架</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">宗教珠寶</a>
+                            </li>
+                        </ul>
+                    </div>
+                </ol>
+
+                <ol class="nav-item">
+                    <button class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#brand-collapse" aria-expanded="false">
+                        品牌
+                    </button>     
+                    <div class="collapse" id="brand-collapse">
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">Ania Haie</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">Ascot</a>
+                            </li>
+                            <li>
+                               <a href="#" class="d-inline-flex align-items-center rounded">Boss</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">Bronzallure</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">Carlo Visconti</a>
+                            </li>
+                            <li>
+                               <a href="#" class="d-inline-flex align-items-center rounded">Cluse</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">Daniel Wellington Jewelry</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">Dyrberg/Kern</a>
+                            </li>
+                            <li>
+                               <a href="#" class="d-inline-flex align-items-center rounded">Fossil</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">Gloria Hope</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">Guess</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">Haritidis</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">JCou</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">Just Cavalli</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">Lily & Rose</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">Michael Kors</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">Montegrappa</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">Nomination</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">Paul Hewitt</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">PDPAOLA</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">Pesavento</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">Police</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">Rosso Amante</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">Sector</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">Skagen</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">UomOro</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">Very Gavello</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">Vitaly</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">Vogue</a>
+                            </li>
+                        </ul>
+                    </div>
+                </ol>
+                 
+                <ol class="nav-item">
+                    <button class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#material-collapse" aria-expanded="false">
+                        材質
+                    </button>     
+                    <div class="collapse" id="material-collapse">
+                        <ul class="list-unstyled ">
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">黃銅</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">白銀</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">黃金</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">合金</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">不鏽鋼</a>
+                            </li>
+                        </ul>
+                    </div>
+                </ol>
+
+                <ol class="nav-item">
+                    <button class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#rocks-collapse" aria-expanded="false">
+                        鑲嵌珠寶
+                    </button>     
+                    <div class="collapse" id="rocks-collapse">
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">鑽石</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">瑪瑙</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">石英</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">綠松石</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">綠寶石</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">藍寶石</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">紅寶石</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">水晶</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">玉髓</a>
+                            </li>
+                        </ul>
+                    </div>
+                </ol>
+
+                <ol class="nav-item dropown">
+                    <button class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#price-collapse" aria-expanded="false">
+                        價格區間
+                    </button>     
+                    <div class="collapse" id="price-collapse">
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">1-1000</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">1001-2000</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">2001-3000</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">3001-4000</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">4001-5000</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">5001-6000</a>
+                            </li>
+                            <li>
+                                <a href="#" class="d-inline-flex align-items-center rounded">>6001</a>
+                            </li>
+                        </ul>
+                    </div>
+                </ol>
+                
+            </ul>        
+        </nav>
+    </div>
+
+    <!-- 右邊 -->
+    <div class="container-right">
+        <div class="container-fluid" >
+            <!-- <div class="nav justify-content-end">
+                <a href="./static/login/popup.html"><img src="./static/imgs/loginin.jpg"></a>
+            </div>   -->
+            <div class="nav justify-content-start">
+                <h6>加入時間:2022/11/10</h6>
+            </div>       
+        </div>    
+            <!-- 第一部份：標籤分頁的導覽列 -->
+            <div class="nav nav-tabs nav-justified">
+                <!-- 按鈕1 -->
+                <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#menu1" aria-selected="true">
+                    已收藏
+                </button>
+                <!-- 按鈕2 -->
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#menu2" aria-selected="false">
+                    已上架
+                </button>
+                <!-- 按鈕3 -->
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#menu3" aria-selected="false">
+                    訂單查詢
+                </button>
+            </div>
+            <!-- 第二部份：標籤分頁的內容 -->
+            <div class="tab-content">
+                <div class="tab-pane fade show active" id="menu1" >
+                    <!-- Swiper -->
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                          <div class="swiper-slide"><img src="../static/imgs/jewelry/1.jpeg"></div>
+                          <div class="swiper-slide"><img src="../static/imgs/jewelry/4.jpg"></div>
+                          <div class="swiper-slide"><img src="../static/imgs/jewelry/5.jpeg"></div>
+                          <div class="swiper-slide"><img src="../static/imgs/jewelry/1.jpeg"></div>
+                          <div class="swiper-slide"><img src="../static/imgs/jewelry/1.jpeg"></div>
+                          <div class="swiper-slide"><img src="../static/imgs/jewelry/4.jpg"></div>
+                          <div class="swiper-slide"><img src="../static/imgs/jewelry/5.jpeg"></div>
+                          <div class="swiper-slide"><img src="../static/imgs/jewelry/1.jpeg"></div>
+                        </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                      </div>
+                </div>
+     
+                <!-- 第2個內容 -->
+                <div class="tab-pane fade" id="menu2" >
+                    <!-- Swiper -->
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="../static/imgs/jewelry/1.jpeg"></div>
+                            <div class="swiper-slide"><img src="../static/imgs/jewelry/4.jpg"></div>
+                            <div class="swiper-slide"><img src="../static/imgs/jewelry/5.jpeg"></div>
+                            <div class="swiper-slide"><img src="../static/imgs/jewelry/1.jpeg"></div>
+                            <div class="swiper-slide"><img src="../static/imgs/jewelry/1.jpeg"></div>
+                            <div class="swiper-slide"><img src="../static/imgs/jewelry/4.jpg"></div>
+                            <div class="swiper-slide"><img src="../static/imgs/jewelry/5.jpeg"></div>
+                            <div class="swiper-slide"><img src="../static/imgs/jewelry/1.jpeg"></div>
+                        </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                      </div>
+                </div>
+
+                <!-- 第3個內容 -->
+                <div class="tab-pane fade" id="menu3" >
+                    <!-- Swiper -->
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="../static/imgs/jewelry/1.jpeg"></div>
+                            <div class="swiper-slide"><img src="../static/imgs/jewelry/4.jpg"></div>
+                            <div class="swiper-slide"><img src="../static/imgs/jewelry/5.jpeg"></div>
+                            <div class="swiper-slide"><img src="../static/imgs/jewelry/1.jpeg"></div>
+                            <div class="swiper-slide"><img src="../static/imgs/jewelry/1.jpeg"></div>
+                            <div class="swiper-slide"><img src="../static/imgs/jewelry/4.jpg"></div>
+                            <div class="swiper-slide"><img src="../static/imgs/jewelry/5.jpeg"></div>
+                            <div class="swiper-slide"><img src="../static/imgs/jewelry/1.jpeg"></div>
+                        </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                      </div>
+                </div>
+            </div>
+    </div>                
+</div>
+ <!-- Swiper JS -->
+ <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+ <!-- Initialize Swiper -->
+ <script>
+   var swiper = new Swiper(".mySwiper", {
+     slidesPerView: 4,
+     spaceBetween: 30,
+     slidesPerGroup: 4,
+    //  loop: true,
+     loopFillGroupWithBlank: true,
+     pagination: {
+       el: ".swiper-pagination",
+       clickable: true,
+     },
+     navigation: {
+       nextEl: ".swiper-button-next",
+       prevEl: ".swiper-button-prev",
+     },
+   });
+ </script>
+
+
+
+</body>
+</html>
+
+{% endblock %}
