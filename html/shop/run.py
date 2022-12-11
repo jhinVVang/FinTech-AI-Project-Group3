@@ -488,7 +488,7 @@ def a_login():
 @admin_login
 def a_logout():
     """
-    後台注銷登錄
+    後台註銷登錄
     """
     session.pop("admin", None)
     session.pop("admin_id", None)
@@ -640,6 +640,9 @@ def a_subcat_del():
         db.session.commit()
         return redirect(url_for("a_subcat_list"))
 
+@app.route('/user')
+def user():
+    return render_template('user.html')
 
 @app.route("/orders/list/", methods=["GET"])
 @admin_login
