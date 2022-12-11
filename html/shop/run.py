@@ -184,6 +184,10 @@ def index():
 def user():
     return render_template('home/user.html')
 
+@app.route('/knowledge/')
+def knowledge():
+    return render_template('home/knowledge.html')
+
 @app.route("/goods_list/<int:supercat_id>/")
 def goods_list(supercat_id=None):  # supercat_id 為商品大分類ID
     """

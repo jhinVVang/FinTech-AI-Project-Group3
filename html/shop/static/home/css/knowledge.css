@@ -1,0 +1,157 @@
+body{
+    background-image: url('./imgs/background/backgroud_light_yellow.jpg');
+
+}
+
+nav{
+    width: 100%;
+    height: 15vh;
+    /* background-image: url('./imgs/sign_in_banner.jpg'); */
+    background-image: url('./imgs/background/logo_banner_white.png');
+    background-size: cover;
+    top: 0;
+    margin-top: -10px;
+    /* margin-left: -10px; */
+    /* padding-right: 20px; */
+    
+}
+
+nav img{
+    width: 200px;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+.link{
+/* margin-left:136vh; */
+margin-left:65%;
+}
+
+.b1 img{
+    width: 50px;
+    height: 50px;
+    margin-top: 30px;
+}
+
+.b2 img{
+    width: 50px;
+    height: 50px;
+    margin-top: 30px;
+}
+
+.b3 img{
+    width: 50px;
+    height: 50px;
+    margin-top: 30px;
+}
+
+.b4 img{
+    width: 50px;
+    height: 50px;
+    margin-top: 30px;
+}
+
+.b5 img{
+    width: 50px;
+    height: 50px;
+    margin-top: 30px;
+}
+
+.line{
+    position:fixed; 
+    top:54%; 
+    left:96%;
+}
+
+.container-all {
+    display: flex;
+    align-items: stretch;
+}
+
+.container-right {
+    background-color: rgb(255, 255, 238);
+    /* width: 180vh; */
+    margin-top: 20px;
+    width: 209vh;
+    height: 230vh;
+    text-align: center;
+}
+
+#gia-tab{
+    width: 300px;
+}
+
+#carat-tab{
+    width: 300px;
+}
+
+#cut-tab{
+    width: 300px;
+}
+
+#color-tab{
+    width: 300px;
+}
+
+#clarity-tab{
+    width: 300px;
+}
+
+table{
+    margin-top: 1%;
+    margin-left: 25%;
+    box-sizing: border-box;
+    border: 1px solid red;
+    font-size: 3rem;
+    width: 50%;
+    height: 100px;
+}
+
+tr td{
+    border: 1px solid rgb(38, 0, 255); 
+}
+
+.bigsmall{
+    margin-top: 1%;
+    margin-left: 22%;
+}
+
+.crlevel{
+    width: 60%;
+    height: 60%;
+}
+
+.cylevel{
+    width: 60%;
+    height: 60%;
+}
+
+.footer{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+/* @media screen and (max-width:600px) {
+    .link{
+        margin-left: 20%;
+    }
+    .container{
+        width: 80%;
+    }
+
+    .card{
+        width: 100%;
+    }
+
+    #product{
+        flex-wrap: wrap;
+    }
+
+    #product .left, #product .right{
+        width: 100%;
+    }
+} */
+
+
+

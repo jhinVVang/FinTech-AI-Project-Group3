@@ -1705,7 +1705,7 @@ img {
 }
 #toolbar {
     background: #F8F8F8;
-    color: #8F8F8F;
+    color: #EAEAEA;
     font-family: 'Roboto Slab', Georgia, Times, serif;
     padding:  0;
     position: relative;
@@ -1721,7 +1721,7 @@ img {
     margin: -10px 0
 }
 #toolbar a{
-	color: #808080;
+	color: #EAEAEA;
 }
 #toolbar a:HOVER{
 	color: #0885B1;
