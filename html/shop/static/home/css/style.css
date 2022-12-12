@@ -5,11 +5,11 @@
 }
 
 /* logo 大頭像 帳戶名 */
-.post{
+/* .post{
     background-color: rgb(188, 133, 240);
     width: 250px;
     padding-bottom: 2px;
-}
+} */
 
 /* .header{
     width: 200px;
@@ -46,10 +46,14 @@ img{
     margin-bottom: 10px;
 }
 
+.right a{
+    font-size: 20px;
+}
+
 /* 左邊導覽列 */
 #sidebar {
     width: 250px;
-    height: 100%;
+    height: 160vh;
     background-color: rgb(243, 243, 202);
     /* sidebar的背景色 */
     transition: 1s;
@@ -59,21 +63,26 @@ img{
     margin-left: -200px;
 }
 
-#sidebar ul li a {
-    padding: 10px;
+#sidebar ul ul a {
+    padding: 20px;
     font-size: 20px;
     display: block;
     text-decoration: none;
     background-color: rgb(244, 244, 176);
     /* 字的顏色 */
+    text-align: center;
+    margin-right: 10%;
+    /* float: left; */
+    
 }
 
-#sidebar ul li a:hover {
+
+/* #sidebar ul li a:hover {
     margin-left: 20px;
     color: indigo;
     background: pink;
     /* sidebar選項框的顏色 */
-}
+/* } */
 
 ul ul li a {
     background-color: rgb(203, 142, 247); 
@@ -86,13 +95,14 @@ ul ul li a {
 .nav-item button{
     margin-left: 20px;
     font-size: 22px;
-    color: crimson;
+    background-color: rgb(243, 243, 202);
 }
 /* 右邊畫面 */
 .container-right {
-    background-color: white;
+    background-color:white;
     width: 83.5%;
-    height: 136vh;
+    /* width: 50%; */
+    height: 71vh;
     text-align: center;
 }
 
@@ -100,13 +110,15 @@ ul ul li a {
 .container-fluid{
     /* background-color: rgb(188, 133, 240); */
     background-image: url(../../images/banner.jpg);
-    width: 83.5%;
+    width: 100%;
     height: 187px;
-    /* background-size: cover; */
+    /* height: 300px;
+    background-size: cover; */
     
 }
 .container-fluid h6 {
-    margin-top: 260px;
+    margin-top: 168px;
+    margin-right: 88%;
     
 }
 
@@ -119,14 +131,19 @@ ul ul li a {
     /* padding: 30px; */
 /* } */
 
-.container{
+/* .container{
     width: 140vh;
     height: 200px;
-}
+} */
 
-.forecast {
+/* .forecast {
     margin-top: 10px; 
     margin-left: 46px;
     margin-bottom: 10px;
     font-size: 20px;
+} */
+.mytreasure a{
+   /* margin-top: 100px; */
+   font-size: 20px;
+  
 }
