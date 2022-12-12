@@ -142,7 +142,7 @@ def logout():
     # 重定向到home模塊下的登錄。
     session.pop("user_id", None)
     session.pop("username", None)
-    return redirect(url_for('login'))
+    return redirect(url_for('index'))
 
 
 @app.route("/modify_password/", methods=["GET", "POST"])
