@@ -49,12 +49,17 @@ img{
 .right a{
     font-size: 20px;
 }
-
+.nav-item button{
+    color: #eaeaea;  
+}
+.list-unstyled a{
+    color: #eaeaea;
+}
 /* 左邊導覽列 */
 #sidebar {
     width: 250px;
     height: 160vh;
-    background-color: rgb(243, 243, 202);
+    background-color: #c5a99e;
     /* sidebar的背景色 */
     transition: 1s;
 }
@@ -68,7 +73,7 @@ img{
     font-size: 20px;
     display: block;
     text-decoration: none;
-    background-color: rgb(244, 244, 176);
+    background-color: #c5a99e;
     /* 字的顏色 */
     text-align: center;
     margin-right: 10%;
@@ -95,7 +100,7 @@ ul ul li a {
 .nav-item button{
     margin-left: 20px;
     font-size: 22px;
-    background-color: rgb(243, 243, 202);
+    background-color: #c5a99e;
 }
 /* 右邊畫面 */
 .container-right {
