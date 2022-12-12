@@ -25,19 +25,7 @@ class RegisterForm(FlaskForm):
             "size": 38,
         }
     )
-    phone = StringField(
-        label="聯系電話 ：",
-        validators=[
-            DataRequired("手機號不能為空！"),
-            Regexp("1[34578][0-9]{9}", message="手機號碼格式不正確")
-        ],
-        description="手機號",
-        render_kw={
-            "type": "text",
-            "placeholder": "請輸入聯系電話！",
-            "size": 38,
-        }
-    )
+    
     email = StringField(
         label="郵箱 ：",
         validators=[
@@ -90,16 +78,6 @@ class RegisterForm(FlaskForm):
         user = User.query.filter_by(email=email).count()
         if user == 1:
             raise ValidationError("郵箱已經存在！")
-
-    def validate_phone(self, field):
-        """
-        檢測手機號是否已經存在
-        :param field: 字段名
-        """
-        phone = field.data
-        user = User.query.filter_by(phone=phone).count()
-        if user == 1:
-            raise ValidationError("手機號已經存在！")
 
 
 class LoginForm(FlaskForm):

@@ -126,7 +126,6 @@ def register():
             username=data["username"],  # 用戶名
             email=data["email"],  # 郵箱
             password=generate_password_hash(data["password"]),  # 對密碼加密
-            phone=data['phone']
         )
         db.session.add(user)  # 添加數據
         db.session.commit()  # 提交數據

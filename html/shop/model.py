@@ -25,7 +25,6 @@ class User(db.Model):
     username = db.Column(db.String(100))  # 用戶名
     password = db.Column(db.String(100))  # 密碼
     email = db.Column(db.String(100), unique=True)  # 郵箱
-    phone = db.Column(db.String(11), unique=True)  # 手機號
     consumption = db.Column(db.DECIMAL(10, 2), default=0)  # 消費額
     addtime = db.Column(db.DateTime, index=True, default=datetime.now)  # 註冊時間
     orders = db.relationship('Orders', backref='user')  # 訂單外鍵關系關聯

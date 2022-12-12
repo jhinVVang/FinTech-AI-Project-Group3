@@ -73,8 +73,8 @@
             <div class="img-wrap">
                 <a href="#"><img src="{{url_for('static',filename='images/dog.jpg')}}" alt=""></a>    
             </div>
-            <div class="right">
-                <a href="#">0Xfintech1110</a>
+            <div class="username">
+                <a href="#">{{session['username']}}</a>
             </div>
             
         
@@ -341,7 +341,7 @@
 
         <div class="mytreasure">
             <ul >
-                <a href="#home">已收藏</a>
+                <h4 style="padding-top: 10px; padding-bottom: 3px;">已收藏</h4>
                 <hr>
                 <div id="home">
                     <!-- Swiper -->
@@ -363,7 +363,7 @@
             </ul>
 
             <ul>
-                <a data-toggle="tab" href="#menu1">已上架</a>
+                <h4 style="padding-top: 10px; padding-bottom: 3px;">已上架</h4>
                 <hr>
                 <div id="menu1">
                     <!-- Swiper -->
@@ -385,7 +385,7 @@
             </ul>
 
             <ul>
-                <a data-toggle="tab" href="#menu2">訂單查詢</a>
+                <h4 style="padding-top: 10px; padding-bottom: 3px;">訂單查詢</h4>
                 <hr>
                 <div id="menu2" class="tab-pane fade">
                     <!-- Swiper -->
@@ -407,6 +407,7 @@
             </ul>
             
         </div>
+    </div>
 </div>
  <!-- Swiper JS -->
  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>

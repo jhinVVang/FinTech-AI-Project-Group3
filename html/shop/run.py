@@ -126,7 +126,6 @@ def register():
             username=data["username"],  # 用戶名
             email=data["email"],  # 郵箱
             password=generate_password_hash(data["password"]),  # 對密碼加密
-            phone=data['phone']
         )
         db.session.add(user)  # 添加數據
         db.session.commit()  # 提交數據
@@ -181,7 +180,9 @@ def index():
     return render_template('home/index.html', new_goods=new_goods, sale_goods=sale_goods, hot_goods=hot_goods)  # 渲染模板
 
 @app.route('/user/')
+@user_login
 def user():
+    user_id=session.get('user_id,0')
     return render_template('home/user.html')
 
 @app.route('/knowledge/')
