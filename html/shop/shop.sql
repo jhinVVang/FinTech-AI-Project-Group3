@@ -320,18 +320,18 @@ CREATE TABLE `subcat` (
 -- ----------------------------
 -- Records of subcat
 -- ----------------------------
-INSERT INTO `subcat` VALUES ('27', '金製戒指', '2022-12-09 15:01:59', '14');
-INSERT INTO `subcat` VALUES ('28', '銀製戒指', '2022-12-09 15:01:59', '14');
-INSERT INTO `subcat` VALUES ('29', '合金製戒指', '2022-12-09 15:01:59', '14');
-INSERT INTO `subcat` VALUES ('30', '金製耳環', '2022-12-09 15:01:59', '15');
-INSERT INTO `subcat` VALUES ('31', '銀製耳環', '2022-12-09 15:01:59', '15');
-INSERT INTO `subcat` VALUES ('32', '不鏽鋼製耳環', '2022-12-09 15:01:59', '15');
-INSERT INTO `subcat` VALUES ('33', '金項鍊', '2022-12-09 15:01:59', '16');
-INSERT INTO `subcat` VALUES ('34', '銀項鍊', '2022-12-09 15:01:59', '16');
-INSERT INTO `subcat` VALUES ('35', '不鏽鋼製項鍊', '2022-12-09 15:01:59', '16');
-INSERT INTO `subcat` VALUES ('36', '金手環', '2022-12-09 15:01:59', '17');
-INSERT INTO `subcat` VALUES ('37', '銀手環', '2022-12-09 15:01:59', '17');
-INSERT INTO `subcat` VALUES ('38', '合金手環', '2022-12-09 15:01:59', '17');
+INSERT INTO `subcat` VALUES ('30', '金製戒指', '2022-12-09 15:01:59', '14');
+INSERT INTO `subcat` VALUES ('31', '銀製戒指', '2022-12-09 15:01:59', '14');
+INSERT INTO `subcat` VALUES ('32', '合金製戒指', '2022-12-09 15:01:59', '14');
+INSERT INTO `subcat` VALUES ('33', '金製耳環', '2022-12-09 15:01:59', '15');
+INSERT INTO `subcat` VALUES ('34', '銀製耳環', '2022-12-09 15:01:59', '15');
+INSERT INTO `subcat` VALUES ('35', '不鏽鋼製耳環', '2022-12-09 15:01:59', '15');
+INSERT INTO `subcat` VALUES ('36', '金項鍊', '2022-12-09 15:01:59', '16');
+INSERT INTO `subcat` VALUES ('37', '銀項鍊', '2022-12-09 15:01:59', '16');
+INSERT INTO `subcat` VALUES ('38', '不鏽鋼製項鍊', '2022-12-09 15:01:59', '16');
+INSERT INTO `subcat` VALUES ('39', '金手環', '2022-12-09 15:01:59', '17');
+INSERT INTO `subcat` VALUES ('40', '銀手環', '2022-12-09 15:01:59', '17');
+INSERT INTO `subcat` VALUES ('41', '合金手環', '2022-12-09 15:01:59', '17');
 
 -- ----------------------------
 -- Table structure for supercat
@@ -353,7 +353,18 @@ INSERT INTO `supercat` VALUES ('14', '戒指', '2022-12-09 15:01:59');
 INSERT INTO `supercat` VALUES ('15', '耳環', '2022-12-09 15:02:59');
 INSERT INTO `supercat` VALUES ('16', '項鍊', '2022-12-09 15:03:59');
 INSERT INTO `supercat` VALUES ('17', '手環', '2022-12-09 15:04:59');
-INSERT INTO `supercat` VALUES ('30', '是的法定', '2022-12-09 15:05:59');
+INSERT INTO `supercat` VALUES ('18', '手鍊', '2022-12-09 15:05:59');
+INSERT INTO `supercat` VALUES ('19', '細鏈', '2022-12-09 15:05:59');
+INSERT INTO `supercat` VALUES ('20', '吊墜', '2022-12-09 15:05:59');
+INSERT INTO `supercat` VALUES ('21', '別針', '2022-12-09 15:05:59');
+INSERT INTO `supercat` VALUES ('22', '胸針', '2022-12-09 15:05:59');
+INSERT INTO `supercat` VALUES ('23', '袖扣', '2022-12-09 15:05:59');
+INSERT INTO `supercat` VALUES ('24', '結婚戒指', '2022-12-09 15:05:59');
+INSERT INTO `supercat` VALUES ('25', '宗教珠寶', '2022-12-09 15:05:59');
+INSERT INTO `supercat` VALUES ('26', '十字架', '2022-12-09 15:05:59');
+INSERT INTO `supercat` VALUES ('27', '識別證', '2022-12-09 15:05:59');
+INSERT INTO `supercat` VALUES ('28', '鑰匙圈', '2022-12-09 15:05:59');
+INSERT INTO `supercat` VALUES ('29', '配件', '2022-12-09 15:05:59');
 
 -- ----------------------------
 -- Table structure for user
@@ -363,21 +374,19 @@ CREATE TABLE `user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(100) DEFAULT NULL,
   `email` varchar(100) DEFAULT NULL,
-  `phone` varchar(11) DEFAULT NULL,
   `addtime` datetime DEFAULT NULL,
   `password` varchar(100) DEFAULT NULL,
   `consumption` decimal(10,2) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`),
-  UNIQUE KEY `phone` (`phone`),
   KEY `ix_user_addtime` (`addtime`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES ('1', 'andy', '694798056@qq.com', '13912345678', '2018-10-27 13:37:33', 'pbkdf2:sha256:50000$TkExX9Jm$d63477853a17dcaedcd52be4b6213ebb74b61a12456762ac19d6b7dfb559aa57', '0.00');
-INSERT INTO `user` VALUES ('2', 'Tom', '1232434@qq.com', '123343467', '2018-10-27 13:55:03', 'pbkdf2:sha256:50000$TkExX9Jm$d63477853a17dcaedcd52be4b6213ebb74b61a12456762ac19d6b7dfb559aa57', '0.00');
-INSERT INTO `user` VALUES ('3', 'kiki', '123456@qq.com', '18910441212', '2022-12-09 09:42:14', 'pbkdf2:sha256:50000$LSXCOuSP$8be298f1360258b419844a128bf053d63c84af626d30404237b3f8ca417e3d9b', '0.00');
-INSERT INTO `user` VALUES ('5', 'lisi', '1234567@qq.com', '18910441213', '2022-12-09 09:49:23', 'pbkdf2:sha256:50000$6ghkMYvc$d2c93fa14932f0dc6e6aa3ea98c39dafba21cd367c6a9c0d3d99360649c94755', '0.00');
-INSERT INTO `user` VALUES ('6', 'kinda', 'mr@mrsoft.com', '13578982158', '2018-11-01 16:51:26', 'pbkdf2:sha256:50000$U27W3Fbe$2c861e8d7ed40a7dfe384a9d490097f2bb6a27a5afd0f85537ea805f9aeb08d4', '0.00');
+INSERT INTO `user` VALUES ('1', 'andy', '694798056@qq.com', '2022-12-09 13:37:33', 'pbkdf2:sha256:50000$TkExX9Jm$d63477853a17dcaedcd52be4b6213ebb74b61a12456762ac19d6b7dfb559aa57', '0.00');
+INSERT INTO `user` VALUES ('2', 'Tom', '1232434@qq.com', '2022-12-09 13:55:03', 'pbkdf2:sha256:50000$TkExX9Jm$d63477853a17dcaedcd52be4b6213ebb74b61a12456762ac19d6b7dfb559aa57', '0.00');
+INSERT INTO `user` VALUES ('3', 'kiki', '123456@qq.com', '2022-12-09 09:42:14', 'pbkdf2:sha256:50000$LSXCOuSP$8be298f1360258b419844a128bf053d63c84af626d30404237b3f8ca417e3d9b', '0.00');
+INSERT INTO `user` VALUES ('5', 'lili', '1234567@qq.com', '2022-12-09 09:49:23', 'pbkdf2:sha256:50000$6ghkMYvc$d2c93fa14932f0dc6e6aa3ea98c39dafba21cd367c6a9c0d3d99360649c94755', '0.00');
+INSERT INTO `user` VALUES ('6', 'kinda', 'mr@mrsoft.com', '2022-12-09 16:51:26', 'pbkdf2:sha256:50000$U27W3Fbe$2c861e8d7ed40a7dfe384a9d490097f2bb6a27a5afd0f85537ea805f9aeb08d4', '0.00');
