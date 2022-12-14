@@ -1,7 +1,7 @@
 <!Doctype html>
 <html>
 <head>
-<title>後台管理!</title>
+<title>後台管理</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="{{url_for('static',filename='admin/css/style.css')}}" rel="stylesheet">
 <script src="{{url_for('static',filename='admin/js/check.js')}}"></script>
@@ -18,14 +18,14 @@ body{
      <td style="background-image:url({{url_for('static',filename='admin/images/backgroud_all.jpg')}});padding-bottom:10%">
       <div style="margin-left: 39%;margin-top: 6%;"><img src="{{url_for('static',filename='admin/images/logo_title.png')}}"></div>
        <form  method="post" action="{{url_for('a_login')}}" >
-          <table width="448" height="345"  border="0" align="center"  style="margin-top:40px;background:url('/static/admin/images/managerlogin_dialog1.png') no-repeat" cellpadding="0" cellspacing="0"  >
+          <table width="448" height="345"  border="0" align="center"  style="margin-top:30px;background:url('/static/admin/images/managerlogin_dialog1.png') no-repeat" cellpadding="0" cellspacing="0"  >
             <tr>
               <td height="60" colspan="2" align="center">&nbsp;</td>
             </tr>
             <tr>
               <td width="55" height="280" align="center" valign="top">&nbsp;</td>
               <td width="436" align="left" valign="top">
-              <table style="margin-top:30px" width="88%" height="240"  border="0" cellpadding="0" cellspacing="0">
+              <table style="margin-top: 20px" width="85%" height="240"  border="0" cellpadding="0" cellspacing="0">
                 <tr>
                   <td width="99%" height="74" align="center">
                       {{ form.manager }}
@@ -41,7 +41,7 @@ body{
                   </span></td>
                 </tr>
                 <tr>
-                  <td height="57" align="center">
+                  <td height="70" align="center">
                     {{ form.csrf_token }}
                     {{ form.submit }}
                     <input  type="reset" class="login_reset" value="重置">
@@ -53,7 +53,7 @@ body{
                     <p class="login-box-msg" style="color: green">{{ msg }}</p>
                 {% endfor %}
                 <tr>
-                  <td height="35" align="right">
+                  <td height="25" align="right">
                     <a href="/"><img src="{{url_for('static',filename='admin/images/back.png')}}"> 返回商城主頁</a></td>
                 </tr>
               </table>
@@ -63,7 +63,10 @@ body{
      </form>
       <table width="491" height="39" border="0" align="center" cellpadding="0" cellspacing="0">
         <tr>
-          <td align="center" >Copyright © 鑽石滿滿希望無限公司 | 地址：台北市復興南路237號4樓</td>
+          <td align="center" style="margin-top: 20px">Copyright &copy;&nbsp;鑽石滿滿希望無限公司&nbsp;&nbsp; | &nbsp;&nbsp;Email：<a
+            href="mailto:LoveAndPeace@fintect.com">LoveAndPeace@fintect.com</a><br>
+            &nbsp;&nbsp;電話：02-1234567&nbsp;&nbsp;|&nbsp;&nbsp;地址：台北市大安區復興南路二段237號4樓
+  </td>
         </tr>
       </table>
      </td>
