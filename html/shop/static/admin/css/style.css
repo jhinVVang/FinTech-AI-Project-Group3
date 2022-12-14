@@ -95,14 +95,16 @@ select, textarea, input[type="text"], input[type="password"], input[type="dateti
 }
 
 .login_ok{
-	background-color: #46C24F;
+	background-color: #c5a99e;
+	/* background-color: #46C24F; */
 	color: #fff;
 	padding:8px 30px;
 	border: 0px;
 	font-size:20px;
 }
 .login_reset{
-	background-color: #6AA4D0;
+	background-color: #0c1636;
+	/* background-color: #6AA4D0; */
 	color: #fff;
 	padding:8px 30px;
 	border: 0px;
