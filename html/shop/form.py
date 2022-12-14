@@ -329,14 +329,14 @@ class GoodsForm(FlaskForm):
         }
     )
     current_price = DecimalField(
-        label="商品現價",
+        label="商品特價",
         validators=[
-            DataRequired("商品現價不能為空！")
+            DataRequired("商品特價不能為空！")
         ],
-        description="商品現價",
+        description="商品特價",
         render_kw={
             "class": "Sytle_text",
-            "placeholder": "請輸入商品現價！"
+            "placeholder": "請輸入商品特價！"
         }
     )
     is_new = RadioField(

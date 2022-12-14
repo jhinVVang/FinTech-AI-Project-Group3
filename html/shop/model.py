@@ -94,7 +94,7 @@ class Goods(db.Model):
     id = db.Column(db.Integer, primary_key=True)  # 編號
     name = db.Column(db.String(255))  # 名稱
     original_price = db.Column(db.DECIMAL(10, 2))  # 原價
-    current_price = db.Column(db.DECIMAL(10, 2))  # 現價
+    current_price = db.Column(db.DECIMAL(10, 2))  # 特價
     picture = db.Column(db.String(255))  # 圖片
     introduction = db.Column(db.Text)  # 商品簡介
     views_count = db.Column(db.Integer, default=0)  # 瀏覽次數

@@ -66,6 +66,7 @@
                                 <td align="center">{{ v.current_price }}</td>
                                 <td align="center">{% if v.is_new %} 是 {% else %} 否 {% endif%}</td>
                                 <td align="center">{% if v.is_sale %} 是 {% else %} 否 {% endif%}</td>
+                                <td align="center">{% if v.is_festival %} 是 {% else %} 否 {% endif%}</td>
                                 <td align="center">
                                     <a href="{{url_for('a_goods_edit',id=v.id)}}">
                                         <img src="{{url_for('static',filename='admin/images/modify.jpg')}}" width="19"
