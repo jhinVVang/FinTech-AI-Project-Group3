@@ -197,10 +197,10 @@ def getproductMessage():
             "type": "carousel",
             "columns": [
             {
-                "thumbnailImageUrl": F"{end_point}/static/jewelry/1.jpeg",
+                "thumbnailImageUrl": F"{end_point}/static/jewelry/23.jpeg",
                 "imageBackgroundColor": "#FFFFFF",
-                "title": "this is menu",
-                "text": "description",
+                "title": "Set Necklace & Earrings Gloria Hope Silver / Pearl",
+                "text": "獨特的高級鑽石珠寶作品融匯了女性優雅與性感的元素演繹您對生活品味的璀璨的想望，玩味於光影與華麗的設計，將自由與精緻做難得一件的完美結合，呈現瑰麗的藝術禮讚，風情萬種、盡藏動人細節。",
                 "defaultAction": {
                 "type": "uri",
                 "label": "查看更多",
@@ -225,10 +225,10 @@ def getproductMessage():
                 ]
             },
             {
-                "thumbnailImageUrl": F"{end_point}/static/jewelry/2.jpg",
+                "thumbnailImageUrl": F"{end_point}/static/jewelry/17.jpg",
                 "imageBackgroundColor": "#000000",
-                "title": "this is menu",
-                "text": "description",
+                "title": "Earrings Gloria Hope Silver",
+                "text": "使用精緻優質的鑽石，優美細膩的設計，最適合送給甜美可愛的她。",
                 "defaultAction": {
                 "type": "uri",
                 "label": "查看更多",
@@ -253,10 +253,10 @@ def getproductMessage():
                 ]
             },
             {
-                "thumbnailImageUrl": F"{end_point}/static/jewelry/3.jpeg",
+                "thumbnailImageUrl": F"{end_point}/static/jewelry/16.jpeg",
                 "imageBackgroundColor": "#000000",
-                "title": "this is menu",
-                "text": "description",
+                "title": "Bracelet Gloria Hope Silver",
+                "text": "鑽石手環帶來亮眼璀璨與雅緻風格，體現經典華麗魅力，讓您無比耀眼、成為眾人注目的焦點。",
                 "defaultAction": {
                 "type": "uri",
                 "label": "查看更多",
@@ -281,38 +281,10 @@ def getproductMessage():
                 ]
             },
             {
-                "thumbnailImageUrl": F"{end_point}/static/jewelry/4.jpg",
+                "thumbnailImageUrl": F"{end_point}/static/jewelry/3.jpg",
                 "imageBackgroundColor": "#000000",
-                "title": "this is menu",
-                "text": "description",
-                "defaultAction": {
-                "type": "uri",
-                "label": "查看更多",
-                "uri": "http://example.com/page/222"
-                },
-                "actions": [
-                {
-                    "type": "postback",
-                    "label": "立即購買",
-                    "data": "action=buy&itemid=222"
-                },
-                {
-                    "type": "postback",
-                    "label": "加入購物車",
-                    "data": "action=add&itemid=222"
-                },
-                {
-                    "type": "uri",
-                    "label": "查看更多",
-                    "uri": "http://example.com/page/222"
-                }
-                ]
-            },
-            {
-                "thumbnailImageUrl": F"{end_point}/static/jewelry/5.jpeg",
-                "imageBackgroundColor": "#000000",
-                "title": "this is menu",
-                "text": "description",
+                "title": "Ring with emerald",
+                "text": "18K金戒指鑲嵌天然鑽石，在簡單中營造獨特，閃耀指間，皆能表現出最耀眼品味。",
                 "defaultAction": {
                 "type": "uri",
                 "label": "查看更多",
@@ -339,8 +311,36 @@ def getproductMessage():
             {
                 "thumbnailImageUrl": F"{end_point}/static/jewelry/6.jpeg",
                 "imageBackgroundColor": "#000000",
-                "title": "this is menu",
-                "text": "description",
+                "title": "Link Nomination Faceted Zirconia Emerald Green",
+                "text": "在一年四季中，隨意搭配一件簡單亮眼的配件，立刻帶出時尚氣息。不論是送給情人或是給自己一份小禮，都是最佳的選擇。",
+                "defaultAction": {
+                "type": "uri",
+                "label": "查看更多",
+                "uri": "http://example.com/page/222"
+                },
+                "actions": [
+                {
+                    "type": "postback",
+                    "label": "立即購買",
+                    "data": "action=buy&itemid=222"
+                },
+                {
+                    "type": "postback",
+                    "label": "加入購物車",
+                    "data": "action=add&itemid=222"
+                },
+                {
+                    "type": "uri",
+                    "label": "查看更多",
+                    "uri": "http://example.com/page/222"
+                }
+                ]
+            },
+            {
+                "thumbnailImageUrl": F"{end_point}/static/jewelry/5.jpeg",
+                "imageBackgroundColor": "#000000",
+                "title": "Ring women's",
+                "text": "採用時尚的混合切割方式，將階梯式切割的冠部與明亮式切割的底部相結合。十分適合追求現代感戒指款式者，呈現出明亮強烈的白色反光，並巧妙地與彩虹及光線移動取得平衡。",
                 "defaultAction": {
                 "type": "uri",
                 "label": "查看更多",

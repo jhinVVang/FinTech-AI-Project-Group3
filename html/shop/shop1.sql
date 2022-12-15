@@ -9,7 +9,7 @@
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
-SET time_zone = "+00:00";
+SET time_zone = "+08:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -30,17 +30,19 @@ SET time_zone = "+00:00";
 CREATE TABLE `admin` (
   `id` int(11) NOT NULL,
   `password` varchar(100) DEFAULT NULL,
-  `manager` varchar(100) DEFAULT NULL
+  `manager` varchar(100) DEFAULT NULL,
+  `addtime` datetime NOT NULL DEFAULT current_timestamp(),
+  `updated_time` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- 傾印資料表的資料 `admin`
 --
 
-INSERT INTO `admin` (`id`, `password`, `manager`) VALUES
-(1, 'pbkdf2:sha256:50000$TkExX9Jm$d63477853a17dcaedcd52be4b6213ebb74b61a12456762ac19d6b7dfb559aa57', 'mr'),
-(2, '123', 'ms');
-
+INSERT INTO `admin` (`id`, `password`, `manager`,`updated_time`) VALUES
+('1', '1', '1','2022-12-09 14:29:40','2022-12-09 14:29:40'),
+('2', '2', '2','2022-12-09 14:29:40','2022-12-09 14:29:40'),
+('3', 'pbkdf2:sha256:50000$TkExX9Jm$d63477853a17dcaedcd52be4b6213ebb74b61a12456762ac19d6b7dfb559aa57', 'mr','2022-12-09 14:29:40','2022-12-09 14:29:40');
 -- --------------------------------------------------------
 
 --
@@ -403,7 +405,9 @@ INSERT INTO `user` (`id`, `username`, `email`, `phone`, `addtime`, `password`, `
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `manager` (`manager`);
+  ADD UNIQUE KEY `manager` (`manager`),
+  ADD KEY `ix_admin_addtime` (`addtime`),
+  ADD KEY `ix_admin_updated_time` (`updated_time`);
 
 --
 -- 資料表索引 `alembic_version`
