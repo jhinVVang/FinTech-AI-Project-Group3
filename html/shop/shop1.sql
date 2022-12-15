@@ -26,7 +26,7 @@ SET time_zone = "+08:00";
 --
 -- 資料表結構 `admin`
 --
-
+DROP TABLE IF EXISTS `admin`;
 CREATE TABLE `admin` (
   `id` int(11) NOT NULL,
   `password` varchar(100) DEFAULT NULL,
@@ -48,7 +48,7 @@ INSERT INTO `admin` (`id`, `password`, `manager`,`updated_time`) VALUES
 --
 -- 資料表結構 `alembic_version`
 --
-
+DROP TABLE IF EXISTS `alembic_version`;
 CREATE TABLE `alembic_version` (
   `version_num` varchar(32) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
