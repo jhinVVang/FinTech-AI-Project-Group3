@@ -185,6 +185,11 @@ def user():
     user_id=session.get('user_id,0')
     return render_template('home/user.html')
 
+@app.route('/recommand/')
+def recommand():
+    return render_template('home/recommand.html')
+
+
 @app.route('/knowledge/')
 def knowledge():
     return render_template('home/knowledge.html')
