@@ -101,9 +101,10 @@ select, textarea, input[type="text"], input[type="password"], input[type="dateti
 	padding:8px 30px;
 	border: 0px;
 	font-size:20px;
+	margin-right: 20px;
 }
 .login_reset{
-	background-color: #0c1636;
+	background-color: #c5a99e;
 	/* background-color: #6AA4D0; */
 	color: #fff;
 	padding:8px 30px;
