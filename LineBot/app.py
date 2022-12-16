@@ -48,12 +48,6 @@ def index():
                     payload["messages"] = [getNameEmojiMessage()]
                 elif text == "出去玩囉":
                     payload["messages"] = [getPlayStickerMessage()]
-                elif text == "台北101":
-                    payload["messages"] = [getTaipei101ImageMessage(),
-                                           getTaipei101LocationMessage(),
-                                           getTaipei101VideoMessage()]
-                elif text == "播放音檔":
-                    payload["messages"] = [getMRTSoundMessage()]
                 elif text == "quota":
                     payload["messages"] = [
                             {
@@ -61,46 +55,13 @@ def index():
                                 "text": getTotalSentMessageCount()
                             }
                         ]
-                elif text == "今日確診人數":
-                    payload["messages"] = [
-                            {
-                                "type": "text",
-                                "text": getTodayCovid19Message()
-                            }
-                        ]
                 elif text == "送禮推薦":
                     payload["messages"] = [getproductMessage()]
+                elif text == "優惠活動":
+                    payload["messages"] = [getbonusImageMessage(),
+                                           getbonus2ImageMessage()]
                 elif text == "製作者名單":
                     payload["messages"] = [getproducerCarouselMessage()]
-                elif text == "主選單":
-                    payload["messages"] = [
-                            {
-                                "type": "template",
-                                "altText": "This is a buttons template",
-                                "template": {
-                                  "type": "buttons",
-                                  "title": "Menu",
-                                  "text": "Please select",
-                                  "actions": [
-                                      {
-                                        "type": "message",
-                                        "label": "我的名字",
-                                        "text": "我的名字"
-                                      },
-                                      {
-                                        "type": "message",
-                                        "label": "今日確診人數",
-                                        "text": "今日確診人數"
-                                      },
-                                      {
-                                        "type": "uri",
-                                        "label": "聯絡我",
-                                        "uri": f"tel:{my_phone}"
-                                      }
-                                  ]
-                              }
-                            }
-                        ]
                 else:
                     payload["messages"] = [
                             {
@@ -121,7 +82,7 @@ def index():
                 payload["messages"] = [
                         {
                             "type": "text",
-                            "text": F"已完成預約於{reservedTime}的叫車服務"
+                            "text": F"已預約於{reservedTime}的鑑賞服務。"
                         }
                     ]
                 replyMessage(payload)
@@ -130,13 +91,10 @@ def index():
                 action = data["action"]
                 if action == "get_near":
                     data["action"] = "get_detail"
-                    payload["messages"] = [getCarouselMessage(data)]
+                    payload["messages"] = [getReserveMessage(data)]
                 elif action == "get_detail":
                     del data["action"]
-                    payload["messages"] = [getTaipei101ImageMessage(),
-                                           getTaipei101LocationMessage(),
-                                           getTaipei101VideoMessage(),
-                                           getCallCarMessage(data)]
+                    payload["messages"] = [getCallCarMessage(data)]
                 replyMessage(payload)
 
     return 'OK'
@@ -349,7 +307,7 @@ def getproducerCarouselMessage():
     "type": "image_carousel",
     "columns": [
       {
-        "imageUrl": F"{end_point}/static/1.jpg",
+        "imageUrl": F"{end_point}/static/producer/1.jpg",
         "action": {
           "type": "message",    
           "label": "組長:王浩晉",
@@ -357,7 +315,7 @@ def getproducerCarouselMessage():
         }
       },
       {
-        "imageUrl": F"{end_point}/static/2.jpg",
+        "imageUrl": F"{end_point}/static/producer/2.jpg",
         "action": {
           "type": "message",
           "label": "譚逸翔",
@@ -365,7 +323,7 @@ def getproducerCarouselMessage():
         }
       },
       {
-        "imageUrl": F"{end_point}/static/3.jpg",
+        "imageUrl": F"{end_point}/static/producer/3.jpg",
         "action": {
           "type": "message",
           "label": "鄭筑馨",
@@ -373,7 +331,7 @@ def getproducerCarouselMessage():
         }
       },
       {
-        "imageUrl": F"{end_point}/static/4.jpg",
+        "imageUrl": F"{end_point}/static/producer/4.jpg",
         "action": {
           "type": "message",
           "label": "李伊淇",
@@ -381,7 +339,7 @@ def getproducerCarouselMessage():
         }
       },
       {
-        "imageUrl": F"{end_point}/static/5.jpg",
+        "imageUrl": F"{end_point}/static/producer/5.jpg",
         "action": {
           "type": "message",
           "label": "鄒蕙安",
@@ -394,34 +352,83 @@ def getproducerCarouselMessage():
     return message
 
 
-def getCarouselMessage(data):
-    message = {
-  "type": "template",
-  "altText": "this is a image carousel template",
-  "template": {
-    "type": "image_carousel",
-    "columns": [
-      {
-        "imageUrl": F"{end_point}/static/taipei_101.jpeg",
-        "action": {
-          "type": "postback",
-          "label": "台北101",
-          "data": json.dumps(data)
-        }
-      },
-      {
-        "imageUrl": F"{end_point}/static/taipei_1.jpeg",
-        "action": {
-          "type": "postback",
-          "label": "台北1",
-          "data": json.dumps(data)
-        }
-      }
-    ]
-  }
-}
-    return message
+# def getCarouselMessage(data):
+#     message = {
+#   "type": "template",
+#   "altText": "this is a image carousel template",
+#   "template": {
+#     "type": "image_carousel",
+#     "columns": [
+#       {
+#         "imageUrl": F"{end_point}/static/shop/1.jpg",
+#         "action": {
+#           "type": "postback",
+#           "label": "1號店",
+#           "data": json.dumps(data)
+#         }
+#       },
+#       {
+#         "imageUrl": F"{end_point}/static/shop/2.jpg",
+#         "action": {
+#           "type": "postback",
+#           "label": "2號店",
+#           "data": json.dumps(data)
+#         }
+#       }
+#     ]
+#   }
+# }
+#     return message
 
+def getReserveMessage(data):
+    message = {
+        "type": "template",
+        "altText": "this is a carousel template",
+        "template": {
+            "type": "carousel",
+            "columns": [
+            {
+                "thumbnailImageUrl": F"{end_point}/static/shop/1.jpg",
+                "imageBackgroundColor": "#FFFFFF",
+                "title": "1號店",
+                "text": "地址：台北市大安區復興南路二段237號4樓",
+                "defaultAction": {
+                "type": "uri",
+                "label": "查看更多",
+                "uri": "http://example.com/page/123"
+                },
+                "actions": [
+                {
+                    "type": "postback",
+                    "label": "預約鑑賞",
+                    "data": json.dumps(data)
+                }
+                ]
+            },
+            {
+                "thumbnailImageUrl": F"{end_point}/static/shop/2.jpg",
+                "imageBackgroundColor": "#000000",
+                "title": "2號店",
+                "text": "地址：台北市大安區和平東路二段106號",
+                "defaultAction": {
+                "type": "uri",
+                "label": "查看更多",
+                "uri": "http://example.com/page/222"
+                },
+                "actions": [
+                {
+                    "type": "postback",
+                    "label": "預約鑑賞",
+                    "data": json.dumps(data)
+                }
+                ]
+            }
+            ],
+            "imageAspectRatio": "rectangle",
+            "imageSize": "cover"
+        }
+    }
+    return message
 
 def getLocationConfirmMessage(title, latitude, longitude):
     data = {
@@ -432,10 +439,10 @@ def getLocationConfirmMessage(title, latitude, longitude):
         }
     message = {
       "type": "template",
-      "altText": "確認規劃行程",
+      "altText": "確認預約",
       "template": {
         "type": "confirm",
-        "text": f'是否要規劃{title}附近行程？',
+        "text": f'是否要預約鑑賞服務？',
         "actions": [
             {
                 "type": "postback",
@@ -459,7 +466,7 @@ def getCallCarMessage(data):
     "altText": "This is a buttons template",
     "template": {
         "type": "buttons",
-        "text": f"請選擇至 {data['title']} 預約叫車時間",
+        "text": f"請選擇預約鑑賞時間",
         "actions": [
            {
             "type": "datetimepicker",
@@ -482,39 +489,11 @@ def getPlayStickerMessage():
     return message
 
 
-def getTaipei101LocationMessage():
-    message = dict()
-    message["type"] = "location"
-    message["title"] = "Taipei 101 location"
-    message["address"] = "台北市信義路五段7號"
-    message["latitude"] = 25.0336693
-    message["longitude"] = 121.5618487
-    return message
 
+def getbonusImageMessage(originalContentUrl=F"{end_point}/static/bonus/1.png"):
+    return getImageMessage(originalContentUrl)
 
-def getTaipei101VideoMessage():
-    message = dict()
-    message["type"] = "video"
-    message["originalContentUrl"] = F"{end_point}/static/taipei_101_video.mp4"
-    message["previewImageUrl"] = F"{end_point}/static/taipei_101_video.mp4"    
-
-    return message
-
-
-def getMRTSoundMessage():
-    message = dict()
-    message["type"] = "audio"
-    message["originalContentUrl"] = F"{end_point}/static/mrt_sound.m4a"
-   # import audioread
-   # with audioread.audio_open('static/mrt_sound.m4a') as f:
-        # totalsec contains the length in float
-   #     totalsec = f.duration
-   # message["duration"] = totalsec * 1000
-    message["duration"] = 33 * 1000
-    return message
-
-
-def getTaipei101ImageMessage(originalContentUrl=F"{end_point}/static/taipei_101.jpeg"):
+def getbonus2ImageMessage(originalContentUrl=F"{end_point}/static/bonus/3.png"):
     return getImageMessage(originalContentUrl)
 
 def getImageMessage(originalContentUrl):
@@ -539,15 +518,6 @@ def pushMessage(payload):
 def getTotalSentMessageCount():
     response = requests.get('https://api.line.me/v2/bot/message/quota/consumption', headers=HEADER)
     return F"總共使用了{response.json()['totalUsage']}則"
-
-
-def getTodayCovid19Message():
-    r = requests.get('https://covid-19.nchc.org.tw/api/covid19?CK=covid-19@nchc.org.tw&querydata=3001&limited=TWN')
-    data = r.json()[0]
-    date = data["a04"]
-    total_count = data["a05"]
-    count = data["a06"]
-    return F"日期：{date}, 人數：{count}, 確診總人數：{total_count}"
 
 
 def allowed_file(filename):

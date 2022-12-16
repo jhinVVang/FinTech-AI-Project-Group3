@@ -491,7 +491,7 @@ def a_login():
     return render_template("admin/login.html", form=form)
 
 
-@app.route('/logout/')
+@app.route('/admin_logout/')
 @admin_login
 def a_logout():
     """
@@ -500,6 +500,16 @@ def a_logout():
     session.pop("admin", None)
     session.pop("admin_id", None)
     return redirect(url_for("a_login"))
+
+# @app.route("/logout/")
+# def logout():
+#     """
+#     退出登錄
+#     """
+#     # 重定向到home模塊下的登錄。
+#     session.pop("user_id", None)
+#     session.pop("username", None)
+#     return redirect(url_for('index'))
 
 
 @app.route("/user/list/", methods=["GET"])
