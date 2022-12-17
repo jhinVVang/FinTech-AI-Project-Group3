@@ -67,6 +67,7 @@ class SuperCat(db.Model):
     __tablename__ = "supercat"
     id = db.Column(db.Integer, primary_key=True)  # 編號
     cat_name = db.Column(db.String(100))  # 大分類名稱
+    cat_eng_name = db.Column(db.String(100))  # 大分類英文名稱
     addtime = db.Column(db.DateTime, index=True, default=datetime.now)  # 添加時間
     subcat = db.relationship("SubCat", backref='supercat')  # 外鍵關系關聯
     goods = db.relationship("Goods", backref='supercat')  # 外鍵關系關聯
