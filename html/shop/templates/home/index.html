@@ -212,6 +212,58 @@
 					</div>
 				</div>
 				<!-- //打折商品 選項卡-->
+				
+					<!-- 活動商品選項卡 -->
+					<h3 class="index_h3"><span class="index_title">活動商品</span></h3>
+					<div class="ja-tab-subcontent">
+						<div class="mijoshop">
+							<div class="container_oc">
+								<div class="row">
+									<!-- 循環顯示活動商品 ：添加12條商品信息-->
+									{% for item in festival_goods %}
+									<div class="product-grid col-lg-2 col-md-3 col-sm-6 col-xs-12">
+										<div class="product-thumb transition">
+											<div class="actions">
+												<div class="image">
+													<a href="/goods_detail/{{item.id}}?type={{item.supercat_id}}">
+														<img src="{{url_for('static',filename='images/goods/'+item.picture)}}"
+															 alt="{{item.name}}" class="img-responsive">
+													</a>
+												</div>
+												<div class="button-group">
+													<div class="cart">
+														<button class="btn btn-primary btn-primary" type="button"
+															data-toggle="tooltip"
+															onclick='javascript:window.location.href="/cart_add/?goods_id={{item.id}}&number=1"; '
+															style="display: none; width: 33.3333%;"
+															data-original-title="加入到購物車">
+															<i class="fa fa-shopping-cart"></i>
+														</button>
+													</div>
+												</div>
+											</div>
+											<div class="caption">
+												<div class="name" style="height: 40px">
+													<a href="/goods_detail/{{item.id}}?type={{item.supercat_id}}" style="width: 95%">
+														{{item.name}}</a>
+												</div>
+												<div class="name" style="margin-top: 10px">
+													<span style="color: #0885B1">分類：</span>{{item.subcat.cat_name}}
+												</div>
+												<span class="price"> 價格：{{item.current_price}} 元</span>
+												<!-- <br> <span class="oldprice">原價：{{item.original_price}}元 -->
+												</span>
+											</div>
+										</div>
+									</div>
+									{% endfor %}
+									<!-- 循環顯示打折商品 ：添加12條商品信息-->
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- //活動商品 選項卡-->
 			</div>
 		</div>
 	</div>

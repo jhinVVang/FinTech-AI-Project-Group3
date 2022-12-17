@@ -359,6 +359,15 @@ class GoodsForm(FlaskForm):
             "class": "is_radio"
         }
     )
+    is_festival = RadioField(
+        label='是否活動',
+        description="是否活動",
+        coerce=int,
+        choices=[(0, '否'), (1, '是')], default=0,
+        render_kw={
+            "class": "is_radio"
+        }
+    )
     introduction = TextAreaField(
         label=" 商品簡介",
         validators=[

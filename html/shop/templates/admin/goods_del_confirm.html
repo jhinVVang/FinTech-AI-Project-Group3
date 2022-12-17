@@ -71,6 +71,14 @@
                     是特價商品
                 {% endif %}
             </td>
+            <td>&nbsp;是否活動：</td>
+            <td>
+                {% if goods.is_festival%}
+                    不是活動商品
+                {% else %}
+                    是活動商品
+                {% endif %}
+            </td>
           </tr>
           <tr>
             <td height="103">&nbsp;商品簡介：</td>

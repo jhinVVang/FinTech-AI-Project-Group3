@@ -62,6 +62,11 @@ def index():
                                            getbonus2ImageMessage()]
                 elif text == "製作者名單":
                     payload["messages"] = [getproducerCarouselMessage()]
+                elif text == "預約鑑賞":
+                    data = {
+                            "action" : 'reserve'
+                        }
+                    payload["messages"] = [getReservedConfirmMessage(data)]
                 else:
                     payload["messages"] = [
                             {
@@ -69,12 +74,6 @@ def index():
                                 "text": text
                             }
                         ]
-                replyMessage(payload)
-            elif events[0]["message"]["type"] == "location":
-                title = events[0]["message"]["title"]
-                latitude = events[0]["message"]["latitude"]
-                longitude = events[0]["message"]["longitude"]
-                payload["messages"] = [getLocationConfirmMessage(title, latitude, longitude)]
                 replyMessage(payload)
         elif events[0]["type"] == "postback":
             if "params" in events[0]["postback"]:
@@ -89,7 +88,7 @@ def index():
             else:
                 data = json.loads(events[0]["postback"]["data"])
                 action = data["action"]
-                if action == "get_near":
+                if action == "reserve":
                     data["action"] = "get_detail"
                     payload["messages"] = [getReserveMessage(data)]
                 elif action == "get_detail":
@@ -430,13 +429,10 @@ def getReserveMessage(data):
     }
     return message
 
-def getLocationConfirmMessage(title, latitude, longitude):
+def getReservedConfirmMessage(data):
     data = {
-        "title" : title,
-        "latitude" : latitude, 
-        "longitude" : longitude,
-        "action" : 'get_near'
-        }
+        "action" : 'reserve'
+    }
     message = {
       "type": "template",
       "altText": "確認預約",

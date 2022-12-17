@@ -35,8 +35,13 @@
 													<div class="btn-group">
 														<button type="button" onclick="addCart()" class="btn btn-primary btn-primary">
 															<i class="fa fa-shopping-cart"></i> 添加到購物車</button>
-														<button type="button" id="button-wishlist" data-toggle="tooltip" class="btn"
-														 title="收藏" data-original-title="收藏"> <i class="fa fa-heart"></i></button>
+                                                        <!-- # new!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!	 -->
+                                                        <button type="button" onclick="addLove()" class="btn btn-primary btn-primary">
+                                                                <i class="fa fa-heart"></i> 收藏</button>
+                                                        <!-- # new!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!	 -->
+															
+														<!-- <button type="button" id="button-wishlist" data-toggle="tooltip" class="btn"
+														 title="收藏" data-original-title="收藏"> <i class="fa fa-heart"></i></button> -->
 													</div>
 												</div>
 											</div>
@@ -176,4 +181,23 @@ function addCart() {
     window.location.href = '/cart_add?goods_id='+goods_id+"&number="+number
     }
 </script>
+<!-- # new!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<script type="text/javascript">
+    function addLove() {
+        var user_id = {{ user_id }}; //獲取當前用戶的id
+        var goods_id = {{ goods.id }}
+        if( !user_id){
+            window.location.href = "/login/"; //如果沒有登錄，跳轉到登錄頁
+            return ;
+        }
+        var number = $('#shuliang').val();//獲取輸入的商品數量
+        //驗證輸入的數量是否合法
+        if (number < 1) {//如果輸入的數量不合法
+            alert('數量不能小於1！');
+            return;
+        }
+        window.location.href = '/love_add?goods_id='+goods_id+"&number="+number
+        }
+</script>
+<!-- # new!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
 {% endblock %}

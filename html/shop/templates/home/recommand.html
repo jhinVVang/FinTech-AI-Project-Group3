@@ -148,7 +148,26 @@
             <button><a href="#">提交</a></button>
         </div>
     </form>
-    
+    <!-- # new!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+    <div>
+        {% for item in orders%}
+        <tr>
+           <td class="text-center image" width="10%">{{item.orders.id}}</td>
+           <td class="text-center picture" width="20%">
+               <a href="{{url_for('goods_detail',id=item.goods.id)}}">
+               <img width="80px" src="{{url_for('static',filename='images/goods/'+item.goods.picture)}}"> </a>
+           </td>
+           <td class="text-center name">{{item.goods.name}}</td>
+           <td class="text-center quantity">{{item.number}}件</td>
+           <td class="text-center quantity">{{item.goods.current_price}}元</td>
+           <td class="text-center quantity">{{item.number*item.goods.current_price}}元</td>
+           <td class="text-center quantity">{{item.orders.recevie_name}}</td>
+           <td class="text-center quantity">{{item.orders.recevie_tel}}</td>
+           <td class="text-center quantity">{{item.orders.addtime}}</td>
+       </tr>
+       {% endfor %}
+    </div>
+    <!-- # new!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
 </body>
 </html>
 

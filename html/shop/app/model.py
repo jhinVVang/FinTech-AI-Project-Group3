@@ -100,12 +100,14 @@ class Goods(db.Model):
     views_count = db.Column(db.Integer, default=0)  # 瀏覽次數
     is_sale = db.Column(db.Boolean(), default=0)  # 是否特價
     is_new = db.Column(db.Boolean(), default=0)  # 是否新品
+    is_festival = db.Column(db.Boolean(), default=0)  # 是否活動
 
     # 設置外鍵
     supercat_id = db.Column(db.Integer, db.ForeignKey('supercat.id'))  # 所屬大分類
     subcat_id = db.Column(db.Integer, db.ForeignKey('subcat.id'))  # 所屬小分類
     addtime = db.Column(db.DateTime, index=True, default=datetime.now)  # 添加時間
     cart = db.relationship("Cart", backref='goods')  # 訂單外鍵關系關聯
+    love = db.relationship("Love", backref='goods')  # 訂單外鍵關系關聯
     orders_detail = db.relationship("OrdersDetail", backref='goods')  # 訂單外鍵關系關聯
 
     def __repr__(self):
@@ -124,6 +126,20 @@ class Cart(db.Model):
     def __repr__(self):
         return "<Cart %r>" % self.id
 
+# new!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+# 收藏
+class Love(db.Model):
+    __tablename__ = 'love'
+    id = db.Column(db.Integer, primary_key=True)  # 編號
+    goods_id = db.Column(db.Integer, db.ForeignKey('goods.id'))  # 所屬商品
+    user_id = db.Column(db.Integer)  # 所屬用戶
+    number = db.Column(db.Integer, default=0)  # 購買數量
+    addtime = db.Column(db.DateTime, index=True, default=datetime.now)  # 添加時間
+
+    def __repr__(self):
+        return "<Love %r>" % self.id
+
+# new!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 # 訂單
 class Orders(db.Model):

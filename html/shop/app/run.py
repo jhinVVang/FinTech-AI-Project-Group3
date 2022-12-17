@@ -178,7 +178,15 @@ def index():
     sale_goods = Goods.query.filter_by(is_sale=1).order_by(
         Goods.addtime.desc()
     ).limit(12).all()
-    return render_template('home/index.html', new_goods=new_goods, sale_goods=sale_goods, hot_goods=hot_goods)  # 渲染模板
+    
+# new!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    # 獲取12個活動商品
+    festival_goods = Goods.query.filter_by(is_festival=1).order_by(
+        Goods.addtime.desc()
+    ).limit(12).all()
+    
+# new!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    return render_template('home/index.html', new_goods=new_goods, sale_goods=sale_goods, festival_goods=festival_goods, hot_goods=hot_goods)  # 渲染模板
 
 
 @app.route("/goods_list/<int:supercat_id>/")
@@ -214,7 +222,7 @@ def goods_detail(id=None):  # id 為商品ID
 @app.route("/search/")
 def goods_search():
     """
-    搜素功能
+    搜索功能
     """
     page = request.args.get('page', 1, type=int)  # 獲取page參數值
     keywords = request.args.get('keywords', '', type=str)
@@ -231,6 +239,76 @@ def goods_search():
     hot_goods = Goods.query.order_by(Goods.views_count.desc()).limit(7).all()
     return render_template("home/goods_search.html", page_data=page_data, keywords=keywords, hot_goods=hot_goods)
 
+# new!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+@app.route("/like_add/")
+@user_login
+def love_add():
+    """
+    添加收藏
+    """
+    love = Love(
+        goods_id=request.args.get('goods_id'),
+        number=request.args.get('number'),
+        user_id=session.get('user_id', 0)  # 獲取用戶ID,判斷用戶是否登錄
+    )
+    db.session.add(love)  # 添加數據
+    db.session.commit()  # 提交數據
+    return redirect(url_for('love_list'))
+
+@app.route("/love_clear/")
+@user_login
+def love_clear():
+    """
+    清空收藏
+    """
+    user_id = session.get('user_id', 0)  # 獲取用戶ID,判斷用戶是否登錄
+    Love.query.filter_by(user_id=user_id).update({'user_id': 0})
+    db.session.commit()
+    return redirect(url_for('love_list'))
+
+
+@app.route("/love_list/")
+@user_login
+def slove_list():
+    user_id = session.get('user_id', 0)
+    love = Love.query.filter_by(user_id=int(user_id)).order_by(Love.addtime.desc()).all()
+    if love:
+        return render_template('home/love_list.html', love=love)
+    else:
+        return render_template('home/empty_love_list.html')
+
+
+@app.route("/love_order/", methods=['GET', 'POST'])
+@user_login
+def love_order():
+    if request.method == 'POST':
+        user_id = session.get('user_id', 0)  # 獲取用戶id
+        # 添加訂單
+        orders = Orders(
+            user_id=user_id,
+            recevie_name=request.form.get('recevie_name'),
+            recevie_tel=request.form.get('recevie_tel'),
+            recevie_address=request.form.get('recevie_address'),
+            remark=request.form.get('remark')
+        )
+        db.session.add(orders)  # 添加數據
+        db.session.commit()  # 提交數據
+        # 添加訂單詳情
+        love = Love.query.filter_by(user_id=user_id).all()
+        object = []
+        for item in love:
+            object.append(
+                OrdersDetail(
+                    order_id=orders.id,
+                    goods_id=item.goods_id,
+                    number=item.number, )
+            )
+        db.session.add_all(object)
+        # 更改喜好狀態
+        Love.query.filter_by(user_id=user_id).update({'user_id': 0})
+        db.session.commit()
+    return redirect(url_for('index'))
+# new!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 @app.route("/cart_add/")
 @user_login
@@ -362,6 +440,7 @@ def a_goods_add():
             current_price=Decimal(data["original_price"]).quantize(Decimal('0.00')),  # 轉化為包含2位小數的形式
             is_new=int(data["is_new"]),
             is_sale=int(data["is_sale"]),
+            is_festival=int(data["is_festival"]),
             introduction=data["introduction"],
         )
         db.session.add(goods)  # 添加數據
@@ -399,6 +478,7 @@ def a_goods_edit(id=None):
         form.subcat_id.data = goods.subcat_id
         form.is_new.data = goods.is_new
         form.is_sale.data = goods.is_sale
+        form.is_festival.data = goods.is_festival
         form.introduction.data = goods.introduction
     elif form.validate_on_submit():
         goods.name = form.data["name"]
@@ -409,6 +489,7 @@ def a_goods_edit(id=None):
         goods.current_price = Decimal(form.data["current_price"]).quantize(Decimal('0.00'))
         goods.is_new = int(form.data["is_new"])
         goods.is_sale = int(form.data["is_sale"])
+        goods.is_festival = int(form.data["is_festival"])
         goods.introduction = form.data["introduction"]
         db.session.add(goods)  # 添加數據
         db.session.commit()  # 提交數據
