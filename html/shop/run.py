@@ -189,8 +189,25 @@ def index():
 @app.route('/user/')
 @user_login
 def user():
-    user_id=session.get('user_id,0')
+    user_id=session.get('user_id',0)
+    love = Love.query.filter_by(user_id=int(user_id)).order_by(Love.addtime.desc()).all()
+    if love:
+        return render_template('home/user.html', love=love)
+    else:
+        return render_template('home/user.html')
     return render_template('home/user.html')
+
+# # new!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+# @app.route("/love_list/")
+# @user_login
+# def love_list():
+#     user_id = session.get('user_id', 0)
+#     love = Love.query.filter_by(user_id=int(user_id)).order_by(Love.addtime.desc()).all()
+#     if love:
+#         return render_template('home/love_list.html', love=love)
+#     else:
+#         return render_template('home/empty_love_list.html')
+# # new!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!     
 
 @app.route('/recommand/')
 def recommand():

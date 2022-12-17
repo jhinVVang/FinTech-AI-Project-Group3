@@ -332,6 +332,7 @@
     </div>
 
     <!-- 右邊 -->
+
     <div class="container-right">
         <div class="container-fluid" >
             <!-- <div class="nav justify-content-end">
@@ -345,8 +346,35 @@
             <ul >
                 <h4 style="padding-top: 10px; padding-bottom: 3px;">已收藏</h4>
                 <hr>
-                <div id="home">
-                    <!-- Swiper -->
+                <!-- # new!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+                                            <div id="home">
+                                            <div class="swiper mySwiper">
+                                                <div class="swiper-slide">
+                                                    <!-- 遍歷收藏清單中的商品並顯示 -->
+                                                        {% for item in love %}
+                                                        <div class="swiper mySwiper" style="margin:5px">
+                                                            <a href="{{url_for('goods_detail',id=item.goods.id)}}">
+                                                            <img src="{{url_for('static',filename='images/goods/'+item.goods.picture)}}"></a>
+                                                        </div>
+                                                        {% endfor %}
+                                                        <!-- //遍歷購物車中的商品並顯示 -->
+                                                </div>
+                                            </div>
+                                            </div>
+                                        </div>
+                                    </div>                   
+                                </div>
+                            </div>
+                        </div>
+                        <!-- //頁面主體內容 -->
+                    <!-- </div>
+                </div> -->
+            
+                <!-- # new!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+                
+                <!-- <div id="home">
+                <ul>
+                    Swiper
                     <div class="swiper mySwiper">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide"><img src="{{url_for('static',filename='images/goods/1.jpg')}}"></div>
@@ -362,13 +390,12 @@
                         <div class="swiper-button-prev"></div>
                     </div>    
                 </div>
-            </ul>
-<!-- 
-            <ul>
+            </ul> -->
+            <!-- <ul>
                 <h4 style="padding-top: 10px; padding-bottom: 3px;">已上架</h4>
                 <hr>
                 <div id="menu1">
-                    <!-- Swiper -->
+                    Swiper
                     <div class="swiper mySwiper">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide"><img src="{{url_for('static',filename='images/goods/9.jpg')}}"></div>
