@@ -347,16 +347,53 @@
                 <h4 style="padding-top: 10px; padding-bottom: 3px;">已收藏</h4>
                 <hr>
                 <!-- # new!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-                                            <div id="home">
-                                            <div class="swiper mySwiper">
-                                                <div class="swiper-slide">
-                                                    <!-- 遍歷收藏清單中的商品並顯示 -->
-                                                        {% for item in love %}
-                                                        <div class="swiper mySwiper" style="margin:5px">
+                <div class="ja-tab-content ja-tab-content col-6 active" style="opacity: 1; width: 100%; visibility: visible;">
+                <div class="ja-tab-subcontent">
+                    <div class="mijoshop">
+                        <div class="container_oc">
+                            <div class="row" style="margin-right: 15px;">
+                                <!-- 遍歷收藏清單中的商品並顯示 -->
+                                    {% for item in love %}
+                                        <div class="product-grid col-lg-2 col-md-3 col-sm-6 col-xs-12">
+                                            <div class="product-thumb transition">
+                                                 <div class="actions">
+                                                        <div class="image" style="padding-top:8px; padding-right: 8px;">
                                                             <a href="{{url_for('goods_detail',id=item.goods.id)}}">
                                                             <img src="{{url_for('static',filename='images/goods/'+item.goods.picture)}}"></a>
                                                         </div>
+                                                        <div class="button-group">
+                                                            <div class="cart">
+                                                                <button class="btn btn-primary btn-primary" type="button"
+                                                                    data-toggle="tooltip"
+                                                                    onclick='javascript:window.location.href="/cart_add/?goods_id={{item.id}}&number=1"; '
+                                                                    style="display: none; width: 33.3333%;"
+                                                                    data-original-title="加入到購物車">
+                                                                    <i class="fa fa-shopping-cart"></i>
+                                                                </button>
+                                                                <!-- 沒實際功能 -->
+                                                                <button class="btn btn-primary btn-primary" type="button"
+                                                                    data-toggle="tooltip"
+                                                                    onclick='javascript:window.location.href="/love_delete/?goods_id={{item.id}}"; '
+                                                                    style="display: none; width: 33.3333%;"
+                                                                    data-original-title="取消收藏">
+                                                                    <i class="fa fa-xmark"></i>
+                                                                </button>
+                                                                <!-- 沒實際功能 -->
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="caption">
+                                                        <div class="name" style="height: 50px">
+                                                            <a href="/goods_detail/{{item.id}}?type={{item.supercat_id}}" style="width: 100%">
+                                                                品名：{{item.goods.name}}</a>
+                                                        </div>
+                                                        <span class="price"> 價格：{{item.goods.current_price}} 元
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
                                                         {% endfor %}
+                                                        
                                                         <!-- //遍歷購物車中的商品並顯示 -->
                                                 </div>
                                             </div>
@@ -364,6 +401,12 @@
                                         </div>
                                     </div>                   
                                 </div>
+                                
+<div class="buttons">
+    <div class="pull-right" style="margin-right: 20px;">
+        <a href="{{url_for('love_clear')}}" class="btn btn-primary btn-default">清空收藏清單</a>
+    </div>
+</div>
                             </div>
                         </div>
                         <!-- //頁面主體內容 -->
@@ -379,12 +422,6 @@
                         <div class="swiper-wrapper">
                             <div class="swiper-slide"><img src="{{url_for('static',filename='images/goods/1.jpg')}}"></div>
                             <div class="swiper-slide"><img src="{{url_for('static',filename='images/goods/2.jpg')}}"></div>
-                            <div class="swiper-slide"><img src="{{url_for('static',filename='images/goods/3.jpg')}}"></div>
-                            <div class="swiper-slide"><img src="{{url_for('static',filename='images/goods/4.jpg')}}"></div>
-                            <div class="swiper-slide"><img src="{{url_for('static',filename='images/goods/5.jpg')}}"></div>
-                            <div class="swiper-slide"><img src="{{url_for('static',filename='images/goods/6.jpg')}}"></div>
-                            <div class="swiper-slide"><img src="{{url_for('static',filename='images/goods/7.jpg')}}"></div>
-                            <div class="swiper-slide"><img src="{{url_for('static',filename='images/goods/8.jpg')}}"></div>
                         </div>
                         <div class="swiper-button-next"></div>
                         <div class="swiper-button-prev"></div>
@@ -439,10 +476,10 @@
     </div>
 </div>
  <!-- Swiper JS -->
- <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+ <!-- <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script> -->
 
  <!-- Initialize Swiper -->
- <script>
+ <!-- <script>
    var swiper = new Swiper(".mySwiper", {
      slidesPerView: 4,
      spaceBetween: 30,
@@ -458,8 +495,7 @@
        prevEl: ".swiper-button-prev",
      },
    });
- </script>
-
+ </script> -->
 
 
 </body>

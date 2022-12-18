@@ -140,18 +140,31 @@
 																data-original-title="加入到購物車">
 																<i class="fa fa-shopping-cart"></i>
 															</button>
+														
+														<!-- # new!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!	 -->
+															
+															<button class="btn btn-primary btn-primary"
+																	type="button" data-toggle="tooltip"
+																	onclick='javascript:window.location.href="/love_add/?goods_id={{item.id}}&number=1"; '
+																	style=" width: 33.3333%;"
+																	data-original-title="收藏">
+																	<i class="fa fa-heart"></i>
+															</button>
+														<!-- # new!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
 														</div>
 													</div>
 												</div>
 												<div class="caption">
-													<div class="name" style="height: 40px">
-														<a href="/goods_detail/{{item.id}}?type={{item.supercat_id}}">
-															{{item.name}}
-														</a>
+													<div class="name" style="height: 20px">
+														<a href="/goods_detail/{{item.id}}?type={{item.supercat_id}}" style="width: 95%">
+															品名：{{item.name}}</a>
 													</div>
-													<p class="price">
-														價格：{{item.current_price}}元
-													</p>
+													<div class="name" style="margin-top: 10px">
+														<span style="color: #0885B1">分類：</span>{{item.subcat.cat_name}}
+													</div>
+													<span class="price"> 特價：{{item.current_price}} 元
+													</span><br> <span class="oldprice">原價：{{item.original_price}}元
+													</span>
 												</div>
 											</div>
 										</div>
@@ -197,9 +210,9 @@
 												</div>
 											</div>
 											<div class="caption">
-												<div class="name" style="height: 40px">
+												<div class="name" style="height: 20px">
 													<a href="/goods_detail/{{item.id}}?type={{item.supercat_id}}" style="width: 95%">
-														{{item.name}}</a>
+														品名：{{item.name}}</a>
 												</div>
 												<div class="name" style="margin-top: 10px">
 													<span style="color: #0885B1">分類：</span>{{item.subcat.cat_name}}
@@ -252,9 +265,9 @@
 												</div>
 											</div>
 											<div class="caption">
-												<div class="name" style="height: 40px">
+												<div class="name" style="height: 20px">
 													<a href="/goods_detail/{{item.id}}?type={{item.supercat_id}}" style="width: 95%">
-														{{item.name}}</a>
+														品名：{{item.name}}</a>
 												</div>
 												<div class="name" style="margin-top: 10px">
 													<span style="color: #0885B1">分類：</span>{{item.subcat.cat_name}}

@@ -182,7 +182,6 @@ def index():
     festival_goods = Goods.query.filter_by(is_festival=1).order_by(
         Goods.addtime.desc()
     ).limit(12).all()
-    
 # new!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     return render_template('home/index.html', new_goods=new_goods, sale_goods=sale_goods, festival_goods=festival_goods, hot_goods=hot_goods)  # 渲染模板
 
@@ -251,7 +250,7 @@ def goods_detail(id=None):  # id 為商品ID
 @app.route("/search/")
 def goods_search():
     """
-    搜素功能
+    搜索功能
     """
     page = request.args.get('page', 1, type=int)  # 獲取page參數值
     keywords = request.args.get('keywords', '', type=str)
@@ -284,7 +283,20 @@ def love_add():
     db.session.add(love)  # 添加數據
     db.session.commit()  # 提交數據
     return redirect(url_for('love_list'))
+# <!-- 沒實際功能 -->
+@app.route("/love_delete/")
+@user_login
+def love_delete():
+    """
+    取消收藏
+    """
 
+    goods_id=request.args.get('goods_id')
+    user_id=session.get('user_id', 0)  # 獲取用戶ID,判斷用戶是否登錄
+    Love.query.filter_by(user_id=user_id, goods_id=goods_id).update({'user_id': 0}) # 刪除數據
+    db.session.commit()  # 提交數據
+    return redirect(url_for('user'))
+# <!-- 沒實際功能 -->
 @app.route("/love_clear/")
 @user_login
 def love_clear():
@@ -603,16 +615,6 @@ def a_logout():
     session.pop("admin", None)
     session.pop("admin_id", None)
     return redirect(url_for("a_login"))
-
-# @app.route("/logout/")
-# def logout():
-#     """
-#     退出登錄
-#     """
-#     # 重定向到home模塊下的登錄。
-#     session.pop("user_id", None)
-#     session.pop("username", None)
-#     return redirect(url_for('index'))
 
 
 @app.route("/user/list/", methods=["GET"])

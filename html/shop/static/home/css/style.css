@@ -46,7 +46,7 @@ img{
 }
 
 .username a{
-    font-size: 20px;
+    font-size: 16px;
     color: #eaeaea;
 }
 .nav-item button{
@@ -70,7 +70,7 @@ img{
 
 #sidebar ul ul a {
     padding: 20px;
-    font-size: 20px;
+    font-size: 14px;
     display: block;
     text-decoration: none;
     background-color: #c5a99e;
@@ -98,8 +98,8 @@ ul ul li a {
 } 
 
 .nav-item button{
-    margin-left: 20px;
-    font-size: 22px;
+    margin-left: 0px;
+    font-size: 18px;
     background-color: #c5a99e;
 }
 /* 右邊畫面 */
