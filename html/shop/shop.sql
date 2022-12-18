@@ -113,6 +113,71 @@ INSERT INTO `brand` (`id`, `brand_name`, `addtime`, `updated_time`) VALUES
 -- --------------------------------------------------------
 
 --
+-- 資料表結構 `orders`
+--
+
+CREATE TABLE `orders` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `recevie_name` varchar(255) DEFAULT NULL,
+  `recevie_address` varchar(255) DEFAULT NULL,
+  `recevie_tel` varchar(255) DEFAULT NULL,
+  `remark` varchar(255) DEFAULT NULL,
+  `addtime` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- 傾印資料表的資料 `orders`
+--
+
+INSERT INTO `orders` (`id`, `user_id`, `recevie_name`, `recevie_address`, `recevie_tel`, `remark`, `addtime`) VALUES
+(21, 3, '測試', '這是誰', '18910441510', '閃電法師', '2022-12-09 18:50:36'),
+(22, 3, '測試3', '手動閥', '18910441510', '手動閥', '2022-12-09 18:52:26'),
+(23, 3, '側室', '123', '18910441510', '的所發生的', '2022-12-09 18:52:50'),
+(24, 3, '張三', '長春', '18910441510', '測試', '2018-11-01 09:06:16'),
+(25, 3, '李四', '長春', '18910441510', '阿斯頓發生', '2018-11-01 09:52:41'),
+(26, 6, '小明', '吉林長春', '18910441510', '請送貨上門', '2018-11-02 15:55:01'),
+(27, 6, '郭靖', '北京回龍觀', '18910441510', '快點發貨', '2018-11-02 15:55:50'),
+(28, 7, '123', '111111', '11111', '', '2022-12-14 10:24:40');
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `orders_detail`
+--
+
+CREATE TABLE `orders_detail` (
+  `id` int(11) NOT NULL,
+  `goods_id` int(11) DEFAULT NULL,
+  `order_id` int(11) DEFAULT NULL,
+  `number` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- 傾印資料表的資料 `orders_detail`
+--
+
+INSERT INTO `orders_detail` (`id`, `goods_id`, `order_id`, `number`) VALUES
+(8, 2, 21, 1),
+(9, 3, 21, 1),
+(10, 18, 22, 1),
+(11, 19, 22, 1),
+(12, 47, 23, 1),
+(13, 49, 23, 1),
+(14, 50, 23, 1),
+(15, 56, 24, 1),
+(16, 2, 25, 1),
+(17, 3, 25, 5),
+(18, 2, 26, 1),
+(19, 17, 26, 1),
+(20, 60, 26, 1),
+(21, 4, 27, 1),
+(22, 7, 27, 1),
+(23, 60, 28, 1);
+
+-- --------------------------------------------------------
+
+--
 -- 資料表結構 `cart`
 --
 
@@ -8511,6 +8576,22 @@ ALTER TABLE `brand`
   ADD KEY `ix_brand_updated_time` (`updated_time`);
 
 --
+-- 資料表索引 `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user_id` (`user_id`),
+  ADD KEY `ix_orders_addtime` (`addtime`);
+
+--
+-- 資料表索引 `orders_detail`
+--
+ALTER TABLE `orders_detail`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `goods_id` (`goods_id`),
+  ADD KEY `order_id` (`order_id`);
+
+--
 -- 資料表索引 `cart`
 --
 ALTER TABLE `cart`
@@ -8593,6 +8674,19 @@ ALTER TABLE `admin`
 ALTER TABLE `brand`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
+
+--
+-- 使用資料表自動遞增(AUTO_INCREMENT) `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+
+--
+-- 使用資料表自動遞增(AUTO_INCREMENT) `orders_detail`
+--
+ALTER TABLE `orders_detail`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `cart`
 --
@@ -8638,6 +8732,18 @@ ALTER TABLE `user`
 --
 -- 已傾印資料表的限制式
 --
+--
+-- 資料表的限制式 `orders`
+--
+ALTER TABLE `orders`
+  ADD CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`);
+
+--
+-- 資料表的限制式 `orders_detail`
+--
+ALTER TABLE `orders_detail`
+  ADD CONSTRAINT `orders_detail_ibfk_1` FOREIGN KEY (`goods_id`) REFERENCES `goods` (`id`),
+  ADD CONSTRAINT `orders_detail_ibfk_2` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`);
 
 --
 -- 資料表的限制式 `cart`
