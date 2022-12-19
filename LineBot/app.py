@@ -642,10 +642,10 @@ def getPlayStickerMessage():
 
 
 
-def getbonusImageMessage(originalContentUrl=F"{end_point}/static/bonus/1.png"):
+def getbonusImageMessage(originalContentUrl=F"{end_point}/static/bonus/1.jpg"):
     return getImageMessage(originalContentUrl)
 
-def getbonus2ImageMessage(originalContentUrl=F"{end_point}/static/bonus/3.png"):
+def getbonus2ImageMessage(originalContentUrl=F"{end_point}/static/bonus/3.jpg"):
     return getImageMessage(originalContentUrl)
 
 def getImageMessage(originalContentUrl):
