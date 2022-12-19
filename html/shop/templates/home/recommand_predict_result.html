@@ -22,9 +22,77 @@
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous"> -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
   
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+
     <!-- Demo styles -->
     <style>
-        
+        .swiper {
+          width: 100%;
+          height: 100%;
+        }
+  
+        .swiper-slide {
+          text-align: center;
+          font-size: 18px;
+          background: #fff;
+  
+          /* Center slide text vertically */
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: -webkit-flex;
+          display: flex;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+          -webkit-justify-content: center;
+          justify-content: center;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          -webkit-align-items: center;
+          align-items: center;
+        }
+  
+        .swiper-slide img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+ 
+    </style><style>
+        .swiper {
+          width: 100%;
+          height: 100%;
+        }
+  
+        .swiper-slide {
+          text-align: center;
+          font-size: 18px;
+          background: #fff;
+  
+          /* Center slide text vertically */
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: -webkit-flex;
+          display: flex;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+          -webkit-justify-content: center;
+          justify-content: center;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          -webkit-align-items: center;
+          align-items: center;
+        }
+  
+        .swiper-slide img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+    
     #basic-price{
         width: 20%;
     }
@@ -52,121 +120,7 @@
                 
             
 <body>
-<div class="container-all ">
-    <!-- 左邊 -->
-    <div class="container-left ">
-        <!-- 導覽列 -->
-        <nav id="sidebar">
-            
-        
-            <div class="bar">
-                <form id="createdForm" action="predict" method="post" style="margin: 20px;">
-        
-                    <label style="margin-top: 10px;">收入(income)</label>
-                    <select class="form-select" aria-label="Default select example" name="income" style="width: 200px;">
-                        <option selected>請選擇</option>
-                        <option value="<=50K"><=50K</option>
-                        <option value=">50K">>50K</option>
-                    </select>
-                
-                    <label>性別(Sex)</label>
-                    <select class="form-select" aria-label="Default select example" name="sex" style="width: 200px;">
-                        <option selected>請選擇</option>
-                        <option value="Men">Male</option>
-                        <option value="Women">Female</option>
-                        <option value="Unisex">Unisex</option>
-                    </select>
-                
-                    <label>材質屬性(Material)</label>
-                    <select class="form-select" aria-label="Default select example" name="material" style="width: 200px;">
-                        <option selected>請選擇</option>
-                        <option value="Gold 14ct">Gold 14ct</option>
-                        <option value="Gold 18ct">Gold 18ct</option>
-                        <option value="Stainless Steel">Stainless Steel</option>
-                        <option value="Silver">Silver</option>
-                        <option value="Metal Alloy">Metal Alloy</option>
-                        <option value="Brass">Brass</option>
-                        <option value="Gold 9ct">Gold 9ct</option>
-                        <option value="Wood">Wood</option>
-                    </select>
-            
-                    <label>品牌(Brand)</label>
-                    <select class="form-select" aria-label="Default select example" name="brand" style="width: 200px;">
-                        <option selected>請選擇</option>
-                        <option value="Haritidis">Haritidis</option>
-                        <option value="Nomination">Nomination</option>
-                        <option value="Paul Hewitt">Paul Hewitt</option>
-                        <option value="PDPAOLA">PDPAOLA</option>
-                        <option value="Fossil">Fossil</option>
-                        <option value="Lily & Rose">Lily & Rose</option>
-                        <option value="Very Gavello">Very Gavello</option>
-                        <option value="Tommy Hilfiger">Tommy Hilfiger</option>
-                        <option value="Rosso Amante">Rosso Amante</option>
-                        <option value="Vogue">Vogue</option>
-                        <option value="JCou">JCou</option>
-                        <option value="Gloria Hope">Gloria Hope</option>
-                        <option value="Daniel Wellington Jewelry">Daniel Wellington Jewelry</option>
-                        <option value="Guess">Guess</option>
-                        <option value="Dyrberg/Kern">Dyrberg/Kern</option>
-                        <option value="Bronzallure">Bronzallure</option>
-                        <option value="Pesavento">Pesavento</option>
-                        <option value="Ania Haie">Ania Haie</option>
-                        <option value="Just Cavalli">Just Cavalli</option>
-                        <option value="Michael Kors">Michael Kors</option>
-                        <option value="Montegrappa">Montegrappa</option>
-                        <option value="Ascot">Ascot</option>
-                        <option value="Skagen">Skagen</option>
-                        <option value="Vitaly">Vitaly</option>
-                        <option value="Cluse">Cluse</option>
-                        <option value="Boss">Boss</option>
-                        <option value="Police">Police</option>
-                        <option value="Sector">Sector</option>
-                        <option value="Carlo Visconti">Carlo Visconti</option>
-                        <option value="UomOro">UomOro</option>
-                    </select>
-            
-                    <label>色澤(color)</label>
-                    <select class="form-select" aria-label="Default select example" name="color" style="width: 200px;">
-                        <option selected>請選擇</option>
-                        <option value="Gold">Gold</option>
-                        <option value="White">White</option>
-                        <option value="Rose">Rose</option>
-                        <option value="White & Gold">White & Gold</option>
-                        <option value="White & Rose">White & Rose</option>
-                        <option value="Black">Black</option>
-                        <option value="White, Gold & Rose">White, Gold & Rose</option>
-                        <option value="Gunmetal">Gunmetal</option>
-                        <option value="Rose & Black">Rose & Black</option>
-                        <option value="Gold & Rose">Gold & Rose</option>
-                    </select>
-                    
-                    <label for="basic-price" class="form-label">購買預算(price)</label>
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" id="basic-price" aria-describedby="basic-addon1" name="price" style="width: 200px;">
-                    </div>
-                    <label for="basic-age" class="form-label">年紀(age)</label>
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" id="basic-age" aria-describedby="basic-addon2" name="age" style="width: 200px;">
-                    </div>
-                    
-                    <div class="submitrecommand">
-                        <input type="submit" id = "btnCreated">
-                    </div>
-    </form>
-            </div>        
-        </nav>
-    </div>
 
-    <!-- 右邊 -->
-
-    <div class="container-right">
-        <div class="container-fluid" >
-            <!-- <div class="nav justify-content-end">
-                <a href="./static/login/popup.html"><img src="./static/imgs/loginin.jpg"></a>
-            </div>   -->
-            <div class="nav justify-content-start">
-            </div>       
-        </div>
             <nav class="container mr-masstop  hidden-sm hidden-xs">
                 <div class="custom">
                     <div>
@@ -185,7 +139,7 @@
                                         <div class="mijoshop">
                                             <div class="container_oc">
                                                 <div class="row">
-                                                    <!-- 循環顯示最新上架商品 ：添加12條商品信息-->
+                                                    <!-- 循環顯示商品 ：添加12條商品信息-->
                                                     {% for item in predict_goods %}
                                                     <div class="product-grid col-lg-2 col-md-3 col-sm-6 col-xs-12">
                                                         <div class="product-thumb transition">
@@ -244,6 +198,7 @@
             
         </div>
     </div>
+</div>
 
 </body>
 </html>

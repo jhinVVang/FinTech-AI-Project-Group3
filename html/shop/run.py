@@ -215,7 +215,6 @@ def user():
 def recommand():
     return render_template('home/recommand.html')
 
-
 @app.route('/knowledge/')
 def knowledge():
     return render_template('home/knowledge.html')
@@ -838,9 +837,10 @@ def predict():
         for i in np_max:
             rec.append(df.iloc[i, 4])
         print(rec)
-
-        
-    return render_template("home/recommand.html", items=rec)
+        predict_goods = Goods.query.filter_by(supercat_id=1).order_by(
+        Goods.addtime.desc()
+        ).limit(6).all()
+    return render_template("home/recommand.html", predict_goods=predict_goods)
 
 if __name__ == '__main__':
     app.run(debug=True)
