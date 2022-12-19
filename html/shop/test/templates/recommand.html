@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+            
+<head>
+
+
+    <!-- JQuery連結 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- css連結 -->
+    <!-- <link rel="stylesheet" href="{{url_for('static',filename='home/css/style.css')}}"> -->
+    <!-- JS連結 -->
+    <!-- <script src="../static/script.js"></script> -->
+    <!-- FontAwesome 連結 -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"> -->
+    <!-- Bootstrap 連結 -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous"> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <!-- <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script> -->
+   
+    <!-- <link rel="stylesheet" href="./slick-1.8.1/slick/slick.css">
+    <link rel="stylesheet" href="./slick-1.8.1/slick/slick-theme.css"> -->
+    
+<style>
+   
+    /* .input-group{
+        width: 50%;
+    } */
+    /* table{
+        width: 50%;
+    } */
+    #basic-price{
+        width: 20%;
+    }
+
+    #basic-age{
+        width: 20%;
+    }
+
+    .age{
+        margin-top: 3%;
+    }
+
+    .submitrecommand{
+        margin-top: 3%;
+    }
+</style>
+</head>
+                
+            
+<body>
+    <form id="createdForm">
+        
+        <label>收入(income)</label>
+        <select class="form-select" aria-label="Default select example" name="income">
+            <option selected>請選擇</option>
+            <option value="<=50K"><=50K</option>
+            <option value=">50K">>50K</option>
+        </select>
+    
+        <label>性別(Sex)</label>
+        <select class="form-select" aria-label="Default select example" name="sex">
+            <option selected>請選擇</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Unisex">Unisex</option>
+        </select>
+    
+        <label>材質屬性(Material)</label>
+        <select class="form-select" aria-label="Default select example" name="material">
+            <option selected>請選擇</option>
+            <option value="Gold 14ct">Gold 14ct</option>
+            <option value="Gold 18ct">Gold 18ct</option>
+            <option value="Stainless Steel">Stainless Steel</option>
+            <option value="Silver">Silver</option>
+            <option value="Metal Alloy">Metal Alloy</option>
+            <option value="Brass">Brass</option>
+            <option value="Gold 9ct">Gold 9ct</option>
+            <option value="Wood">Wood</option>
+        </select>
+
+        <label>品牌(Brand)</label>
+        <select class="form-select" aria-label="Default select example" name="brand">
+            <option selected>請選擇</option>
+            <option value="Haritidis">Haritidis</option>
+            <option value="Nomination">Nomination</option>
+            <option value="Paul Hewitt">Paul Hewitt</option>
+            <option value="PDPAOLA">PDPAOLA</option>
+            <option value="Fossil">Fossil</option>
+            <option value="Lily & Rose">Lily & Rose</option>
+            <option value="Very Gavello">Very Gavello</option>
+            <option value="Tommy Hilfiger">Tommy Hilfiger</option>
+            <option value="Rosso Amante">Rosso Amante</option>
+            <option value="Vogue">Vogue</option>
+            <option value="JCou">JCou</option>
+            <option value="Gloria Hope">Gloria Hope</option>
+            <option value="Daniel Wellington Jewelry">Daniel Wellington Jewelry</option>
+            <option value="Guess">Guess</option>
+            <option value="Dyrberg/Kern">Dyrberg/Kern</option>
+            <option value="Bronzallure">Bronzallure</option>
+            <option value="Pesavento">Pesavento</option>
+            <option value="Ania Haie">Ania Haie</option>
+            <option value="Just Cavalli">Just Cavalli</option>
+            <option value="Michael Kors">Michael Kors</option>
+            <option value="Montegrappa">Montegrappa</option>
+            <option value="Ascot">Ascot</option>
+            <option value="Skagen">Skagen</option>
+            <option value="Vitaly">Vitaly</option>
+            <option value="Cluse">Cluse</option>
+            <option value="Boss">Boss</option>
+            <option value="Police">Police</option>
+            <option value="Sector">Sector</option>
+            <option value="Carlo Visconti">Carlo Visconti</option>
+            <option value="UomOro">UomOro</option>
+        </select>
+
+        <label>色澤(color)</label>
+        <select class="form-select" aria-label="Default select example" name="color">
+            <option selected>請選擇</option>
+            <option value="Gold">Gold</option>
+            <option value="White">White</option>
+            <option value="Rose">Rose</option>
+            <option value="White & Gold">White & Gold</option>
+            <option value="White & Rose">White & Rose</option>
+            <option value="Black">Black</option>
+            <option value="White, Gold & Rose">White, Gold & Rose</option>
+            <option value="Gunmetal">Gunmetal</option>
+            <option value="Rose & Black">Rose & Black</option>
+            <option value="Gold & Rose">Gold & Rose</option>
+        </select>
+        
+        <label for="basic-price" class="form-label">購買預算(price)</label>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" id="basic-price" aria-describedby="basic-addon1" name="price">
+        </div>
+        
+    
+        
+        <label for="basic-age" class="form-label">年紀(age)</label>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" id="basic-age" aria-describedby="basic-addon2" name="age">
+        </div>
+        
+
+        <div class="submitrecommand">
+            <button  id="btnCreated">提交</button>
+        </div>
+    
+    </form>
+
+    <form id="readForm">
+        <button id="btnRead">查詢</button>
+    </form>
+    <div id="readResult">
+
+    </div>
+    
+    <!-- {% for item in items %}
+            console.log(item.income, item.sex, item.j_type, item.brand, item.color, item.price, item.age)
+    {% endfor %} -->
+    
+    <script>
+        const btnCreated = document.querySelector('#btnCreated')
+        const createdForm = document.querySelector('#createdForm')
+
+        btnCreated.addEventListener('click', function (event) {
+            event.preventDefault()
+
+
+            var obj = {};
+            var formData = new FormData(createdForm);
+            for (var key of formData.keys()) {
+                obj[key] = formData.get(key);
+            }
+
+
+            
+            fetch(`http://127.0.0.1:5000/newfeature`, {
+                method: 'POST',
+                headers: { 'content-type': 'application/json' },
+                body: JSON.stringify(obj)
+            })
+                .then(function (res) {
+                    return res.json();
+                })
+                .then((result) => {
+                    console.log(result)
+                    if (result.success) {
+                        alert('新增成功')
+                    }
+                })
+        })
+
+        const btnRead = document.querySelector('#btnRead')
+        const readForm = document.querySelector('#readForm')
+
+        btnRead.addEventListener('click', function (event) {
+            event.preventDefault()
+
+            const formData = Array.from(
+                new FormData(readForm),
+                function (e) { return e.map(encodeURIComponent).join('='); }
+            ).join('&')
+
+            fetch(`http://127.0.0.1:5000/shop/read?${formData}`, {
+                method: 'GET',
+            })
+                .then(function (res) {
+                    return res.json();
+                })
+                .then((data) => {
+                    console.log(data)
+                    if (data.success) {
+
+                        let html = `<h2>您提交的資訊:</h2>
+                        <table style="border:1px solid #000;">
+                        `;
+
+                        for (studentInfoArray of data.result) {
+                            html += `<tr>
+                        <td  style="border:1px solid #000;">年齡：${studentInfoArray[6]}</td>
+                        <td  style="border:1px solid #000;">收入:${studentInfoArray[0]}</td>
+                        <td  style="border:1px solid #000;">性別：${studentInfoArray[1]}</td>
+                        <td  style="border:1px solid #000;">品牌：${studentInfoArray[2]}</td>
+                        <td  style="border:1px solid #000;">材質屬性：${studentInfoArray[3]}</td>
+                        <td  style="border:1px solid #000;">色澤：${studentInfoArray[4]}</td>
+                        <td  style="border:1px solid #000;">預算：${studentInfoArray[5]}</td>`
+                        }
+
+                        html += `</table>`
+
+                        document.querySelector('#readResult').innerHTML = html;
+
+                    } else {
+                        document.querySelector('#readResult').innerHTML = '';
+                        alert('查無資料')
+                    }
+                })
+        })
+
+
+        // <!-- # new!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+    // <div>
+    //     {% for item in orders%}
+    //     <tr>
+    //        <td class="text-center image" width="10%">{{item.orders.id}}</td>
+    //        <td class="text-center picture" width="20%">
+    //            <a href="{{url_for('goods_detail',id=item.goods.id)}}">
+    //            <img width="80px" src="{{url_for('static',filename='images/goods/'+item.goods.picture)}}"> </a>
+    //        </td>
+    //        <td class="text-center name">{{item.goods.name}}</td>
+    //        <td class="text-center quantity">{{item.number}}件</td>
+    //        <td class="text-center quantity">{{item.goods.current_price}}元</td>
+    //        <td class="text-center quantity">{{item.number*item.goods.current_price}}元</td>
+    //        <td class="text-center quantity">{{item.orders.recevie_name}}</td>
+    //        <td class="text-center quantity">{{item.orders.recevie_tel}}</td>
+    //        <td class="text-center quantity">{{item.orders.addtime}}</td>
+    //    </tr>
+    //    {% endfor %}
+    // </div>
+    // <!-- # new!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+    </script>
+</body>
+</html>
+

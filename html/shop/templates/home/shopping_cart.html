@@ -185,21 +185,21 @@
             var html = '<div class="popup_cont">'
                     + '<div style="width: 256px; height: 250px; text-align: center; margin:70px" >'
                     + '<image src="/static/home/images/QRCode.jpg" width="256" height="256" />'
-                    + '<p style="color:red;padding-tope:30px">該頁面僅為測試頁面，並未實現支付功能</p></div>'
+                    + '<p style="color:red;padding-tope:30px">此頁面僅為測試頁面，並未實現付款功能</p></div>'
                     + '</div>';
             var content = {
                 state1 : {
                     content : html,
                     buttons : {
                         '取消' : 0,
-                        '支付' : 1
+                        '付款' : 1
                     },
                     buttonsFocus : 0,
                     submit : function(v, h, f) {
                         if (v == 0) {//取消按鈕的響應事件
                             return true; //關閉窗口
                         }
-                        if (v == 1) {//支付按鈕的響應事件
+                        if (v == 1) {//付款按鈕的響應事件
                             document.getElementById('myform').submit();//提交表單
                             return true;
                         }
@@ -207,7 +207,7 @@
                     }
                 }
             };
-            $.jBox.open(content, '支付', 400, 450);//打開支付窗口
+            $.jBox.open(content, '付款', 400, 450);//打開付款窗口
         }
     </script>
     <!-- // 使用jBox插件實現一個支付對話框 -->

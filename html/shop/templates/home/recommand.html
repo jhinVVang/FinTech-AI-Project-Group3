@@ -52,122 +52,105 @@
                 
             
 <body>
-    <form class="recommandt">
-        <span>收入(income)</span>
-        <select class="form-select" aria-label="Income select example">
+    <form id="createdForm" action="predict" method="post" style="margin: 20px;">
+        
+        <label>收入(income)</label>
+        <select class="form-select" aria-label="Default select example" name="income" style="width: 200px;">
             <option selected>請選擇</option>
-            <option value="1"><=50K</option>
-            <option value="2">>50K</option>
+            <option value="<=50K"><=50K</option>
+            <option value=">50K">>50K</option>
         </select>
     
-        <span>性別(Sex)</span>
-        <select class="form-select" aria-label="Sex select example">
+        <label>性別(Sex)</label>
+        <select class="form-select" aria-label="Default select example" name="sex" style="width: 200px;">
             <option selected>請選擇</option>
-            <option value="1">Male</option>
-            <option value="2">Female</option>
-            <option value="3">Unisex</option>
+            <option value="Men">Male</option>
+            <option value="Women">Female</option>
+            <option value="Unisex">Unisex</option>
         </select>
     
-        <span>材質屬性</span>
-        <select class="form-select" aria-label="Material select example">
+        <label>材質屬性(Material)</label>
+        <select class="form-select" aria-label="Default select example" name="material" style="width: 200px;">
             <option selected>請選擇</option>
-            <option value="1">Gold 14ct</option>
-            <option value="2">Gold 18ct</option>
-            <option value="3">Stainless Steel</option>
-            <option value="4">Silver</option>
-            <option value="5">Metal Alloy</option>
-            <option value="6">Brass</option>
-            <option value="7">Gold 9ct</option>
-            <option value="8">Wood</option>
+            <option value="Gold 14ct">Gold 14ct</option>
+            <option value="Gold 18ct">Gold 18ct</option>
+            <option value="Stainless Steel">Stainless Steel</option>
+            <option value="Silver">Silver</option>
+            <option value="Metal Alloy">Metal Alloy</option>
+            <option value="Brass">Brass</option>
+            <option value="Gold 9ct">Gold 9ct</option>
+            <option value="Wood">Wood</option>
         </select>
 
-        <span>品牌(Brand)</span>
-        <select class="form-select" aria-label="Brand select example">
+        <label>品牌(Brand)</label>
+        <select class="form-select" aria-label="Default select example" name="brand" style="width: 200px;">
             <option selected>請選擇</option>
-            <option value="1">Haritidis</option>
-            <option value="2">Nomination</option>
-            <option value="3">Paul Hewitt</option>
-            <option value="4">PDPAOLA</option>
-            <option value="5">Fossil</option>
-            <option value="6">Lily & Rose</option>
-            <option value="7">Very Gavello</option>
-            <option value="8">Tommy Hilfiger</option>
-            <option value="9">Rosso Amante</option>
-            <option value="10">Vogue</option>
-            <option value="11">JCou</option>
-            <option value="12">Gloria Hope</option>
-            <option value="13">Daniel Wellington Jewelry</option>
-            <option value="14">Guess</option>
-            <option value="15">Dyrberg/Kern</option>
-            <option value="16">Bronzallure</option>
-            <option value="17">Pesavento</option>
-            <option value="18">Ania Haie</option>
-            <option value="19">Just Cavalli</option>
-            <option value="20">Michael Kors</option>
-            <option value="21">Montegrappa</option>
-            <option value="22">Ascot</option>
-            <option value="23">Skagen</option>
-            <option value="24">Vitaly</option>
-            <option value="25">Cluse</option>
-            <option value="26">Boss</option>
-            <option value="27">Police</option>
-            <option value="28">Sector</option>
-            <option value="29">Carlo Visconti</option>
-            <option value="30">UomOro</option>
+            <option value="Haritidis">Haritidis</option>
+            <option value="Nomination">Nomination</option>
+            <option value="Paul Hewitt">Paul Hewitt</option>
+            <option value="PDPAOLA">PDPAOLA</option>
+            <option value="Fossil">Fossil</option>
+            <option value="Lily & Rose">Lily & Rose</option>
+            <option value="Very Gavello">Very Gavello</option>
+            <option value="Tommy Hilfiger">Tommy Hilfiger</option>
+            <option value="Rosso Amante">Rosso Amante</option>
+            <option value="Vogue">Vogue</option>
+            <option value="JCou">JCou</option>
+            <option value="Gloria Hope">Gloria Hope</option>
+            <option value="Daniel Wellington Jewelry">Daniel Wellington Jewelry</option>
+            <option value="Guess">Guess</option>
+            <option value="Dyrberg/Kern">Dyrberg/Kern</option>
+            <option value="Bronzallure">Bronzallure</option>
+            <option value="Pesavento">Pesavento</option>
+            <option value="Ania Haie">Ania Haie</option>
+            <option value="Just Cavalli">Just Cavalli</option>
+            <option value="Michael Kors">Michael Kors</option>
+            <option value="Montegrappa">Montegrappa</option>
+            <option value="Ascot">Ascot</option>
+            <option value="Skagen">Skagen</option>
+            <option value="Vitaly">Vitaly</option>
+            <option value="Cluse">Cluse</option>
+            <option value="Boss">Boss</option>
+            <option value="Police">Police</option>
+            <option value="Sector">Sector</option>
+            <option value="Carlo Visconti">Carlo Visconti</option>
+            <option value="UomOro">UomOro</option>
         </select>
 
-        <span>色澤(color)</span>
-        <select class="form-select" aria-label="Color select example">
+        <label>色澤(color)</label>
+        <select class="form-select" aria-label="Default select example" name="color" style="width: 200px;">
             <option selected>請選擇</option>
-            <option value="1">Gold</option>
-            <option value="2">White</option>
-            <option value="3">Rose</option>
-            <option value="4">White & Gold</option>
-            <option value="5">White & Rose</option>
-            <option value="6">Black</option>
-            <option value="7">White, Gold & Rose</option>
-            <option value="8">Gunmetal</option>
-            <option value="9">Rose & Black</option>
-            <option value="10">Gold & Rose</option>
+            <option value="Gold">Gold</option>
+            <option value="White">White</option>
+            <option value="Rose">Rose</option>
+            <option value="White & Gold">White & Gold</option>
+            <option value="White & Rose">White & Rose</option>
+            <option value="Black">Black</option>
+            <option value="White, Gold & Rose">White, Gold & Rose</option>
+            <option value="Gunmetal">Gunmetal</option>
+            <option value="Rose & Black">Rose & Black</option>
+            <option value="Gold & Rose">Gold & Rose</option>
         </select>
         
-        <label for="basic-price" class="form-label">購買預算(price)</label>
+        <label for="basic-price" class="form-label">購買預算(price)
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            年紀(age)</label>
         <div class="input-group mb-3">
-            <input type="text" class="form-control" id="basic-price" aria-describedby="basic-addon1">
+            <input type="text" class="form-control" id="basic-price" aria-describedby="basic-addon1" name="price" style="width: 200px;">
+        </div>
+        <div class="input-group mb-3"  style="margin-left: 20px;">
+            <input type="text" class="form-control" id="basic-age" aria-describedby="basic-addon2" name="age" style="width: 200px;">
         </div>
         
-    
-        <div class="age">
-        <label for="basic-age" class="form-label">年紀(age)</label>
-        <div class="input-group mb-3">
-            <input type="text" class="form-control" id="basic-age" aria-describedby="basic-addon2">
-        </div>
-        </div>
 
         <div class="submitrecommand">
-            <button><a href="#">提交</a></button>
+            <input type="submit" id = "btnCreated">
         </div>
     </form>
-    <!-- # new!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-    <div>
-        {% for item in orders%}
-        <tr>
-           <td class="text-center image" width="10%">{{item.orders.id}}</td>
-           <td class="text-center picture" width="20%">
-               <a href="{{url_for('goods_detail',id=item.goods.id)}}">
-               <img width="80px" src="{{url_for('static',filename='images/goods/'+item.goods.picture)}}"> </a>
-           </td>
-           <td class="text-center name">{{item.goods.name}}</td>
-           <td class="text-center quantity">{{item.number}}件</td>
-           <td class="text-center quantity">{{item.goods.current_price}}元</td>
-           <td class="text-center quantity">{{item.number*item.goods.current_price}}元</td>
-           <td class="text-center quantity">{{item.orders.recevie_name}}</td>
-           <td class="text-center quantity">{{item.orders.recevie_tel}}</td>
-           <td class="text-center quantity">{{item.orders.addtime}}</td>
-       </tr>
-       {% endfor %}
-    </div>
-    <!-- # new!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+    
+    <script>
+        
+    </script>
 </body>
 </html>
 

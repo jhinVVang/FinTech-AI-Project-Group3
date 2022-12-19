@@ -56,10 +56,12 @@ def index():
                             }
                         ]
                 elif text == "送禮推薦":
-                    payload["messages"] = [getproductMessage()]
+                    payload["messages"] = [getfestivalproductMessage()]
                 elif text == "優惠活動":
                     payload["messages"] = [getbonusImageMessage(),
                                            getbonus2ImageMessage()]
+                elif text == "新品介紹":
+                    payload["messages"] = [getnewproductMessage()]
                 elif text == "製作者名單":
                     payload["messages"] = [getproducerCarouselMessage()]
                 elif text == "預約鑑賞":
@@ -146,7 +148,161 @@ def getNameEmojiMessage():
     print(message)
     return message
 
-def getproductMessage():
+
+def getnewproductMessage():
+    message = {
+        "type": "template",
+        "altText": "this is a carousel template",
+        "template": {
+            "type": "carousel",
+            "columns": [
+            {
+                "thumbnailImageUrl": F"{end_point}/static/jewelry/47.jpg",
+                "imageBackgroundColor": "#000000",
+                "title": "Bracelet",
+                "text": "鑽石手環帶來亮眼璀璨與雅緻風格，體現經典華麗魅力。",
+                "defaultAction": {
+                "type": "uri",
+                "label": "查看更多",
+                "uri": "http://example.com/page/222"
+                },
+                "actions": [
+                {
+                    "type": "postback",
+                    "label": "立即購買",
+                    "data": "action=buy&itemid=222"
+                },
+                {
+                    "type": "uri",
+                    "label": "查看更多",
+                    "uri": "http://example.com/page/222"
+                }
+                ]
+            },
+            {
+                "thumbnailImageUrl": F"{end_point}/static/jewelry/5.jpg",
+                "imageBackgroundColor": "#000000",
+                "title": "Ring",
+                "text": "採用時尚的混合切割方式，將階梯式切割的冠部與明亮式切割的底部相結合。十分適合追求現代感戒指款式者。",
+                "defaultAction": {
+                "type": "uri",
+                "label": "查看更多",
+                "uri": "http://example.com/page/222"
+                },
+                "actions": [
+                {
+                    "type": "postback",
+                    "label": "立即購買",
+                    "data": "action=buy&itemid=222"
+                },
+                {
+                    "type": "uri",
+                    "label": "查看更多",
+                    "uri": "http://example.com/page/222"
+                }
+                ]
+            },
+            {
+                "thumbnailImageUrl": F"{end_point}/static/jewelry/35.jpg",
+                "imageBackgroundColor": "#000000",
+                "title": "Earrings",
+                "text": "使用精緻優質的鑽石，優美細膩的設計，最適合送給甜美可愛的她。",
+                "defaultAction": {
+                "type": "uri",
+                "label": "查看更多",
+                "uri": "http://example.com/page/222"
+                },
+                "actions": [
+                {
+                    "type": "postback",
+                    "label": "立即購買",
+                    "data": "action=buy&itemid=222"
+                },
+                {
+                    "type": "uri",
+                    "label": "查看更多",
+                    "uri": "http://example.com/page/222"
+                }
+                ]
+            },
+            {
+                "thumbnailImageUrl": F"{end_point}/static/jewelry/23.jpg",
+                "imageBackgroundColor": "#FFFFFF",
+                "title": "Necklace",
+                "text": "獨特的高級鑽石珠寶作品融匯了女性優雅與性感的元素演繹您對生活品味的璀璨的想望。",
+                "defaultAction": {
+                "type": "uri",
+                "label": "查看更多",
+                "uri": "http://example.com/page/123"
+                },
+                "actions": [
+                {
+                    "type": "postback",
+                    "label": "立即購買",
+                    "data": "action=buy&itemid=111"
+                },
+                {
+                    "type": "uri",
+                    "label": "查看更多",
+                    "uri": "http://example.com/page/111"
+                }
+                ]
+            },
+            {
+                "thumbnailImageUrl": F"{end_point}/static/jewelry/3.jpg",
+                "imageBackgroundColor": "#000000",
+                "title": "Ring",
+                "text": "18K金戒指鑲嵌天然鑽石，在簡單中營造獨特。",
+                "defaultAction": {
+                "type": "uri",
+                "label": "查看更多",
+                "uri": "http://example.com/page/222"
+                },
+                "actions": [
+                {
+                    "type": "postback",
+                    "label": "立即購買",
+                    "data": "action=buy&itemid=222"
+                },
+                {
+                    "type": "uri",
+                    "label": "查看更多",
+                    "uri": "http://example.com/page/222"
+                }
+                ]
+            },
+            {
+                "thumbnailImageUrl": F"{end_point}/static/jewelry/49.jpg",
+                "imageBackgroundColor": "#000000",
+                "title": "Link",
+                "text": "在一年四季中，隨意搭配一件簡單亮眼的配件，立刻帶出時尚氣息。",
+                "defaultAction": {
+                "type": "uri",
+                "label": "查看更多",
+                "uri": "http://example.com/page/222"
+                },
+                "actions": [
+                {
+                    "type": "postback",
+                    "label": "立即購買",
+                    "data": "action=buy&itemid=222"
+                },
+                {
+                    "type": "uri",
+                    "label": "查看更多",
+                    "uri": "http://example.com/page/222"
+                }
+                ]
+            }
+            ],
+            "imageAspectRatio": "rectangle",
+            "imageSize": "cover"
+        }
+    }
+    return message
+
+
+def getfestivalproductMessage():
     message = {
         "type": "template",
         "altText": "this is a carousel template",

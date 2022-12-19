@@ -1,5 +1,5 @@
 from flask import render_template, url_for, redirect, \
-    flash, session, request, make_response, jsonify
+    flash, session, request, make_response, jsonify, Flask
 from werkzeug.security import generate_password_hash
 import random
 import string
@@ -9,10 +9,95 @@ from sqlalchemy import or_
 from functools import wraps
 from decimal import *
 from form import *
-import numpy as np
-import pandas as pd
-from tensorflow.keras.models import load_model
-from sklearn.preprocessing import OrdinalEncoder
+from flask_cors import CORS
+import pymysql
+
+# new!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+app = Flask(__name__)
+app.config["JSON_AS_ASCII"] = False
+
+# 這裡設定 DEBUG 為 TRUE 的話，更新程式碼就不用一直重啟 flask 伺服器了
+# 更新 python 程式碼存檔之後，直接重新整理網頁即可。
+app.config['DEBUG']=True
+
+CORS(app, resources={r"./*":{"origins":["*"]}})
+
+db = pymysql.connect(
+    host='localhost',
+    port=3306,
+    user='root',
+    passwd='',
+    database='shop',
+    charset='utf8mb4'
+)
+
+cursor = db.cursor()
+
+@app.route('/', methods=['POST','GET'])
+def home():
+    return render_template("recommand.html")
+
+
+@app.route('/newfeature',methods=['POST'])
+def newfeature():
+    res = {"success":False, "info":"寫入失敗"}
+    try:
+        sql = 'INSERT INTO `custom_feature` (`income`, `sex`, `brand`, `material`, `color`, `price`, `age`) VALUES (%s,%s,%s,%s,%s,%s,%s)'
+        cursor.execute(sql, (request.
+        json['income'], request.json['sex'],request.json['brand'],request.json['material'],request.json['color'],request.json['price'],request.json['age']))
+
+        if cursor.rowcount > 0:
+
+            res['success'] = True
+            res['info'] = '新增成功'
+
+        else:
+            res['info'] = '新增失敗'
+
+        db.commit()
+
+    except Exception as e:
+        db.rollback()
+        res['info']= f'SQL 寫入失敗: {e}'
+
+    return jsonify(res)
+        
+
+@app.route('/shop/read',methods=['GET'])
+def shopread():
+    res = {"success":False, "info":"查詢失敗"}
+    whereSqlString = ' WHERE ';
+
+    for key, value in list(request.args.lists()):
+        if value[0] :
+            whereSqlString += f'`{key}`="{value[0]}" OR '
+
+    finalSQL = whereSqlString[:-3]
+
+    try:
+        sql = f'SELECT * FROM `custom_feature` {finalSQL}'
+        cursor.execute(sql)
+
+        if cursor.rowcount > 0:
+            result = cursor.fetchall()
+
+            res['success'] = True
+            res['info'] = '查詢成功'
+            res['result'] = result
+        else:
+            res['info'] = '查無資料'
+
+        db.commit()
+
+    except Exception as e:
+        db.rollback()
+        res['info']= f'SQL 執行失敗: {e}'
+
+    return jsonify(res)
+
+app.run()
+# new!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 def rndColor():
     '''隨機顏色'''
@@ -806,41 +891,6 @@ def a_topgoods():
     orders = OrdersDetail.query.order_by(OrdersDetail.number.desc()).limit(10).all()
     return render_template("admin/topgoods.html", data=orders)
 
-@app.route('/recommand/predict/', methods=['GET', 'POST'])
-def predict():
-    if request.method == "POST":
-        income = request.values.get('income')
-        sex = request.values.get('sex')
-        brand = request.values.get('brand')
-        material = request.values.get('material')
-        color = request.values.get('color')
-        price = request.values.get('price')
-        age = request.values.get('age')
-        df = pd.read_csv('./merged_data.csv')
-        
-        print(income, sex, brand, material, color, price, age)
-
-        
-        x_encoder = OrdinalEncoder()
-        encoder_X = []
-        encoder_X.append([income, sex, brand, material, color, price, age])
-        # print(encoder_X)
-        encoded_X = x_encoder.fit_transform(encoder_X)
-        # print(type(encoder_X))
-
-        model = load_model('./DNN_model_jewel_type.h5')
-        # print('load ok')
-        prediction = model.predict(encoded_X)
-        np_max = []
-        np_max.append(np.argmax(np.array(prediction.T)))
-        print(np_max)
-        rec = []
-        for i in np_max:
-            rec.append(df.iloc[i, 4])
-        print(rec)
-
-        
-    return render_template("home/recommand.html", items=rec)
 
 if __name__ == '__main__':
     app.run(debug=True)

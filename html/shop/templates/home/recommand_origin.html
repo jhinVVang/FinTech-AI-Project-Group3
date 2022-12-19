@@ -1,0 +1,155 @@
+{% extends "home/common.html" %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+            
+<head>
+
+
+    <!-- JQuery連結 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- css連結 -->
+    <link rel="stylesheet" href="{{url_for('static',filename='home/css/style.css')}}">
+    <!-- JS連結 -->
+    <!-- <script src="../static/script.js"></script> -->
+    <!-- FontAwesome 連結 -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"> -->
+    <!-- Bootstrap 連結 -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous"> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <!-- <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script> -->
+   
+    <!-- <link rel="stylesheet" href="./slick-1.8.1/slick/slick.css">
+    <link rel="stylesheet" href="./slick-1.8.1/slick/slick-theme.css"> -->
+    
+    <style>
+    
+        #basic-price{
+            width: 20%;
+        }
+    
+        #basic-age{
+            width: 20%;
+        }
+    
+        .age{
+            margin-top: 4%;
+        }
+    
+        .submitrecommand{
+            margin-top: 4%;
+            margin-left: 8%;
+        }
+        
+        .recommandt{
+            margin-left: 11%;
+            margin-top: 1%;
+        }
+       
+    </style>
+</head>
+                
+            
+<body>
+    <form class="recommandt">
+        <span>收入(income)</span>
+        <select class="form-select" aria-label="Income select example">
+            <option selected>請選擇</option>
+            <option value="1"><=50K</option>
+            <option value="2">>50K</option>
+        </select>
+    
+        <span>性別(Sex)</span>
+        <select class="form-select" aria-label="Sex select example">
+            <option selected>請選擇</option>
+            <option value="1">Male</option>
+            <option value="2">Female</option>
+            <option value="3">Unisex</option>
+        </select>
+    
+        <span>材質屬性</span>
+        <select class="form-select" aria-label="Material select example">
+            <option selected>請選擇</option>
+            <option value="1">Gold 14ct</option>
+            <option value="2">Gold 18ct</option>
+            <option value="3">Stainless Steel</option>
+            <option value="4">Silver</option>
+            <option value="5">Metal Alloy</option>
+            <option value="6">Brass</option>
+            <option value="7">Gold 9ct</option>
+            <option value="8">Wood</option>
+        </select>
+
+        <span>品牌(Brand)</span>
+        <select class="form-select" aria-label="Brand select example">
+            <option selected>請選擇</option>
+            <option value="1">Haritidis</option>
+            <option value="2">Nomination</option>
+            <option value="3">Paul Hewitt</option>
+            <option value="4">PDPAOLA</option>
+            <option value="5">Fossil</option>
+            <option value="6">Lily & Rose</option>
+            <option value="7">Very Gavello</option>
+            <option value="8">Tommy Hilfiger</option>
+            <option value="9">Rosso Amante</option>
+            <option value="10">Vogue</option>
+            <option value="11">JCou</option>
+            <option value="12">Gloria Hope</option>
+            <option value="13">Daniel Wellington Jewelry</option>
+            <option value="14">Guess</option>
+            <option value="15">Dyrberg/Kern</option>
+            <option value="16">Bronzallure</option>
+            <option value="17">Pesavento</option>
+            <option value="18">Ania Haie</option>
+            <option value="19">Just Cavalli</option>
+            <option value="20">Michael Kors</option>
+            <option value="21">Montegrappa</option>
+            <option value="22">Ascot</option>
+            <option value="23">Skagen</option>
+            <option value="24">Vitaly</option>
+            <option value="25">Cluse</option>
+            <option value="26">Boss</option>
+            <option value="27">Police</option>
+            <option value="28">Sector</option>
+            <option value="29">Carlo Visconti</option>
+            <option value="30">UomOro</option>
+        </select>
+
+        <span>色澤(color)</span>
+        <select class="form-select" aria-label="Color select example">
+            <option selected>請選擇</option>
+            <option value="1">Gold</option>
+            <option value="2">White</option>
+            <option value="3">Rose</option>
+            <option value="4">White & Gold</option>
+            <option value="5">White & Rose</option>
+            <option value="6">Black</option>
+            <option value="7">White, Gold & Rose</option>
+            <option value="8">Gunmetal</option>
+            <option value="9">Rose & Black</option>
+            <option value="10">Gold & Rose</option>
+        </select>
+        
+        <label for="basic-price" class="form-label">購買預算(price)</label>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" id="basic-price" aria-describedby="basic-addon1">
+        </div>
+        
+    
+        <div class="age">
+        <label for="basic-age" class="form-label">年紀(age)</label>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" id="basic-age" aria-describedby="basic-addon2">
+        </div>
+        </div>
+
+        <div class="submitrecommand">
+            <button><a href="#">提交</a></button>
+        </div>
+    </form>
+</body>
+</html>
+
+
+{% endblock %}
